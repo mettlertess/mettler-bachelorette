@@ -695,7 +695,9 @@
       .hero-cta-group { flex-direction: column; }
       .btn-primary, .btn-secondary { justify-content: center; }
       .includes-grid { grid-template-columns: 1fr; }
-      .photos-row { overflow-x: auto; padding-bottom: 12px; -webkit-overflow-scrolling: touch; }
+      .photos-strip { overflow: visible; padding: 40px 0; }
+      .photos-row { overflow-x: auto; padding: 0 20px 16px; -webkit-overflow-scrolling: touch; justify-content: flex-start; scroll-snap-type: x mandatory; }
+      .photo-thumb { width: 220px; height: 240px; flex-shrink: 0; scroll-snap-align: start; }
       .sticky-bar { flex-direction: column; gap: 10px; text-align: center; padding: 14px 20px; }
       .lightbox-nav { display: none; }
     }
