@@ -535,6 +535,68 @@
     .photo-thumb:hover { opacity: .88; }
     .photo-thumb img { width: 100%; height: 100%; object-fit: cover; }
 
+    /* ─── TESTIMONIALS ─── */
+    .testimonials {
+      background: var(--cream);
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .testimonial-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 36px 30px 28px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .testimonial-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 4px;
+      height: 60px;
+      background: var(--terra);
+      border-radius: 0 var(--radius) 0 4px;
+    }
+
+    .testimonial-quote {
+      font-size: 1.05rem;
+      color: var(--ink);
+      line-height: 1.8;
+      flex: 1;
+      font-style: italic;
+    }
+
+    .testimonial-footer {
+      margin-top: 24px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(193,127,90,.12);
+    }
+
+    .testimonial-name {
+      font-size: .95rem;
+      font-weight: 700;
+      color: var(--brown);
+    }
+
+    .testimonial-context {
+      font-size: .82rem;
+      color: var(--muted);
+      margin-top: 3px;
+    }
+
+    @media (max-width: 900px) {
+      .testimonials-grid { grid-template-columns: 1fr; }
+    }
+
     /* ─── FINAL CTA ─── */
     .final-cta {
       background: var(--brown);
@@ -943,6 +1005,51 @@
     <div class="photo-thumb"><img src="images/gallery-5.jpg" alt="סדנת ציור ביקב מטלר" /></div>
   </div>
 </div>
+
+<!-- ─── TESTIMONIALS ─── -->
+<section class="testimonials">
+  <div class="container">
+    <span class="section-tag">מה אומרות</span>
+    <h2 class="section-title">בנות שהיו כאן, ומספרות.</h2>
+    <p class="section-lead">כל אחת הגיעה עם ספק קטן — ויצאה עם ציור וחיוך.</p>
+    <div class="testimonials-grid">
+
+      <div class="testimonial-card">
+        <p class="testimonial-quote">
+          "הגעתי בלי שום ניסיון בציור, קצת חששתי שאהיה 'זו שלא מצליחה'.
+          לאה הייתה לצד כל אחת מאיתנו — ובסוף יצאתי עם ציור שתלתי בסלון."
+        </p>
+        <div class="testimonial-footer">
+          <div class="testimonial-name">מיכל ר.</div>
+          <div class="testimonial-context">הגיעה עם חברות לבוקר בנות</div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <p class="testimonial-quote">
+          "ארגנתי את הסדנה כמסיבת רווקות לחברה שלי ולא ידעתי מה לצפות.
+          זו הייתה ההפתעה הכי גדולה — כולן יצאו מרגישות שהן אמניות."
+        </p>
+        <div class="testimonial-footer">
+          <div class="testimonial-name">שירה ל.</div>
+          <div class="testimonial-context">מסיבת רווקות, קבוצה של 10</div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <p class="testimonial-quote">
+          "שעתיים וחצי שעברו כמו חצי שעה. היין, האווירה, לאה שמסבירה בסבלנות —
+          פשוט נשמנו. זה בדיוק מה שצריך לפעמים."
+        </p>
+        <div class="testimonial-footer">
+          <div class="testimonial-name">דנה כ.</div>
+          <div class="testimonial-context">הגיעה עם אחותה</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 <!-- ─── ABOUT LEAH ─── -->
 <section class="about">
