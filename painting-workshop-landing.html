@@ -430,36 +430,41 @@
 
     /* ─── PERFECT FOR ─── */
     .perfect-for {
-      background: var(--cream-dark);
+      background: var(--cream);
     }
 
     .pf-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      align-items: stretch;
     }
 
     .pf-card {
-      background: var(--white);
       border-radius: var(--radius);
-      padding: 34px 30px;
-      box-shadow: var(--shadow);
-      display: flex;
-      gap: 20px;
-      align-items: flex-start;
+      padding: 34px 26px 30px;
+      position: relative;
+      overflow: hidden;
       transition: transform .25s, box-shadow .25s;
+      background: var(--white);
+      box-shadow: var(--shadow);
     }
-    .pf-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
-
-    .pf-emoji { font-size: 2rem; flex-shrink: 0; margin-top: 2px; }
-
-    .pf-card h3 {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--ink);
-      margin-bottom: 8px;
+    .pf-card::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--terra);
     }
-    .pf-card p { font-size: .93rem; color: var(--muted); line-height: 1.65; }
+    .pf-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+
+    .pf-card.featured {
+      background: var(--brown);
+      box-shadow: var(--shadow-lg);
+    }
+    .pf-card.featured::after { background: var(--pink); }
+    .pf-card.featured h3 { color: var(--white); }
+    .pf-card.featured p { color: rgba(255,255,255,.75); }
 
     .pf-popular {
       display: inline-block;
@@ -469,9 +474,21 @@
       font-weight: 700;
       padding: 3px 10px;
       border-radius: 50px;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
       letter-spacing: .04em;
     }
+    .pf-card.featured .pf-popular {
+      background: rgba(255,255,255,.2);
+      color: var(--white);
+    }
+
+    .pf-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 10px;
+    }
+    .pf-card p { font-size: .92rem; color: var(--muted); line-height: 1.7; }
 
     /* ─── ABOUT LEAH ─── */
     .about {
@@ -537,48 +554,84 @@
 
     /* ─── TESTIMONIALS ─── */
     .testimonials {
-      background: var(--cream);
+      background: var(--cream-dark);
     }
 
     .testimonials-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 24px;
+      align-items: start;
     }
 
     .testimonial-card {
       background: var(--white);
       border-radius: var(--radius);
-      padding: 36px 30px 28px;
+      padding: 44px 32px 32px;
       box-shadow: var(--shadow);
       display: flex;
       flex-direction: column;
       position: relative;
+      overflow: hidden;
+      transition: transform .25s, box-shadow .25s;
     }
+    .testimonial-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
 
     .testimonial-card::before {
-      content: '';
+      content: '\201C';
       position: absolute;
-      top: 0;
-      right: 0;
-      width: 4px;
-      height: 60px;
-      background: var(--terra);
-      border-radius: 0 var(--radius) 0 4px;
+      top: -18px;
+      left: 16px;
+      font-size: 10rem;
+      line-height: 1;
+      color: var(--terra);
+      opacity: .1;
+      font-family: Georgia, serif;
+      pointer-events: none;
     }
+
+    .testimonial-card.featured {
+      background: var(--brown);
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-10px);
+    }
+    .testimonial-card.featured:hover { transform: translateY(-14px); }
+    .testimonial-card.featured::before { color: var(--white); opacity: .12; }
 
     .testimonial-quote {
-      font-size: 1.05rem;
+      font-size: 1rem;
       color: var(--ink);
-      line-height: 1.8;
+      line-height: 1.85;
       flex: 1;
-      font-style: italic;
+      position: relative;
+      z-index: 1;
     }
+    .testimonial-card.featured .testimonial-quote { color: rgba(255,255,255,.9); }
 
     .testimonial-footer {
-      margin-top: 24px;
-      padding-top: 18px;
-      border-top: 1px solid rgba(193,127,90,.12);
+      margin-top: 28px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .testimonial-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--terra);
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .9rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+    .testimonial-card.featured .testimonial-avatar {
+      background: rgba(255,255,255,.22);
     }
 
     .testimonial-name {
@@ -586,15 +639,19 @@
       font-weight: 700;
       color: var(--brown);
     }
+    .testimonial-card.featured .testimonial-name { color: var(--white); }
 
     .testimonial-context {
-      font-size: .82rem;
+      font-size: .8rem;
       color: var(--muted);
-      margin-top: 3px;
+      margin-top: 2px;
     }
+    .testimonial-card.featured .testimonial-context { color: rgba(255,255,255,.6); }
 
     @media (max-width: 900px) {
       .testimonials-grid { grid-template-columns: 1fr; }
+      .testimonial-card.featured { transform: none; }
+      .pf-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
     /* ─── FINAL CTA ─── */
@@ -760,6 +817,9 @@
       .hero-cta-group { flex-direction: column; }
       .btn-primary, .btn-secondary { justify-content: center; }
       .includes-grid { grid-template-columns: 1fr; }
+      .pf-grid { grid-template-columns: 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .testimonial-card.featured { transform: none; }
       .photos-strip { overflow: visible; padding: 40px 0; }
       .photos-row { overflow-x: auto; padding: 0 20px 16px; -webkit-overflow-scrolling: touch; justify-content: flex-start; scroll-snap-type: x mandatory; }
       .photo-thumb { width: 220px; height: 240px; flex-shrink: 0; scroll-snap-align: start; }
@@ -962,33 +1022,25 @@
     </p>
     <div class="pf-grid">
 
-      <div class="pf-card">
-        <div>
-          <span class="pf-popular">הכי פופולרי</span>
-          <h3>בוקר בנות</h3>
-          <p>מגיעות קבוצה, יוצאות עם ציורים וסיפורים. פשוט אחד מהימים שמדברים עליהם עוד שנים.</p>
-        </div>
+      <div class="pf-card featured">
+        <span class="pf-popular">הכי פופולרי</span>
+        <h3>בוקר בנות</h3>
+        <p>מגיעות קבוצה, יוצאות עם ציורים וסיפורים. פשוט אחד מהימים שמדברים עליהם עוד שנים.</p>
       </div>
 
       <div class="pf-card">
-        <div>
-          <h3>מסיבת רווקות</h3>
-          <p>חלופה ליקים ולפאבים. יין, יצירה ואווירה בלתי נשכחת — לפני שהכל משתנה.</p>
-        </div>
+        <h3>מסיבת רווקות</h3>
+        <p>חלופה ליקים ולפאבים. יין, יצירה ואווירה בלתי נשכחת — לפני שהכל משתנה.</p>
       </div>
 
       <div class="pf-card">
-        <div>
-          <h3>יום הולדת</h3>
-          <p>חוויה שנשארת הרבה אחרי שהעוגה נגמרת. יוצאת עם ציור — ולא מתנה נוספת שנשכחת.</p>
-        </div>
+        <h3>יום הולדת</h3>
+        <p>חוויה שנשארת הרבה אחרי שהעוגה נגמרת. יוצאת עם ציור — ולא מתנה נוספת שנשכחת.</p>
       </div>
 
       <div class="pf-card">
-        <div>
-          <h3>ספונטני לגמרי</h3>
-          <p>גם זוגות וגם יחידים מוזמנים להצטרף לסדנה פתוחה. תתקשרו ותבדקו מה יש.</p>
-        </div>
+        <h3>ספונטני לגמרי</h3>
+        <p>גם זוגות וגם יחידים מוזמנים להצטרף לסדנה פתוחה. תתקשרו ותבדקו מה יש.</p>
       </div>
 
     </div>
@@ -1020,19 +1072,25 @@
           לאה הייתה לצד כל אחת מאיתנו — ובסוף יצאתי עם ציור שתלתי בסלון."
         </p>
         <div class="testimonial-footer">
-          <div class="testimonial-name">מיכל ר.</div>
-          <div class="testimonial-context">הגיעה עם חברות לבוקר בנות</div>
+          <div class="testimonial-avatar">מ</div>
+          <div>
+            <div class="testimonial-name">מיכל ר.</div>
+            <div class="testimonial-context">בוקר בנות</div>
+          </div>
         </div>
       </div>
 
-      <div class="testimonial-card">
+      <div class="testimonial-card featured">
         <p class="testimonial-quote">
           "ארגנתי את הסדנה כמסיבת רווקות לחברה שלי ולא ידעתי מה לצפות.
           זו הייתה ההפתעה הכי גדולה — כולן יצאו מרגישות שהן אמניות."
         </p>
         <div class="testimonial-footer">
-          <div class="testimonial-name">שירה ל.</div>
-          <div class="testimonial-context">מסיבת רווקות, קבוצה של 10</div>
+          <div class="testimonial-avatar">ש</div>
+          <div>
+            <div class="testimonial-name">שירה ל.</div>
+            <div class="testimonial-context">מסיבת רווקות, קבוצה של 10</div>
+          </div>
         </div>
       </div>
 
@@ -1042,8 +1100,11 @@
           פשוט נשמנו. זה בדיוק מה שצריך לפעמים."
         </p>
         <div class="testimonial-footer">
-          <div class="testimonial-name">דנה כ.</div>
-          <div class="testimonial-context">הגיעה עם אחותה</div>
+          <div class="testimonial-avatar">ד</div>
+          <div>
+            <div class="testimonial-name">דנה כ.</div>
+            <div class="testimonial-context">הגיעה עם אחותה</div>
+          </div>
         </div>
       </div>
 
