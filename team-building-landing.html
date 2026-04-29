@@ -9,13 +9,16 @@
   <style>
     /* ─── Variables ─── */
     :root {
-      --cream:       #FDF6F0;
-      --cream-dark:  #F5EDE3;
+      --cream:       #F7F5EF;
+      --cream-dark:  #EEE9DC;
       --ink:         #2C2C2C;
-      --primary:     #8B3A52;
-      --primary-dark:#6E2D41;
-      --terra:       #C17F5A;
-      --terra-dark:  #A8663E;
+      --primary:     #2B4A8C;
+      --primary-dark:#1F3A70;
+      --terra:       #D4902A;
+      --terra-dark:  #B87520;
+      --teal:        #3D7A78;
+      --sage:        #89A882;
+      --sky:         #5B84C4;
       --muted:       #6B6B6B;
       --white:       #FFFFFF;
       --shadow:      0 4px 24px rgba(44,44,44,.08);
@@ -99,7 +102,7 @@
     /* ─── Hero ─── */
     .hero {
       min-height: 100svh;
-      background: url('images/bachelorette/winery-hero.jpg') center center / cover no-repeat;
+      background: url('images/team-building/hero.jpg') center center / cover no-repeat;
       position: relative;
       display: flex; align-items: center; justify-content: center;
       text-align: center;
@@ -117,7 +120,7 @@
     }
     .hero-eyebrow {
       display: inline-block;
-      background: rgba(139,58,82,.10);
+      background: rgba(43,74,140,.10);
       color: var(--primary);
       border-radius: 50px;
       padding: 6px 18px;
@@ -169,7 +172,7 @@
     .section-inner { max-width: 1080px; margin: 0 auto; }
     .section-tag {
       display: inline-block;
-      background: rgba(139,58,82,.10);
+      background: rgba(43,74,140,.10);
       color: var(--primary);
       border-radius: 50px;
       padding: 5px 16px;
@@ -194,7 +197,7 @@
 
     /* ─── Pain Section ─── */
     .pain {
-      background: linear-gradient(135deg, #FFF0E8 0%, #FDEEDD 100%);
+      background: linear-gradient(135deg, #EEF2F8 0%, #E8EDDC 100%);
     }
     .pain-grid {
       display: grid;
@@ -208,7 +211,7 @@
     }
     .pain-icon {
       width: 44px; height: 44px; flex-shrink: 0;
-      background: rgba(139,58,82,.12);
+      background: rgba(43,74,140,.12);
       border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
       font-size: 1.2rem;
@@ -355,7 +358,7 @@
     .activity-body p { font-size: .95rem; color: var(--muted); line-height: 1.6; flex: 1; margin-bottom: 18px; }
     .activity-tags { display: flex; gap: 8px; flex-wrap: wrap; }
     .activity-tag {
-      background: rgba(139,58,82,.08);
+      background: rgba(43,74,140,.08);
       color: var(--primary);
       border-radius: 50px;
       padding: 4px 12px;
@@ -414,7 +417,7 @@
 
     /* ─── Testimonials ─── */
     .testimonials {
-      background: linear-gradient(135deg, #2c1a0e 0%, #4a2d1a 45%, #7a4f3a 80%, #9a6545 100%);
+      background: linear-gradient(135deg, #0e1c2e 0%, #1a2f52 45%, #2B4A8C 80%, #3D7A78 100%);
       padding: 80px 24px;
       overflow: hidden;
     }
@@ -547,7 +550,7 @@
 
     /* ─── Final CTA ─── */
     .final-cta {
-      background: linear-gradient(135deg, var(--cream) 0%, #F5E6D3 50%, var(--cream-dark) 100%);
+      background: linear-gradient(135deg, var(--cream) 0%, #EBF0F8 50%, var(--cream-dark) 100%);
       padding: 100px 24px;
       text-align: center;
     }
@@ -738,7 +741,7 @@
         <p class="pain-quote">"חיפשנו משהו שיגרום לצוות להרגיש טוב — לא עוד אירוע שצריך לסבול אותו."</p>
       </div>
       <div class="pain-image-wrap">
-        <img src="images/bachelorette/winery-sunset.jpg" alt="יקב מטלר בשקיעה" loading="lazy" />
+        <img src="images/team-building/pain-image.jpg" alt="יקב מטלר בשקיעה" loading="lazy" />
       </div>
     </div>
   </div>
@@ -749,7 +752,7 @@
   <div class="section-inner">
     <div class="solution-grid">
       <div class="solution-image-wrap">
-        <img src="images/bachelorette/winery-hero.jpg" alt="סדנת יצירה ביקב מטלר" loading="lazy" />
+        <img src="images/team-building/solution.jpg" alt="סדנת יצירה ביקב מטלר" loading="lazy" />
         <div class="solution-badge">
           <strong>5–20</strong>
           <span>משתתפים</span>
@@ -830,7 +833,7 @@
       <div class="activity-card featured">
         <span class="activity-badge">הכי פופולרי</span>
         <div class="activity-img">
-          <img src="images/bachelorette/gallery-2.jpg" alt="ציור על קאנווס" loading="lazy" />
+          <img src="images/team-building/workshop-canvas.jpg" alt="ציור על קאנווס" loading="lazy" />
         </div>
         <div class="activity-body">
           <h3>ציור על קאנווס</h3>
@@ -844,7 +847,7 @@
 
       <div class="activity-card">
         <div class="activity-img">
-          <img src="images/bachelorette/workshop-pots.jpg" alt="ציור על עציצים" loading="lazy" />
+          <img src="images/team-building/workshop-pots.jpg" alt="ציור על עציצים" loading="lazy" />
         </div>
         <div class="activity-body">
           <h3>ציור על עציצים</h3>
@@ -858,7 +861,7 @@
 
       <div class="activity-card">
         <div class="activity-img">
-          <img src="images/bachelorette/workshop-watercolor.jpg" alt="ציור בצבעי מים" loading="lazy" />
+          <img src="images/team-building/workshop-watercolor.jpg" alt="ציור בצבעי מים" loading="lazy" />
         </div>
         <div class="activity-body">
           <h3>ציור בצבעי מים</h3>
@@ -889,14 +892,14 @@
     <p class="section-sub" style="margin: 0 auto;">כי המראה של בוקר ביקב עם כוס יין ביד — מסביר יותר מכל מילה.</p>
   </div>
   <div class="masonry-grid">
-    <div class="photo-thumb" data-index="0"><img src="images/bachelorette/gallery-1.jpg" alt="גלריה 1" loading="lazy" /></div>
-    <div class="photo-thumb" data-index="1"><img src="images/bachelorette/gallery-2.jpg" alt="גלריה 2" loading="lazy" /></div>
-    <div class="photo-thumb" data-index="2"><img src="images/bachelorette/gallery-3.jpg" alt="גלריה 3" loading="lazy" /></div>
-    <div class="photo-thumb" data-index="3"><img src="images/bachelorette/gallery-4.jpg" alt="גלריה 4" loading="lazy" /></div>
-    <div class="photo-thumb" data-index="4"><img src="images/bachelorette/gallery-5.jpg" alt="גלריה 5" loading="lazy" /></div>
-    <div class="photo-thumb" data-index="5"><img src="images/bachelorette/gallery-6.jpg" alt="גלריה 6" loading="lazy" /></div>
-    <div class="photo-thumb" data-index="6"><img src="images/bachelorette/gallery-7.jpg" alt="גלריה 7" loading="lazy" /></div>
-    <div class="photo-thumb" data-index="7"><img src="images/bachelorette/winery-sunset.jpg" alt="שקיעה ביקב" loading="lazy" /></div>
+    <div class="photo-thumb" data-index="0"><img src="images/team-building/gallery-1.jpg" alt="גלריה 1" loading="lazy" /></div>
+    <div class="photo-thumb" data-index="1"><img src="images/team-building/gallery-2.jpg" alt="גלריה 2" loading="lazy" /></div>
+    <div class="photo-thumb" data-index="2"><img src="images/team-building/gallery-3.jpg" alt="גלריה 3" loading="lazy" /></div>
+    <div class="photo-thumb" data-index="3"><img src="images/team-building/gallery-4.jpg" alt="גלריה 4" loading="lazy" /></div>
+    <div class="photo-thumb" data-index="4"><img src="images/team-building/gallery-5.jpg" alt="גלריה 5" loading="lazy" /></div>
+    <div class="photo-thumb" data-index="5"><img src="images/team-building/gallery-6.jpg" alt="גלריה 6" loading="lazy" /></div>
+    <div class="photo-thumb" data-index="6"><img src="images/team-building/gallery-7.jpg" alt="גלריה 7" loading="lazy" /></div>
+    <div class="photo-thumb" data-index="7"><img src="images/team-building/pain-image.jpg" alt="שקיעה ביקב" loading="lazy" /></div>
   </div>
 </section>
 
