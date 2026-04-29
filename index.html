@@ -18,8 +18,8 @@
       --pink-dark: #D4909A;
       --terra:     #C17F5A;
       --terra-dark:#A8663E;
-      --brown:     #7A4F3A;
-      --brown-dark:#5E3A28;
+      --brown:     #D4909A;
+      --brown-dark:#B87080;
       --muted:     #6B6B6B;
       --sage:      #C17F5A;
       --sage-light:#F5EDE3;
@@ -87,11 +87,11 @@
 
     .navbar-cta {
       background: var(--brown);
-      color: var(--white);
+      color: var(--ink);
       padding: 9px 20px;
       border-radius: 50px;
       font-size: 14px;
-      font-weight: 600;
+      font-weight: 700;
       transition: background .2s;
       white-space: nowrap;
     }
@@ -120,14 +120,16 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(to left, rgba(253,246,240,.6) 0%, rgba(253,246,240,.85) 55%, rgba(253,246,240,.95) 100%);
+      background: rgba(253,246,240,.78);
     }
 
     .hero-content {
       position: relative;
       z-index: 1;
-      max-width: 620px;
+      max-width: 720px;
       padding: 60px 24px;
+      margin: 0 auto;
+      text-align: center;
     }
 
     .hero-tag {
@@ -157,7 +159,7 @@
     .hero-sub {
       font-size: 1.15rem;
       color: var(--muted);
-      margin-bottom: 36px;
+      margin: 0 auto 36px;
       max-width: 480px;
     }
 
@@ -167,15 +169,16 @@
       display: flex;
       gap: 14px;
       flex-wrap: wrap;
+      justify-content: center;
     }
 
     .btn-primary {
       background: var(--brown);
-      color: var(--white);
+      color: var(--ink);
       padding: 14px 32px;
       border-radius: 50px;
       font-size: 16px;
-      font-weight: 600;
+      font-weight: 700;
       font-family: 'Assistant', sans-serif;
       transition: background .2s, transform .15s;
       display: inline-flex;
@@ -189,7 +192,7 @@
 
     .btn-secondary {
       background: transparent;
-      color: var(--brown);
+      color: var(--ink);
       padding: 14px 28px;
       border-radius: 50px;
       font-size: 16px;
@@ -208,6 +211,7 @@
       gap: 20px;
       margin-top: 44px;
       flex-wrap: wrap;
+      justify-content: center;
     }
 
     .badge {
@@ -254,12 +258,12 @@
 
     /* ─── PAIN ─── */
     .pain {
-      background: var(--ink);
-      color: var(--white);
+      background: linear-gradient(135deg, #FFF0E8 0%, #FDEEDD 100%);
+      color: var(--ink);
     }
 
-    .pain .section-tag { color: var(--pink); }
-    .pain .section-title { color: var(--white); }
+    .pain .section-tag { color: var(--terra); }
+    .pain .section-title { color: var(--ink); }
 
     .pain-grid {
       display: grid;
@@ -269,18 +273,18 @@
     }
 
     .pain-text .section-lead {
-      color: rgba(255,255,255,.65);
+      color: var(--muted);
       max-width: 100%;
     }
 
     .pain-highlight {
       font-size: 1.25rem;
-      color: var(--pink);
+      color: var(--terra-dark);
       font-family: 'Assistant', sans-serif;
       font-style: italic;
       margin-top: 24px;
       padding-right: 20px;
-      border-right: 3px solid var(--pink);
+      border-right: 3px solid var(--terra);
     }
 
     /* 🖼️ שנה ל-img עם תמונה אמיתית */
@@ -392,11 +396,12 @@
     .step-arrow {
       position: absolute;
       top: 50%;
-      left: -18px;
+      right: -20px;
       transform: translateY(-50%);
       color: var(--terra);
-      font-size: 1.4rem;
+      font-size: 1.6rem;
       font-weight: 700;
+      z-index: 1;
     }
 
     /* ─── WORKSHOPS ─── */
@@ -440,6 +445,26 @@
     .workshop-img-3 { background: linear-gradient(135deg, #f3e5f5, #ce93d8); }
     .workshop-img-4 { background: linear-gradient(135deg, #e3f2fd, #90caf9); }
     .workshop-img-5 { background: linear-gradient(135deg, #fff8e1, #ffe082); }
+    .workshop-img-6 { background: linear-gradient(135deg, #e8f4fd, #b3d9f7); }
+
+    .workshop-card.workshop-featured {
+      border: 2px solid var(--brown);
+      position: relative;
+    }
+
+    .workshop-popular-badge {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: var(--brown);
+      color: var(--ink);
+      font-size: .75rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 50px;
+      z-index: 2;
+      letter-spacing: .03em;
+    }
 
     /* wide card for last item if odd count */
     .workshop-card.wide {
@@ -586,7 +611,8 @@
     .photos-row {
       display: flex;
       gap: 16px;
-      /* 🖼️ הוסף כאן תמונות */
+      justify-content: center;
+      flex-wrap: wrap;
     }
 
     .photo-thumb {
@@ -607,46 +633,269 @@
 
     /* ─── TESTIMONIALS ─── */
     .testimonials {
-      background: var(--white);
+      background: linear-gradient(135deg, #2c1a0e 0%, #4a2d1a 45%, #7a4f3a 80%, #9a6545 100%);
+      position: relative;
+      overflow: hidden;
     }
 
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+    .testimonials::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 15% 60%, rgba(232,180,184,.08) 0%, transparent 55%),
+        radial-gradient(ellipse at 85% 25%, rgba(193,127,90,.07) 0%, transparent 50%);
+      pointer-events: none;
     }
 
-    .testimonial {
-      background: var(--cream);
+    .testimonials .container { position: relative; z-index: 1; }
+    .testimonials .section-tag { color: var(--pink); }
+    .testimonials .section-title { color: var(--white); }
+    .testimonials .section-lead { color: rgba(255,255,255,.65); }
+
+    /* Rating bar */
+    .rating-bar {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 44px;
+      flex-wrap: wrap;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.13);
       border-radius: var(--radius);
-      padding: 30px 26px;
+      padding: 20px 28px;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
     }
 
-    .testimonial-stars {
-      color: var(--terra);
-      font-size: 1rem;
-      margin-bottom: 14px;
-      letter-spacing: 2px;
+    .rating-score {
+      font-size: 3.2rem;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1;
     }
 
-    .testimonial-text {
-      font-family: 'Assistant', sans-serif;
-      font-size: 1rem;
+    .rating-stars-wrap { display: flex; flex-direction: column; gap: 6px; }
+
+    .rating-stars-large { display: flex; gap: 4px; }
+
+    .star-icon {
+      font-size: 1.35rem;
+      color: #FFD700;
+      display: inline-block;
+    }
+
+    .stars-animate .star-icon {
+      animation: starShine 2.5s ease-in-out infinite;
+    }
+    .stars-animate .star-icon:nth-child(1) { animation-delay: 0s; }
+    .stars-animate .star-icon:nth-child(2) { animation-delay: .25s; }
+    .stars-animate .star-icon:nth-child(3) { animation-delay: .5s; }
+    .stars-animate .star-icon:nth-child(4) { animation-delay: .75s; }
+    .stars-animate .star-icon:nth-child(5) { animation-delay: 1s; }
+
+    @keyframes starShine {
+      0%, 100% { filter: brightness(1); transform: scale(1); }
+      50%       { filter: brightness(1.55); transform: scale(1.2); }
+    }
+
+    .rating-info { font-size: .88rem; color: rgba(255,255,255,.5); }
+    .rating-info strong { display: block; color: var(--pink); font-size: .95rem; margin-bottom: 2px; }
+
+    /* Carousel */
+    .tcarousel-wrap { position: relative; }
+
+    .tcarousel-overflow { overflow: hidden; }
+
+    .tcarousel-track {
+      display: flex;
+      gap: 20px;
+      transition: transform .55s cubic-bezier(.4,0,.2,1);
+      will-change: transform;
+    }
+
+    .tcard { flex: 0 0 calc(33.333% - 14px); min-width: 0; }
+
+    /* Glassmorphism card */
+    .tcard-inner {
+      background: rgba(255,255,255,.10);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      height: 100%;
+      box-shadow: 0 8px 32px rgba(0,0,0,.22), inset 0 1px 0 rgba(255,255,255,.12);
+      transition: transform .3s ease, background .3s ease, box-shadow .3s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      direction: rtl;
+    }
+
+    .tcard-inner:hover {
+      transform: translateY(-6px);
+      background: rgba(255,255,255,.17);
+      box-shadow: 0 20px 50px rgba(0,0,0,.3), inset 0 1px 0 rgba(255,255,255,.2);
+    }
+
+    .tcard-header { display: flex; align-items: center; gap: 10px; }
+
+    .tcard-avatar {
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--white);
+      flex-shrink: 0;
+      border: 2px solid rgba(255,255,255,.25);
+      overflow: hidden;
+    }
+
+    .tcard-meta { flex: 1; min-width: 0; }
+
+    .tcard-name { font-size: .95rem; font-weight: 700; color: var(--white); }
+
+    .tcard-city { font-size: .8rem; color: rgba(255,255,255,.5); }
+
+    .tcard-verified {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      background: rgba(100,200,100,.15);
+      border: 1px solid rgba(100,200,100,.3);
+      color: #8fdc8f;
+      font-size: .7rem;
+      font-weight: 700;
+      padding: 3px 9px;
+      border-radius: 50px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      letter-spacing: .02em;
+    }
+
+    .tcard-stars { display: flex; gap: 2px; }
+
+    .tcard-stars span {
+      color: #FFD700;
+      font-size: .95rem;
+      display: inline-block;
+    }
+
+    .tcard-inner:hover .tcard-stars span { animation: starPop .4s ease both; }
+    .tcard-inner:hover .tcard-stars span:nth-child(1) { animation-delay: 0s; }
+    .tcard-inner:hover .tcard-stars span:nth-child(2) { animation-delay: .07s; }
+    .tcard-inner:hover .tcard-stars span:nth-child(3) { animation-delay: .14s; }
+    .tcard-inner:hover .tcard-stars span:nth-child(4) { animation-delay: .21s; }
+    .tcard-inner:hover .tcard-stars span:nth-child(5) { animation-delay: .28s; }
+
+    @keyframes starPop {
+      0%   { transform: scale(1); }
+      40%  { transform: scale(1.5) rotate(10deg); }
+      100% { transform: scale(1) rotate(0); }
+    }
+
+    .tcard-text {
+      font-size: .97rem;
       font-style: italic;
-      color: var(--ink);
-      line-height: 1.7;
-      margin-bottom: 18px;
+      color: rgba(255,255,255,.85);
+      line-height: 1.72;
+      flex: 1;
     }
 
-    .testimonial-name {
-      font-size: .88rem;
+    .tcard-workshop {
+      display: inline-flex;
+      align-items: center;
+      background: rgba(232,180,184,.15);
+      border: 1px solid rgba(232,180,184,.28);
+      color: var(--pink);
+      font-size: .78rem;
       font-weight: 600;
-      color: var(--brown);
+      padding: 4px 12px;
+      border-radius: 50px;
+      align-self: flex-start;
     }
 
-    .testimonial-city {
-      font-size: .82rem;
-      color: var(--muted);
+    /* Nav buttons */
+    .tcarousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,.12);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,.22);
+      color: var(--white);
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      font-size: 1.5rem;
+      line-height: 1;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background .2s, transform .2s;
+      z-index: 3;
+    }
+
+    .tcarousel-btn:hover {
+      background: rgba(255,255,255,.24);
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .tcarousel-btn.tprev { right: 8px; }
+    .tcarousel-btn.tnext { left: 8px; }
+
+    /* Progress bar */
+    .tcarousel-progress {
+      height: 2px;
+      background: rgba(255,255,255,.12);
+      border-radius: 1px;
+      margin-top: 24px;
+      overflow: hidden;
+    }
+
+    .tcarousel-bar {
+      height: 100%;
+      background: linear-gradient(to left, var(--pink), var(--terra));
+      border-radius: 1px;
+      width: 0%;
+    }
+
+    /* Dots */
+    .tcarousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .tdot {
+      height: 8px;
+      width: 8px;
+      border-radius: 4px;
+      background: rgba(255,255,255,.25);
+      border: none;
+      cursor: pointer;
+      transition: background .3s, width .3s;
+      padding: 0;
+    }
+
+    .tdot.active {
+      background: var(--pink);
+      width: 24px;
+    }
+
+    @media (max-width: 900px) {
+      .tcard { flex: 0 0 calc(50% - 10px); }
+      .tcarousel-btn { display: none; }
+    }
+
+    @media (max-width: 580px) {
+      .tcard { flex: 0 0 100%; }
     }
 
     /* ─── FAQ ─── */
@@ -707,20 +956,20 @@
 
     /* ─── FINAL CTA ─── */
     .final-cta {
-      background: var(--brown);
-      color: var(--white);
+      background: linear-gradient(135deg, var(--brown) 0%, var(--pink) 100%);
+      color: var(--ink);
       text-align: center;
       padding: 100px 24px;
     }
 
-    .final-cta .section-title { color: var(--white); }
+    .final-cta .section-title { color: var(--ink); }
 
     .final-cta .section-lead {
-      color: rgba(255,255,255,.75);
+      color: rgba(44,44,44,.75);
       margin: 0 auto 44px;
     }
 
-    .final-cta .section-tag { color: var(--pink); }
+    .final-cta .section-tag { color: var(--terra-dark); }
 
     .final-cta-grid {
       display: flex;
@@ -736,23 +985,23 @@
       justify-content: center;
       gap: 10px;
       font-size: 1rem;
-      color: rgba(255,255,255,.7);
+      color: rgba(44,44,44,.65);
       margin-top: 10px;
     }
 
-    .contact-line a { color: var(--pink); font-weight: 600; }
+    .contact-line a { color: var(--terra-dark); font-weight: 600; }
 
     .final-signature {
       margin-top: 50px;
       padding-top: 32px;
-      border-top: 1px solid rgba(255,255,255,.15);
+      border-top: 1px solid rgba(44,44,44,.15);
       font-size: .95rem;
-      color: rgba(255,255,255,.55);
+      color: rgba(44,44,44,.55);
     }
 
     .final-signature strong {
       display: block;
-      color: var(--white);
+      color: var(--ink);
       font-size: 1.05rem;
       margin-bottom: 4px;
     }
@@ -763,121 +1012,41 @@
       bottom: 0; right: 0; left: 0;
       z-index: 150;
       background: var(--brown);
-      color: var(--white);
+      color: var(--ink);
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 14px 28px;
       transform: translateY(100%);
       transition: transform .35s ease;
-      box-shadow: 0 -4px 20px rgba(0,0,0,.15);
+      box-shadow: 0 -4px 20px rgba(0,0,0,.12);
     }
 
     .sticky-bar.visible { transform: translateY(0); }
 
     .sticky-bar-text {
       font-size: .95rem;
-      color: rgba(255,255,255,.8);
+      color: rgba(44,44,44,.75);
     }
 
     .sticky-bar-text strong {
       display: block;
       font-size: 1rem;
-      color: var(--white);
+      color: var(--ink);
     }
 
     .sticky-bar .btn-primary {
-      background: var(--pink);
-      color: var(--brown-dark);
+      background: var(--ink);
+      color: var(--white);
       padding: 10px 24px;
       font-size: .95rem;
       flex-shrink: 0;
     }
 
-    .sticky-bar .btn-primary:hover { background: var(--pink-dark); color: var(--white); }
+    .sticky-bar .btn-primary:hover { background: #444; }
 
     @media (max-width: 500px) {
       .sticky-bar { flex-direction: column; gap: 10px; text-align: center; padding: 14px 20px; }
-    }
-
-    /* ─── CALCULATOR ─── */
-    .calculator {
-      background: var(--ink);
-      color: var(--white);
-    }
-
-    .calculator .section-tag { color: var(--pink); }
-    .calculator .section-title { color: var(--white); }
-
-    .calc-box {
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.1);
-      border-radius: var(--radius);
-      padding: 40px;
-      max-width: 620px;
-      margin: 0 auto;
-    }
-
-    .calc-row {
-      margin-bottom: 28px;
-    }
-
-    .calc-label {
-      display: block;
-      font-size: .95rem;
-      font-weight: 600;
-      margin-bottom: 10px;
-      color: rgba(255,255,255,.8);
-    }
-
-    .calc-select,
-    .calc-input {
-      width: 100%;
-      background: rgba(255,255,255,.1);
-      border: 1px solid rgba(255,255,255,.2);
-      border-radius: var(--radius-sm);
-      padding: 13px 16px;
-      font-size: 1rem;
-      font-family: 'Assistant', sans-serif;
-      color: var(--white);
-      direction: rtl;
-      appearance: none;
-      -webkit-appearance: none;
-    }
-
-    .calc-select option { background: #2c2c2c; color: var(--white); }
-    .calc-select:focus, .calc-input:focus { outline: 2px solid var(--pink); }
-
-    .calc-result {
-      background: var(--brown);
-      border-radius: var(--radius);
-      padding: 28px 32px;
-      text-align: center;
-      margin-top: 10px;
-      transition: all .3s;
-    }
-
-    .calc-result-label {
-      font-size: .9rem;
-      color: rgba(255,255,255,.65);
-      margin-bottom: 8px;
-    }
-
-    .calc-result-price {
-      font-size: 2.8rem;
-      font-weight: 700;
-      color: var(--pink);
-      line-height: 1.1;
-    }
-
-    .calc-result-note {
-      font-size: .85rem;
-      color: rgba(255,255,255,.55);
-      margin-top: 8px;
-    }
-
-    .calc-result-cta {
-      margin-top: 20px;
     }
 
     /* ─── LIGHTBOX ─── */
@@ -1262,6 +1431,22 @@
         </div>
       </div>
 
+      <div class="workshop-card workshop-featured">
+        <div class="workshop-popular-badge">הכי מבוקש</div>
+        <div class="workshop-img workshop-img-6">
+          <img src="images/workshop-watercolor.jpg" alt="ציור אקוורל" />
+        </div>
+        <div class="workshop-body">
+          <h3>ציור אקוורל ביקב</h3>
+          <p>צבעי מים על נוף הכרמים. יוצרות ציור אישי עם נוף יקב מטלר — חוויה שנשמרת בפריים.</p>
+          <div class="workshop-meta">
+            <span class="workshop-tag">עד 15 משתתפות</span>
+            <span class="workshop-tag">2.5 שעות</span>
+            <span class="workshop-tag">מ-1,800 ₪</span>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -1328,71 +1513,151 @@
   </div>
 </section>
 
-<!-- ─── CALCULATOR ─── -->
-<section class="calculator">
-  <div class="container">
-    <span class="section-tag">חשבי לפני שאת מתקשרת</span>
-    <h2 class="section-title" style="margin-bottom:10px;">כמה זה יעלה לקבוצה שלך?</h2>
-    <p style="color:rgba(255,255,255,.6); margin-bottom:40px; font-size:1rem;">בחרי סדנה וכמות משתתפות, ותקבלי הערכת מחיר מיידית.</p>
-    <div class="calc-box">
-      <div class="calc-row">
-        <label class="calc-label" for="calc-workshop">איזו סדנה מעניינת אתכן?</label>
-        <select class="calc-select" id="calc-workshop" onchange="calcPrice()">
-          <option value="">בחרי סדנה...</option>
-          <option value="pots">זורעות אהבה: ציור עציצים</option>
-          <option value="wine">ציור על כוסות יין</option>
-          <option value="embroidery">רקמה בוטנית</option>
-          <option value="beads">רקמת חרוזים מיוחדת</option>
-          <option value="punch">פאנץ' נידל</option>
-        </select>
-      </div>
-      <div class="calc-row">
-        <label class="calc-label" for="calc-num">כמה משתתפות?</label>
-        <input class="calc-input" type="number" id="calc-num" min="5" max="20" placeholder="לדוגמה: 12" oninput="calcPrice()" />
-      </div>
-      <div class="calc-result" id="calc-result">
-        <div class="calc-result-label">הערכת מחיר לקבוצה שלך</div>
-        <div class="calc-result-price" id="calc-price">בחרי סדנה וכמות</div>
-        <div class="calc-result-note" id="calc-note">כל החומרים כלולים. יין וכיבוד בתשלום נפרד.</div>
-        <div class="calc-result-cta" id="calc-cta" style="display:none;">
-          <a href="https://wa.me/972515767496?text=שלום!%20אני%20מעוניינת%20לשמוע%20על%20סדנת%20רווקות%20ביקב%20מטלר" class="btn-primary" target="_blank">לתיאום בוואטסאפ</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ─── TESTIMONIALS ─── -->
 <section class="testimonials">
   <div class="container">
     <span class="section-tag">מה אומרות אחרות?</span>
     <h2 class="section-title">חוויות מהשטח</h2>
-    <div class="testimonials-grid">
-      <div class="testimonial">
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text">
-          "לא האמנתי שאצליח ליצור משהו יפה. ויצאתי עם עציץ שכולן ביקשו לראות."
-        </p>
-        <div class="testimonial-name">מיכל כ.</div>
-        <div class="testimonial-city">ירושלים</div>
-      </div>
-      <div class="testimonial">
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text">
-          "הסדנה הייתה הרגע הכי שקט ויפה בכל חגיגת הרווקות. כולנו בכינו קצת."
-        </p>
-        <div class="testimonial-name">שירה מ.</div>
-        <div class="testimonial-city">תל אביב</div>
-      </div>
-      <div class="testimonial">
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text">
-          "טס יודעת לגרום לכולן להרגיש מסוגלות. זה נדיר ומיוחד."
-        </p>
-        <div class="testimonial-name">נועה ר.</div>
-        <div class="testimonial-city">רחובות</div>
+    <p class="section-lead">מאות נשים יצרו, נשמו, ויצאו עם משהו שנשאר.</p>
+
+    <div class="rating-bar">
+      <div class="rating-score">5.0</div>
+      <div class="rating-stars-wrap">
+        <div class="rating-stars-large stars-animate">
+          <span class="star-icon">★</span>
+          <span class="star-icon">★</span>
+          <span class="star-icon">★</span>
+          <span class="star-icon">★</span>
+          <span class="star-icon">★</span>
+        </div>
+        <div class="rating-info">
+          <strong>+47 לקוחות מאושרות</strong>
+          100% המלצה
+        </div>
       </div>
     </div>
+
+    <div class="tcarousel-wrap">
+      <div class="tcarousel-overflow" dir="ltr">
+        <div class="tcarousel-track" id="tcarousel-track">
+
+          <div class="tcard">
+            <div class="tcard-inner">
+              <div class="tcard-header">
+                <div class="tcard-avatar" style="background:linear-gradient(135deg,#C17F5A,#A8663E);">מ</div>
+                <div class="tcard-meta">
+                  <div class="tcard-name">מיכל כ.</div>
+                  <div class="tcard-city">ירושלים</div>
+                </div>
+                <div class="tcard-verified">✓ מאומתת</div>
+              </div>
+              <div class="tcard-stars">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              </div>
+              <p class="tcard-text">"לא האמנתי שאצליח ליצור משהו יפה. ויצאתי עם עציץ שכולן ביקשו לראות. טס יצרה אצלי ביטחון שלא ידעתי שיש לי."</p>
+              <span class="tcard-workshop">זורעות אהבה: ציור עציצים</span>
+            </div>
+          </div>
+
+          <div class="tcard">
+            <div class="tcard-inner">
+              <div class="tcard-header">
+                <div class="tcard-avatar" style="background:linear-gradient(135deg,#E8B4B8,#D4909A);">ש</div>
+                <div class="tcard-meta">
+                  <div class="tcard-name">שירה מ.</div>
+                  <div class="tcard-city">תל אביב</div>
+                </div>
+                <div class="tcard-verified">✓ מאומתת</div>
+              </div>
+              <div class="tcard-stars">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              </div>
+              <p class="tcard-text">"הסדנה הייתה הרגע הכי שקט ויפה בכל חגיגת הרווקות. כולנו בכינו קצת. מה שיצרנו שם יישאר אצלנו לנצח."</p>
+              <span class="tcard-workshop">רקמה בוטנית</span>
+            </div>
+          </div>
+
+          <div class="tcard">
+            <div class="tcard-inner">
+              <div class="tcard-header">
+                <div class="tcard-avatar" style="background:linear-gradient(135deg,#7A4F3A,#5E3A28);">נ</div>
+                <div class="tcard-meta">
+                  <div class="tcard-name">נועה ר.</div>
+                  <div class="tcard-city">רחובות</div>
+                </div>
+                <div class="tcard-verified">✓ מאומתת</div>
+              </div>
+              <div class="tcard-stars">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              </div>
+              <p class="tcard-text">"טס יודעת לגרום לכולן להרגיש מסוגלות. זה נדיר ומיוחד. מגיעה לסדנאות שלה כבר שנה ומשתוקקת לחזור כל פעם מחדש."</p>
+              <span class="tcard-workshop">ציור על כוסות יין</span>
+            </div>
+          </div>
+
+          <div class="tcard">
+            <div class="tcard-inner">
+              <div class="tcard-header">
+                <div class="tcard-avatar" style="background:linear-gradient(135deg,#D4909A,#C17F5A);">ד</div>
+                <div class="tcard-meta">
+                  <div class="tcard-name">דנה ל.</div>
+                  <div class="tcard-city">הרצליה</div>
+                </div>
+                <div class="tcard-verified">✓ מאומתת</div>
+              </div>
+              <div class="tcard-stars">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              </div>
+              <p class="tcard-text">"ארגנתי לחברה שלי את מסיבת הרווקות ביקב מטלר ולא יכולתי להיות מרוצה יותר. הנוף, האווירה, טס — הכל היה פשוט מושלם."</p>
+              <span class="tcard-workshop">פאנץ' נידל</span>
+            </div>
+          </div>
+
+          <div class="tcard">
+            <div class="tcard-inner">
+              <div class="tcard-header">
+                <div class="tcard-avatar" style="background:linear-gradient(135deg,#A8663E,#7A4F3A);">א</div>
+                <div class="tcard-meta">
+                  <div class="tcard-name">אורית ב.</div>
+                  <div class="tcard-city">נתניה</div>
+                </div>
+                <div class="tcard-verified">✓ מאומתת</div>
+              </div>
+              <div class="tcard-stars">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              </div>
+              <p class="tcard-text">"הגעתי בלי ציפיות ויצאתי עם חיוך שלא עזב אותי שלושה ימים. הסביבה ביקב, הריח, הצבעים — חוויה שכל הגוף זוכר."</p>
+              <span class="tcard-workshop">זורעות אהבה: ציור עציצים</span>
+            </div>
+          </div>
+
+          <div class="tcard">
+            <div class="tcard-inner">
+              <div class="tcard-header">
+                <div class="tcard-avatar" style="background:linear-gradient(135deg,#E8B4B8,#A8663E);">ר</div>
+                <div class="tcard-meta">
+                  <div class="tcard-name">רינת ש.</div>
+                  <div class="tcard-city">מודיעין</div>
+                </div>
+                <div class="tcard-verified">✓ מאומתת</div>
+              </div>
+              <div class="tcard-stars">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              </div>
+              <p class="tcard-text">"מוצאת את עצמי ממליצה לכל חברה שלי — לא רק לרווקות. כל אחת שצריכה קצת אוויר וקצת יצירה, זה המקום שלה."</p>
+              <span class="tcard-workshop">רקמת חרוזים</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <button class="tcarousel-btn tprev" id="tprev-btn" aria-label="הקודמת">›</button>
+      <button class="tcarousel-btn tnext" id="tnext-btn" aria-label="הבאה">‹</button>
+    </div>
+
+    <div class="tcarousel-progress"><div class="tcarousel-bar" id="tcarousel-bar"></div></div>
+    <div class="tcarousel-dots" id="tcarousel-dots"></div>
   </div>
 </section>
 
@@ -1429,10 +1694,10 @@
 
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
-          אפשר לשלב כמה סדנאות באותו ערב?
+          אפשר לשלב כמה סדנאות באותו יום?
           <span class="faq-icon">+</span>
         </button>
-        <div class="faq-a">בהחלט! בואו נחשוב ביחד מה מתאים לקבוצה שלכן. שלחי הודעה ונבנה יחד את הערב המושלם.</div>
+        <div class="faq-a">בהחלט! בואו נחשוב ביחד מה מתאים לקבוצה שלכן. שלחי הודעה ונבנה יחד את היום המושלם.</div>
       </div>
 
       <div class="faq-item">
@@ -1461,7 +1726,7 @@
     <span class="section-tag">מוכנות?</span>
     <h2 class="section-title">יש לכן תאריך בראש?</h2>
     <p class="section-lead">
-      נשמח לשמוע. דברי איתנו בוואטסאפ ונבנה יחד את הערב המושלם שלכן.
+      נשמח לשמוע. דברי איתנו בוואטסאפ ונבנה יחד את היום המושלם שלכן.
     </p>
     <div class="final-cta-grid">
       <a href="https://wa.me/972515767496?text=שלום!%20אני%20מעוניינת%20לשמוע%20על%20סדנת%20רווקות%20ביקב%20מטלר" class="btn-primary" target="_blank" style="font-size:1.1rem; padding:16px 38px;">
@@ -1529,62 +1794,6 @@
   }, { threshold: 0 });
   observer.observe(hero);
 
-  /* ── PRICE CALCULATOR ── */
-  const PRICES = {
-    pots:       { fix6: 1200, fix10: 1800, extra: 150,  max: 20, group20: 2800 },
-    wine:       { fix6: null, fix10: 1600, extra: 150,  max: 20 },
-    embroidery: { fix6: null, fix10: 2000, extra: 180,  max: 10 },
-    beads:      { fix6: null, fix10: 2200, extra: 180,  max: 10 },
-    punch:      { fix6: null, fix10: null, extra: null,  max: 10 },
-  };
-
-  function calcPrice() {
-    const ws  = document.getElementById('calc-workshop').value;
-    const num = parseInt(document.getElementById('calc-num').value, 10);
-    const priceEl = document.getElementById('calc-price');
-    const noteEl  = document.getElementById('calc-note');
-    const ctaEl   = document.getElementById('calc-cta');
-
-    if (!ws || !num || num < 5) {
-      priceEl.textContent = 'בחרי סדנה וכמות';
-      noteEl.textContent  = 'כל החומרים כלולים. יין וכיבוד בתשלום נפרד.';
-      ctaEl.style.display = 'none';
-      return;
-    }
-
-    const p = PRICES[ws];
-
-    if (ws === 'punch') {
-      priceEl.textContent = 'לפי תיאום';
-      noteEl.textContent  = 'סדנת פאנץ׳ נידל: מחיר לפי גודל קבוצה. נשמח לפרט.';
-      ctaEl.style.display = 'block';
-      return;
-    }
-
-    if (num > p.max) {
-      priceEl.textContent = `מעל ${p.max} משתתפות`;
-      noteEl.textContent  = 'צרי קשר ונתאים עבורכן הצעה מיוחדת.';
-      ctaEl.style.display = 'block';
-      return;
-    }
-
-    let total = 0;
-
-    if (ws === 'pots' && num === 20 && p.group20) {
-      total = p.group20;
-    } else if (ws === 'pots' && num <= 6) {
-      total = p.fix6;
-    } else if (num <= 10) {
-      total = p.fix10;
-    } else {
-      total = p.fix10 + (num - 10) * p.extra;
-    }
-
-    priceEl.textContent = total.toLocaleString('he-IL') + ' ₪';
-    noteEl.textContent  = `לקבוצה של ${num} משתתפות. כל החומרים כלולים.`;
-    ctaEl.style.display = 'block';
-  }
-
   /* ── LIGHTBOX ── */
   let lbItems = [], lbIndex = 0;
 
@@ -1637,6 +1846,120 @@
   });
 
   document.addEventListener('DOMContentLoaded', initLightbox);
+
+  /* ── TESTIMONIALS CAROUSEL ── */
+  (function () {
+    const TOTAL    = 6;
+    const INTERVAL = 4500;
+    let current = 0;
+    let perView = getPerView();
+    let autoTimer;
+
+    function getPerView() {
+      if (window.innerWidth >= 900) return 3;
+      if (window.innerWidth >= 580) return 2;
+      return 1;
+    }
+
+    function maxIdx() { return Math.max(0, TOTAL - perView); }
+
+    const track    = document.getElementById('tcarousel-track');
+    const bar      = document.getElementById('tcarousel-bar');
+    const dotsWrap = document.getElementById('tcarousel-dots');
+    const prevBtn  = document.getElementById('tprev-btn');
+    const nextBtn  = document.getElementById('tnext-btn');
+    const overflow = track ? track.closest('.tcarousel-overflow') : null;
+
+    if (!track || !overflow) return;
+
+    function buildDots() {
+      dotsWrap.innerHTML = '';
+      for (let i = 0; i <= maxIdx(); i++) {
+        const d = document.createElement('button');
+        d.className = 'tdot' + (i === current ? ' active' : '');
+        d.setAttribute('aria-label', 'ביקורת ' + (i + 1));
+        d.addEventListener('click', function () { goTo(i); });
+        dotsWrap.appendChild(d);
+      }
+    }
+
+    function updateDots() {
+      dotsWrap.querySelectorAll('.tdot').forEach(function (d, i) {
+        d.classList.toggle('active', i === current);
+      });
+    }
+
+    function updateButtons() {
+      if (!prevBtn || !nextBtn) return;
+      prevBtn.style.opacity = current <= 0        ? '.4' : '1';
+      nextBtn.style.opacity = current >= maxIdx() ? '.4' : '1';
+    }
+
+    function goTo(idx) {
+      current = Math.max(0, Math.min(idx, maxIdx()));
+      var cardWidth = track.children[0] ? track.children[0].offsetWidth : 0;
+      track.style.transform = 'translateX(' + (-current * (cardWidth + 20)) + 'px)';
+      updateDots();
+      updateButtons();
+      startTimer();
+    }
+
+    function startTimer() {
+      clearTimeout(autoTimer);
+      bar.style.transition = 'none';
+      bar.style.width = '0%';
+      void bar.offsetWidth;
+      bar.style.transition = 'width ' + INTERVAL + 'ms linear';
+      bar.style.width = '100%';
+      autoTimer = setTimeout(function () {
+        current = current >= maxIdx() ? 0 : current + 1;
+        goTo(current);
+      }, INTERVAL);
+    }
+
+    if (prevBtn) prevBtn.addEventListener('click', function () {
+      current = current <= 0 ? maxIdx() : current - 1;
+      goTo(current);
+    });
+
+    if (nextBtn) nextBtn.addEventListener('click', function () {
+      current = current >= maxIdx() ? 0 : current + 1;
+      goTo(current);
+    });
+
+    var touchX = 0;
+    overflow.addEventListener('touchstart', function (e) {
+      touchX = e.touches[0].clientX;
+    }, { passive: true });
+
+    overflow.addEventListener('touchend', function (e) {
+      var dx = touchX - e.changedTouches[0].clientX;
+      if (Math.abs(dx) > 40) {
+        if (dx > 0) { current = current >= maxIdx() ? 0 : current + 1; }
+        else        { current = current <= 0 ? maxIdx() : current - 1; }
+        goTo(current);
+      }
+    }, { passive: true });
+
+    overflow.addEventListener('mouseenter', function () {
+      clearTimeout(autoTimer);
+      bar.style.transition = 'none';
+    });
+    overflow.addEventListener('mouseleave', function () { startTimer(); });
+
+    window.addEventListener('resize', function () {
+      var nv = getPerView();
+      if (nv !== perView) {
+        perView = nv;
+        current = 0;
+        buildDots();
+      }
+      goTo(current);
+    });
+
+    buildDots();
+    goTo(0);
+  })();
 </script>
 
 </body>
