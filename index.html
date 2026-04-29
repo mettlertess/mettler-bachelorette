@@ -430,14 +430,18 @@
       box-shadow: var(--shadow-lg);
     }
 
-    /* 🖼️ החלף כל .workshop-img ב-<img src="images/bachelorette/workshop-X.jpg"> */
     .workshop-img {
-      height: 200px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2.5rem;
+      height: 220px;
+      overflow: hidden;
       flex-shrink: 0;
+      position: relative;
+    }
+
+    .workshop-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     .workshop-img-1 { background: linear-gradient(135deg, #fce4ec, #f8bbd9); }
@@ -1353,7 +1357,7 @@
   <div class="container">
     <span class="section-tag">הסדנאות שלנו</span>
     <h2 class="section-title">בחרו את הסדנה שמדברת אליכן</h2>
-    <p class="section-lead">5 סדנאות שונות, כל אחת עם אופי משלה. לא צריך ניסיון. צריך רק רצון ליצור.</p>
+    <p class="section-lead">6 סדנאות שונות, כל אחת עם אופי משלה. לא צריך ניסיון. צריך רק רצון ליצור.</p>
     <div class="workshops-grid">
 
       <div class="workshop-card">
@@ -1373,7 +1377,7 @@
 
       <div class="workshop-card">
         <div class="workshop-img workshop-img-2">
-          <img src="images/bachelorette/workshop-pots.jpg" alt="זורעות אהבה" />
+          <!-- תמונה עדיין חסרה -->
         </div>
         <div class="workshop-body">
           <h3>זורעות אהבה: ציור עציצים</h3>
