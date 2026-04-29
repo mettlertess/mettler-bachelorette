@@ -606,34 +606,63 @@
     .pricing-footer strong { color: var(--brown); }
 
     /* ─── PHOTOS STRIP ─── */
+    /* ─── MASONRY GALLERY ─── */
     .photos-strip {
-      background: var(--cream);
-      padding: 50px 0;
-      overflow: hidden;
+      background: linear-gradient(180deg, var(--cream-dark) 0%, var(--cream) 100%);
+      padding: 70px 0 80px;
     }
 
-    .photos-row {
-      display: flex;
-      gap: 16px;
-      justify-content: center;
-      flex-wrap: wrap;
+    .gallery-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .masonry-grid {
+      columns: 3;
+      column-gap: 14px;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 20px;
     }
 
     .photo-thumb {
-      border-radius: var(--radius);
+      break-inside: avoid;
+      margin-bottom: 14px;
+      border-radius: 16px;
       overflow: hidden;
-      flex-shrink: 0;
-      width: 260px;
-      height: 280px;
+      cursor: pointer;
+      position: relative;
+      display: block;
     }
 
-    /* placeholder colors per thumb */
-    .photo-thumb:nth-child(1) { background: linear-gradient(135deg,#e8b4b8,#c17f5a); }
-    .photo-thumb:nth-child(2) { background: linear-gradient(135deg,#a8b99c,#7a9e6e); }
-    .photo-thumb:nth-child(3) { background: linear-gradient(135deg,#f8e1d4,#e8b4b8); }
-    .photo-thumb:nth-child(4) { background: linear-gradient(135deg,#c17f5a,#7a4f3a); }
-    .photo-thumb:nth-child(5) { background: linear-gradient(135deg,#fce4ec,#f48fb1); }
-    .photo-thumb img { width: 100%; height: 100%; object-fit: cover; }
+    .photo-thumb img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform .45s ease;
+    }
+
+    .photo-thumb::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(180,100,120,.35) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity .3s ease;
+      border-radius: 16px;
+    }
+
+    .photo-thumb:hover img { transform: scale(1.05); }
+    .photo-thumb:hover::after { opacity: 1; }
+
+    @media (max-width: 720px) {
+      .masonry-grid { columns: 2; column-gap: 10px; }
+      .photo-thumb { margin-bottom: 10px; border-radius: 12px; }
+    }
+
+    @media (max-width: 420px) {
+      .masonry-grid { columns: 2; }
+    }
 
     /* ─── TESTIMONIALS ─── */
     .testimonials {
@@ -1054,8 +1083,6 @@
     }
 
     /* ─── LIGHTBOX ─── */
-    .photo-thumb { cursor: pointer; }
-    .photo-thumb:hover { opacity: .88; transition: opacity .2s; }
 
     .lightbox-overlay {
       position: fixed;
@@ -1463,7 +1490,11 @@
 
 <!-- ─── PHOTOS STRIP ─── -->
 <div class="photos-strip">
-  <div class="photos-row container">
+  <div class="gallery-header">
+    <span class="section-tag">גלריה</span>
+    <h2 class="section-title">רגעים מהיקב</h2>
+  </div>
+  <div class="masonry-grid">
     <div class="photo-thumb"><img src="images/bachelorette/gallery-1.jpg" alt="סדנת רווקות ביקב מטלר" /></div>
     <div class="photo-thumb"><img src="images/bachelorette/gallery-2.jpg" alt="יצירה ביקב מטלר" /></div>
     <div class="photo-thumb"><img src="images/bachelorette/gallery-3.jpg" alt="חוויה ביקב מטלר" /></div>
