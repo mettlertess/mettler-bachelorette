@@ -80,13 +80,24 @@
       padding: 14px 24px;
       display: flex; justify-content: space-between; align-items: center;
     }
-    .navbar-logo {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: var(--ink);
-      display: flex; align-items: center; gap: 8px;
+    .navbar-logo img {
+      height: 52px;
+      width: auto;
+      display: block;
     }
-    .navbar-logo span { color: var(--primary); }
+    .navbar-links {
+      display: flex; align-items: center; gap: 20px;
+    }
+    .navbar-link {
+      font-size: .88rem;
+      font-weight: 600;
+      color: var(--ink);
+      display: flex; align-items: center; gap: 5px;
+      opacity: .75;
+      transition: opacity .2s;
+    }
+    .navbar-link:hover { opacity: 1; }
+    .navbar-link svg { width: 16px; height: 16px; }
     .navbar-cta {
       background: var(--primary);
       color: var(--white);
@@ -664,13 +675,16 @@
       .tcard { flex: 0 0 calc(80% - 12px); }
       .masonry-grid { columns: 2; }
     }
+    @media (max-width: 700px) {
+      .navbar-link { display: none; }
+    }
     @media (max-width: 600px) {
       .section { padding: 60px 16px; }
       .hero-content { padding: 100px 16px 50px; }
       .tcard { flex: 0 0 calc(100% - 0px); }
       .masonry-grid { columns: 2; }
       .navbar { padding: 12px 16px; }
-      .navbar-logo { font-size: 1.05rem; }
+      .navbar-logo img { height: 40px; }
       .sticky-bar p { font-size: .85rem; }
       .hero-btns { flex-direction: column; align-items: center; }
     }
@@ -680,10 +694,27 @@
 
 <!-- ─── Navbar ─── -->
 <nav class="navbar">
-  <div class="navbar-logo">
-    <span>יקב</span> מטלר
+  <a href="https://www.mettler-winery.com/" target="_blank" class="navbar-logo" aria-label="דף הבית יקב מטלר">
+    <img src="images/logo-mettler.svg" alt="Mettler Winery Logo" />
+  </a>
+  <div class="navbar-links">
+    <a href="https://www.instagram.com/mettler_winery" class="navbar-link" target="_blank" aria-label="אינסטגרם">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+        <circle cx="12" cy="12" r="4"/>
+        <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+      </svg>
+      Instagram
+    </a>
+    <a href="https://www.mettler-winery.com/" class="navbar-link" target="_blank" aria-label="אתר הבית">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/>
+        <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+      </svg>
+      האתר שלנו
+    </a>
+    <a href="https://wa.me/972515900544?text=%D7%A9%D7%9C%D7%95%D7%9D!%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%9F%2F%D7%AA%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A2%D7%9C%20%D7%99%D7%95%D7%9D%20%D7%92%D7%99%D7%91%D7%95%D7%A9%20%D7%91%D7%99%D7%A7%D7%91%20%D7%9E%D7%98%D7%9C%D7%A8" class="navbar-cta" target="_blank">בקשו הצעת מחיר</a>
   </div>
-  <a href="https://wa.me/972515900544?text=%D7%A9%D7%9C%D7%95%D7%9D!%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%9F%2F%D7%AA%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A2%D7%9C%20%D7%99%D7%95%D7%9D%20%D7%92%D7%99%D7%91%D7%95%D7%A9%20%D7%91%D7%99%D7%A7%D7%91%20%D7%9E%D7%98%D7%9C%D7%A8" class="navbar-cta" target="_blank">בקשו הצעת מחיר</a>
 </nav>
 
 <!-- ─── Hero ─── -->
