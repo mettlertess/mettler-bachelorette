@@ -1,0 +1,1213 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ימי גיבוש ופעילויות קבוצתיות | יקב מטלר</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ─── Variables ─── */
+    :root {
+      --cream:       #FDF6F0;
+      --cream-dark:  #F5EDE3;
+      --ink:         #2C2C2C;
+      --primary:     #8B3A52;
+      --primary-dark:#6E2D41;
+      --terra:       #C17F5A;
+      --terra-dark:  #A8663E;
+      --muted:       #6B6B6B;
+      --white:       #FFFFFF;
+      --shadow:      0 4px 24px rgba(44,44,44,.08);
+      --shadow-lg:   0 8px 40px rgba(44,44,44,.13);
+      --radius:      18px;
+      --radius-sm:   10px;
+    }
+
+    /* ─── Reset ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Assistant', sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      direction: rtl;
+      overflow-x: hidden;
+    }
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ─── Buttons ─── */
+    .btn-primary {
+      display: inline-block;
+      background: var(--primary);
+      color: var(--white);
+      border-radius: 50px;
+      padding: 14px 32px;
+      font-size: 1rem;
+      font-weight: 700;
+      font-family: 'Assistant', sans-serif;
+      border: none;
+      cursor: pointer;
+      transition: background .2s, transform .15s;
+    }
+    .btn-primary:hover { background: var(--primary-dark); transform: translateY(-1px); }
+
+    .btn-secondary {
+      display: inline-block;
+      background: transparent;
+      color: var(--terra);
+      border: 2px solid var(--terra);
+      border-radius: 50px;
+      padding: 12px 28px;
+      font-size: 1rem;
+      font-weight: 600;
+      font-family: 'Assistant', sans-serif;
+      cursor: pointer;
+      transition: background .2s, color .2s, transform .15s;
+    }
+    .btn-secondary:hover { background: var(--terra); color: var(--white); transform: translateY(-1px); }
+
+    /* ─── Navbar ─── */
+    .navbar {
+      position: fixed; top: 0; right: 0; left: 0; z-index: 100;
+      background: rgba(253,246,240,.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(193,127,90,.15);
+      padding: 14px 24px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .navbar-logo {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--ink);
+      display: flex; align-items: center; gap: 8px;
+    }
+    .navbar-logo span { color: var(--primary); }
+    .navbar-cta {
+      background: var(--primary);
+      color: var(--white);
+      border-radius: 50px;
+      padding: 10px 22px;
+      font-size: .9rem;
+      font-weight: 700;
+      font-family: 'Assistant', sans-serif;
+      transition: background .2s, transform .15s;
+    }
+    .navbar-cta:hover { background: var(--primary-dark); transform: translateY(-1px); }
+
+    /* ─── Hero ─── */
+    .hero {
+      min-height: 100svh;
+      background: url('images/bachelorette/winery-hero.jpg') center center / cover no-repeat;
+      position: relative;
+      display: flex; align-items: center; justify-content: center;
+      text-align: center;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: rgba(253,246,240,.78);
+    }
+    .hero-content {
+      position: relative; z-index: 1;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 120px 24px 60px;
+    }
+    .hero-eyebrow {
+      display: inline-block;
+      background: rgba(139,58,82,.10);
+      color: var(--primary);
+      border-radius: 50px;
+      padding: 6px 18px;
+      font-size: .88rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      letter-spacing: .03em;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 700;
+      line-height: 1.22;
+      margin-bottom: 18px;
+      color: var(--ink);
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--primary);
+    }
+    .hero-sub {
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      color: var(--muted);
+      line-height: 1.65;
+      margin-bottom: 36px;
+      max-width: 560px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+    .hero-btns {
+      display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+    .hero-badges {
+      display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;
+    }
+    .hero-badge {
+      background: rgba(255,255,255,.85);
+      border: 1px solid rgba(193,127,90,.25);
+      border-radius: 50px;
+      padding: 6px 14px;
+      font-size: .82rem;
+      font-weight: 600;
+      color: var(--ink);
+      display: flex; align-items: center; gap: 5px;
+    }
+
+    /* ─── Section Base ─── */
+    .section { padding: 80px 24px; }
+    .section-inner { max-width: 1080px; margin: 0 auto; }
+    .section-tag {
+      display: inline-block;
+      background: rgba(139,58,82,.10);
+      color: var(--primary);
+      border-radius: 50px;
+      padding: 5px 16px;
+      font-size: .8rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+    .section-title {
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      font-weight: 700;
+      line-height: 1.25;
+      margin-bottom: 14px;
+    }
+    .section-sub {
+      font-size: 1.05rem;
+      color: var(--muted);
+      line-height: 1.65;
+      max-width: 560px;
+    }
+
+    /* ─── Pain Section ─── */
+    .pain {
+      background: linear-gradient(135deg, #FFF0E8 0%, #FDEEDD 100%);
+    }
+    .pain-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .pain-items { display: flex; flex-direction: column; gap: 28px; margin-top: 28px; }
+    .pain-item {
+      display: flex; gap: 16px; align-items: flex-start;
+    }
+    .pain-icon {
+      width: 44px; height: 44px; flex-shrink: 0;
+      background: rgba(139,58,82,.12);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem;
+    }
+    .pain-item-text strong {
+      display: block;
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .pain-item-text p { font-size: .95rem; color: var(--muted); line-height: 1.55; }
+    .pain-quote {
+      margin-top: 28px;
+      border-right: 3px solid var(--terra);
+      padding-right: 16px;
+      font-size: 1rem;
+      font-style: italic;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .pain-image-wrap {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+    }
+    .pain-image-wrap img { width: 100%; height: 420px; object-fit: cover; }
+
+    /* ─── Solution ─── */
+    .solution-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .solution-image-wrap {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+    }
+    .solution-image-wrap img { width: 100%; height: 420px; object-fit: cover; }
+    .solution-badge {
+      position: absolute;
+      bottom: 24px;
+      right: 24px;
+      background: var(--white);
+      border-radius: 14px;
+      padding: 12px 18px;
+      box-shadow: var(--shadow-lg);
+      text-align: center;
+    }
+    .solution-badge strong { display: block; font-size: 1.4rem; font-weight: 700; color: var(--primary); }
+    .solution-badge span { font-size: .8rem; color: var(--muted); }
+    .solution-points { display: flex; flex-direction: column; gap: 18px; margin-top: 28px; }
+    .solution-point {
+      display: flex; gap: 14px; align-items: flex-start;
+    }
+    .solution-dot {
+      width: 10px; height: 10px; border-radius: 50%;
+      background: var(--primary);
+      flex-shrink: 0;
+      margin-top: 7px;
+    }
+    .solution-point p { font-size: 1rem; line-height: 1.6; color: var(--ink); }
+
+    /* ─── How It Works ─── */
+    .how { background: var(--cream-dark); }
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+      position: relative;
+    }
+    .step {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+    .step-num {
+      width: 52px; height: 52px;
+      background: var(--primary);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin: 0 auto 18px;
+    }
+    .step h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 8px; }
+    .step p { font-size: .95rem; color: var(--muted); line-height: 1.6; }
+    .step-arrow {
+      position: absolute;
+      top: 50%;
+      right: -20px;
+      transform: translateY(-50%);
+      font-size: 1.5rem;
+      color: var(--terra);
+      z-index: 2;
+      pointer-events: none;
+    }
+    .step:last-child .step-arrow { display: none; }
+
+    /* ─── Activities / Workshop Cards ─── */
+    .activities-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .activity-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: transform .25s, box-shadow .25s;
+    }
+    .activity-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+    .activity-card.featured { border: 2px solid var(--primary); }
+    .activity-badge {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: var(--primary);
+      color: var(--white);
+      border-radius: 50px;
+      padding: 4px 14px;
+      font-size: .78rem;
+      font-weight: 700;
+      z-index: 2;
+    }
+    .activity-img { height: 220px; overflow: hidden; flex-shrink: 0; }
+    .activity-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
+    .activity-card:hover .activity-img img { transform: scale(1.05); }
+    .activity-body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
+    .activity-body h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 10px; }
+    .activity-body p { font-size: .95rem; color: var(--muted); line-height: 1.6; flex: 1; margin-bottom: 18px; }
+    .activity-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+    .activity-tag {
+      background: rgba(139,58,82,.08);
+      color: var(--primary);
+      border-radius: 50px;
+      padding: 4px 12px;
+      font-size: .78rem;
+      font-weight: 600;
+    }
+
+    /* ─── Mid CTA ─── */
+    .mid-cta {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      padding: 64px 24px;
+      text-align: center;
+    }
+    .mid-cta h2 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 700; color: var(--white); margin-bottom: 14px; }
+    .mid-cta p { color: rgba(255,255,255,.82); font-size: 1.05rem; margin-bottom: 30px; max-width: 520px; margin-right: auto; margin-left: auto; line-height: 1.6; }
+    .btn-white {
+      display: inline-block;
+      background: var(--white);
+      color: var(--primary);
+      border-radius: 50px;
+      padding: 14px 36px;
+      font-size: 1rem;
+      font-weight: 700;
+      font-family: 'Assistant', sans-serif;
+      transition: transform .15s, box-shadow .15s;
+    }
+    .btn-white:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,.18); }
+
+    /* ─── Masonry Gallery ─── */
+    .gallery { background: var(--cream-dark); }
+    .masonry-grid {
+      columns: 3;
+      column-gap: 14px;
+      max-width: 1000px;
+      margin: 40px auto 0;
+      padding: 0 20px;
+    }
+    .photo-thumb {
+      break-inside: avoid;
+      margin-bottom: 14px;
+      border-radius: 16px;
+      overflow: hidden;
+      cursor: pointer;
+      position: relative;
+    }
+    .photo-thumb img { width: 100%; height: auto; display: block; transition: transform .45s ease; }
+    .photo-thumb::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(139,58,82,.35) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity .3s;
+    }
+    .photo-thumb:hover img { transform: scale(1.05); }
+    .photo-thumb:hover::after { opacity: 1; }
+
+    /* ─── Testimonials ─── */
+    .testimonials {
+      background: linear-gradient(135deg, #2c1a0e 0%, #4a2d1a 45%, #7a4f3a 80%, #9a6545 100%);
+      padding: 80px 24px;
+      overflow: hidden;
+    }
+    .testimonials .section-tag { background: rgba(255,255,255,.12); color: rgba(255,255,255,.9); }
+    .testimonials .section-title { color: var(--white); }
+    .testimonials .section-sub { color: rgba(255,255,255,.72); max-width: 520px; }
+    .t-carousel-wrap {
+      margin-top: 48px;
+      position: relative;
+    }
+    .t-overflow {
+      overflow: hidden;
+    }
+    .t-track {
+      display: flex;
+      gap: 24px;
+      transition: transform .45s ease;
+    }
+    .tcard {
+      flex: 0 0 calc(33.333% - 16px);
+      min-width: 0;
+    }
+    .tcard-inner {
+      background: rgba(255,255,255,.10);
+      backdrop-filter: blur(18px);
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      box-shadow: 0 8px 32px rgba(0,0,0,.22), inset 0 1px 0 rgba(255,255,255,.12);
+      direction: rtl;
+      transition: transform .3s, background .3s;
+      height: 100%;
+    }
+    .tcard-inner:hover { transform: translateY(-6px); background: rgba(255,255,255,.17); }
+    .t-stars { display: flex; gap: 4px; margin-bottom: 14px; }
+    .star-icon {
+      color: #F5C842;
+      font-size: 1.1rem;
+      animation: starShine 2.5s ease-in-out infinite;
+    }
+    .star-icon:nth-child(2) { animation-delay: .3s; }
+    .star-icon:nth-child(3) { animation-delay: .6s; }
+    .star-icon:nth-child(4) { animation-delay: .9s; }
+    .star-icon:nth-child(5) { animation-delay: 1.2s; }
+    @keyframes starShine {
+      0%,100% { filter: brightness(1); transform: scale(1); }
+      50% { filter: brightness(1.55); transform: scale(1.2); }
+    }
+    .tcard-text {
+      font-size: .97rem;
+      color: rgba(255,255,255,.9);
+      line-height: 1.65;
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+    .tcard-author { display: flex; align-items: center; gap: 12px; }
+    .tcard-avatar {
+      width: 42px; height: 42px; border-radius: 50%;
+      background: rgba(255,255,255,.2);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; font-weight: 700; color: var(--white);
+      flex-shrink: 0;
+    }
+    .tcard-name { font-weight: 700; color: var(--white); font-size: .95rem; }
+    .tcard-role { font-size: .82rem; color: rgba(255,255,255,.6); }
+    .t-controls { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 36px; }
+    .t-btn {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: rgba(255,255,255,.15);
+      border: 1px solid rgba(255,255,255,.25);
+      color: var(--white);
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: background .2s;
+    }
+    .t-btn:hover { background: rgba(255,255,255,.28); }
+    .t-dots { display: flex; gap: 8px; }
+    .t-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: rgba(255,255,255,.35);
+      cursor: pointer;
+      transition: background .2s, transform .2s;
+    }
+    .t-dot.active { background: var(--white); transform: scale(1.3); }
+    .t-progress-bar {
+      height: 2px;
+      background: rgba(255,255,255,.18);
+      border-radius: 2px;
+      margin-top: 20px;
+      overflow: hidden;
+    }
+    .t-progress-fill {
+      height: 100%;
+      background: rgba(255,255,255,.65);
+      border-radius: 2px;
+      width: 0%;
+      transition: width .1s linear;
+    }
+
+    /* ─── FAQ ─── */
+    .faq { background: var(--cream); }
+    .faq-list { max-width: 720px; margin: 48px auto 0; display: flex; flex-direction: column; gap: 12px; }
+    .faq-item {
+      background: var(--white);
+      border-radius: var(--radius-sm);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .faq-q {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 20px 22px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 600;
+      gap: 12px;
+    }
+    .faq-icon { font-size: 1.3rem; color: var(--primary); transition: transform .25s; flex-shrink: 0; }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .3s ease, padding .3s ease;
+      font-size: .97rem;
+      color: var(--muted);
+      line-height: 1.7;
+      padding: 0 22px;
+    }
+    .faq-item.open .faq-a { max-height: 300px; padding-bottom: 22px; }
+
+    /* ─── Final CTA ─── */
+    .final-cta {
+      background: linear-gradient(135deg, var(--cream) 0%, #F5E6D3 50%, var(--cream-dark) 100%);
+      padding: 100px 24px;
+      text-align: center;
+    }
+    .final-cta h2 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 700;
+      margin-bottom: 16px;
+      line-height: 1.25;
+    }
+    .final-cta h2 em { font-style: normal; color: var(--primary); }
+    .final-cta p { font-size: 1.1rem; color: var(--muted); line-height: 1.65; max-width: 520px; margin: 0 auto 36px; }
+    .final-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 40px; }
+    .final-signature { font-size: 1.05rem; color: var(--muted); font-style: italic; }
+    .final-signature strong { color: var(--primary); font-style: normal; }
+
+    /* ─── Footer ─── */
+    footer {
+      background: var(--ink);
+      color: rgba(255,255,255,.55);
+      text-align: center;
+      padding: 24px;
+      font-size: .85rem;
+    }
+    footer a { color: var(--terra); }
+
+    /* ─── Sticky Bar ─── */
+    .sticky-bar {
+      position: fixed; bottom: 0; right: 0; left: 0; z-index: 150;
+      background: var(--primary);
+      transform: translateY(100%);
+      transition: transform .35s ease;
+      padding: 14px 24px;
+      display: flex; justify-content: space-between; align-items: center; gap: 12px;
+    }
+    .sticky-bar.visible { transform: translateY(0); }
+    .sticky-bar p { color: var(--white); font-size: .95rem; font-weight: 600; }
+    .sticky-bar-btn {
+      background: var(--white);
+      color: var(--primary);
+      border-radius: 50px;
+      padding: 10px 24px;
+      font-size: .9rem;
+      font-weight: 700;
+      font-family: 'Assistant', sans-serif;
+      white-space: nowrap;
+      transition: transform .15s;
+    }
+    .sticky-bar-btn:hover { transform: translateY(-1px); }
+
+    /* ─── Lightbox ─── */
+    .lightbox-overlay {
+      position: fixed; inset: 0; z-index: 500;
+      background: rgba(0,0,0,.92);
+      opacity: 0; pointer-events: none;
+      transition: opacity .25s;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .lightbox-overlay.open { opacity: 1; pointer-events: all; }
+    .lightbox-img { max-width: 90vw; max-height: 85vh; border-radius: 12px; object-fit: contain; }
+    .lightbox-close {
+      position: absolute; top: 20px; left: 20px;
+      font-size: 2rem; color: var(--white);
+      cursor: pointer; line-height: 1;
+      background: rgba(255,255,255,.12);
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      transition: background .2s;
+    }
+    .lightbox-close:hover { background: rgba(255,255,255,.22); }
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2rem;
+      color: var(--white);
+      cursor: pointer;
+      background: rgba(255,255,255,.12);
+      width: 52px; height: 52px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      transition: background .2s;
+    }
+    .lightbox-nav:hover { background: rgba(255,255,255,.22); }
+    .lightbox-prev { right: 20px; }
+    .lightbox-next { left: 20px; }
+
+    /* ─── WhatsApp Float ─── */
+    .wa-float {
+      position: fixed;
+      bottom: 80px; left: 20px;
+      z-index: 140;
+      width: 56px; height: 56px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 18px rgba(37,211,102,.4);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .wa-float:hover { transform: scale(1.1); box-shadow: 0 6px 24px rgba(37,211,102,.55); }
+    .wa-float svg { width: 28px; height: 28px; }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 900px) {
+      .pain-grid, .solution-grid { grid-template-columns: 1fr; gap: 36px; }
+      .pain-image-wrap { order: -1; }
+      .pain-image-wrap img, .solution-image-wrap img { height: 280px; }
+      .steps-grid { grid-template-columns: 1fr; }
+      .step-arrow { display: none; }
+      .activities-grid { grid-template-columns: 1fr; }
+      .tcard { flex: 0 0 calc(80% - 12px); }
+      .masonry-grid { columns: 2; }
+    }
+    @media (max-width: 600px) {
+      .section { padding: 60px 16px; }
+      .hero-content { padding: 100px 16px 50px; }
+      .tcard { flex: 0 0 calc(100% - 0px); }
+      .masonry-grid { columns: 2; }
+      .navbar { padding: 12px 16px; }
+      .navbar-logo { font-size: 1.05rem; }
+      .sticky-bar p { font-size: .85rem; }
+      .hero-btns { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── Navbar ─── -->
+<nav class="navbar">
+  <div class="navbar-logo">
+    <span>יקב</span> מטלר
+  </div>
+  <a href="https://wa.me/972515900544?text=%D7%A9%D7%9C%D7%95%D7%9D!%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%9F%2F%D7%AA%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A2%D7%9C%20%D7%99%D7%95%D7%9D%20%D7%92%D7%99%D7%91%D7%95%D7%A9%20%D7%91%D7%99%D7%A7%D7%91%20%D7%9E%D7%98%D7%9C%D7%A8" class="navbar-cta" target="_blank">בקשו הצעת מחיר</a>
+</nav>
+
+<!-- ─── Hero ─── -->
+<section class="hero" id="hero">
+  <div class="hero-content">
+    <span class="hero-eyebrow">ימי גיבוש ופעילויות קבוצתיות</span>
+    <h1>יום גיבוש שהצוות שלכם<br><em>ישמע עליו שנים</em></h1>
+    <p class="hero-sub">
+      חוויה של יצירה, יין ונוף פתוח בלב יקב מטלר —<br>
+      לקבוצות עובדים, חברים ומשפחות שמחפשים משהו אמיתי.
+    </p>
+    <div class="hero-btns">
+      <a href="https://wa.me/972515900544?text=%D7%A9%D7%9C%D7%95%D7%9D!%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%9F%2F%D7%AA%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A2%D7%9C%20%D7%99%D7%95%D7%9D%20%D7%92%D7%99%D7%91%D7%95%D7%A9%20%D7%91%D7%99%D7%A7%D7%91%20%D7%9E%D7%98%D7%9C%D7%A8" class="btn-primary" target="_blank">בקשו הצעת מחיר</a>
+      <a href="#activities" class="btn-secondary">הפעילויות שלנו</a>
+    </div>
+    <div class="hero-badges">
+      <span class="hero-badge">🍷 5–20 משתתפים</span>
+      <span class="hero-badge">🎨 3 פעילויות לבחירה</span>
+      <span class="hero-badge">🥗 אופציית בראנץ'</span>
+      <span class="hero-badge">🌿 יין וכיבוד כלולים</span>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Pain ─── -->
+<section class="section pain">
+  <div class="section-inner">
+    <div class="pain-grid">
+      <div>
+        <span class="section-tag">מה הצוות שלכם צריך?</span>
+        <h2 class="section-title">לפעמים יום גיבוש<br>מרגיש כמו עוד ישיבה</h2>
+        <div class="pain-items">
+          <div class="pain-item">
+            <div class="pain-icon">😶</div>
+            <div class="pain-item-text">
+              <strong>פעילויות שכולם כבר עשו</strong>
+              <p>קארטינג, פסיחה — יפה לפעם ראשונה, אבל הצוות כבר מכיר את התסריט מראש.</p>
+            </div>
+          </div>
+          <div class="pain-item">
+            <div class="pain-icon">🤔</div>
+            <div class="pain-item-text">
+              <strong>קשה למצוא חוויה שמחברת אנשים</strong>
+              <p>לא כולם אוהבים ספורט, לא כולם אוהבים שקט. לצאת לאמצע — קשה.</p>
+            </div>
+          </div>
+          <div class="pain-item">
+            <div class="pain-icon">📋</div>
+            <div class="pain-item-text">
+              <strong>ארגון מורכב מדי</strong>
+              <p>לוגיסטיקה, ספקים, תיאומים — מה שאמור להיות כיף הופך למשימה.</p>
+            </div>
+          </div>
+        </div>
+        <p class="pain-quote">"חיפשנו משהו שיגרום לצוות להרגיש טוב — לא עוד אירוע שצריך לסבול אותו."</p>
+      </div>
+      <div class="pain-image-wrap">
+        <img src="images/bachelorette/winery-sunset.jpg" alt="יקב מטלר בשקיעה" loading="lazy" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Solution ─── -->
+<section class="section">
+  <div class="section-inner">
+    <div class="solution-grid">
+      <div class="solution-image-wrap">
+        <img src="images/bachelorette/winery-hero.jpg" alt="סדנת יצירה ביקב מטלר" loading="lazy" />
+        <div class="solution-badge">
+          <strong>5–20</strong>
+          <span>משתתפים</span>
+        </div>
+      </div>
+      <div>
+        <span class="section-tag">החוויה שלנו</span>
+        <h2 class="section-title">יצירה + יין + נוף —<br>שילוב שעובד</h2>
+        <p class="section-sub">
+          הגעתם, פתחתם בקבוק, ישבתם ביחד סביב קאנווס.
+          אין תחרות, אין "נכון" ו"לא נכון" —
+          רק שעה-שעתיים שבהן אנשים פשוט נושמים.
+        </p>
+        <div class="solution-points">
+          <div class="solution-point">
+            <div class="solution-dot"></div>
+            <p><strong>יין ביתי ממש מהיקב</strong> — שתייה שמגיעה עם סיפור</p>
+          </div>
+          <div class="solution-point">
+            <div class="solution-dot"></div>
+            <p><strong>פעילות יצירה לבחירה</strong> — קאנווס, עציצים או צבעי מים</p>
+          </div>
+          <div class="solution-point">
+            <div class="solution-dot"></div>
+            <p><strong>כיבוד שמחכה עליכם</strong> — ואופציית בראנץ' מלא</p>
+          </div>
+          <div class="solution-point">
+            <div class="solution-dot"></div>
+            <p><strong>כל אחד חוזר עם יצירה</strong> — זיכרון שנשאר</p>
+          </div>
+          <div class="solution-point">
+            <div class="solution-dot"></div>
+            <p><strong>אנחנו מסדרים הכל</strong> — אתם רק מגיעים</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── How It Works ─── -->
+<section class="section how">
+  <div class="section-inner" style="text-align:center;">
+    <span class="section-tag">איך זה עובד?</span>
+    <h2 class="section-title">שלושה צעדים. חוויה שלמה.</h2>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>בחרו את הפעילות</h3>
+        <p>קאנווס, עציצים, או צבעי מים — שולחים לנו הודעה ומחליטים ביחד מה מתאים לקבוצה.</p>
+        <span class="step-arrow">‹</span>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>הגיעו ליקב</h3>
+        <p>אנחנו מכינים הכל מראש — חומרי יצירה, יין, כיבוד ואווירה. אתם מגיעים ומתחילים ליהנות.</p>
+        <span class="step-arrow">‹</span>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>צרו, שתו, חזרו</h3>
+        <p>שעתיים של יצירה ושיחות טובות — וכל אחד חוזר הביתה עם יצירה אישית ביד.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Activities ─── -->
+<section class="section" id="activities">
+  <div class="section-inner">
+    <div style="text-align:center; margin-bottom:0;">
+      <span class="section-tag">הפעילויות שלנו</span>
+      <h2 class="section-title">בחרו את החוויה שמתאימה לכם</h2>
+      <p class="section-sub" style="margin: 0 auto;">שלוש אפשרויות יצירה — כולן מתאימות גם למי שלא מצייר מאז כיתה ד'.</p>
+    </div>
+    <div class="activities-grid">
+
+      <div class="activity-card featured">
+        <span class="activity-badge">הכי פופולרי</span>
+        <div class="activity-img">
+          <img src="images/bachelorette/gallery-2.jpg" alt="ציור על קאנווס" loading="lazy" />
+        </div>
+        <div class="activity-body">
+          <h3>ציור על קאנווס</h3>
+          <p>כל אחד מקבל קאנווס, צבעים ומכחול — ומצייר בדיוק מה שמרגיש נכון לו. אין טעויות, יש רק יצירה. המדריכה מלווה וכולם חוזרים עם ציור לתלות בבית.</p>
+          <div class="activity-tags">
+            <span class="activity-tag">מתאים לכולם</span>
+            <span class="activity-tag">לוקח הביתה</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="activity-card">
+        <div class="activity-img">
+          <img src="images/bachelorette/workshop-pots.jpg" alt="ציור על עציצים" loading="lazy" />
+        </div>
+        <div class="activity-body">
+          <h3>ציור על עציצים</h3>
+          <p>מציירים על עציץ חרס לבן, ואחר כך שותלים בתוכו עשב מריח או פרח קטן. יוצא מגן בית עם אופי. פעילות מרגיעה במיוחד שיוצרת שיחות לאורך כל הדרך.</p>
+          <div class="activity-tags">
+            <span class="activity-tag">מרגיע</span>
+            <span class="activity-tag">לוקח הביתה</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="activity-card">
+        <div class="activity-img">
+          <img src="images/bachelorette/workshop-watercolor.jpg" alt="ציור בצבעי מים" loading="lazy" />
+        </div>
+        <div class="activity-body">
+          <h3>ציור בצבעי מים</h3>
+          <p>טכניקה עדינה ומרגיעה שמתאימה גם לאלה שאומרים "אני לא אמן בחיים". צבעי המים עושים את העבודה — אתם רק נושמים ונותנים לצבע לזרום.</p>
+          <div class="activity-tags">
+            <span class="activity-tag">טכניקה קלה</span>
+            <span class="activity-tag">מדיטטיבי</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── Mid CTA ─── -->
+<section class="mid-cta">
+  <h2>מחפשים משהו שיישאר בזיכרון?</h2>
+  <p>שולחים לנו הודעה עם מספר המשתתפים והתאריך — ואנחנו מכינים לכם הצעה אישית.</p>
+  <a href="https://wa.me/972515900544?text=%D7%A9%D7%9C%D7%95%D7%9D!%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%9F%2F%D7%AA%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A2%D7%9C%20%D7%99%D7%95%D7%9D%20%D7%92%D7%99%D7%91%D7%95%D7%A9%20%D7%91%D7%99%D7%A7%D7%91%20%D7%9E%D7%98%D7%9C%D7%A8" class="btn-white" target="_blank">שלחו הודעה בוואטסאפ</a>
+</section>
+
+<!-- ─── Gallery ─── -->
+<section class="section gallery">
+  <div class="section-inner" style="text-align:center;">
+    <span class="section-tag">גלריה</span>
+    <h2 class="section-title">הצצה לאווירה</h2>
+    <p class="section-sub" style="margin: 0 auto;">כי המראה של בוקר ביקב עם כוס יין ביד — מסביר יותר מכל מילה.</p>
+  </div>
+  <div class="masonry-grid">
+    <div class="photo-thumb" data-index="0"><img src="images/bachelorette/gallery-1.jpg" alt="גלריה 1" loading="lazy" /></div>
+    <div class="photo-thumb" data-index="1"><img src="images/bachelorette/gallery-2.jpg" alt="גלריה 2" loading="lazy" /></div>
+    <div class="photo-thumb" data-index="2"><img src="images/bachelorette/gallery-3.jpg" alt="גלריה 3" loading="lazy" /></div>
+    <div class="photo-thumb" data-index="3"><img src="images/bachelorette/gallery-4.jpg" alt="גלריה 4" loading="lazy" /></div>
+    <div class="photo-thumb" data-index="4"><img src="images/bachelorette/gallery-5.jpg" alt="גלריה 5" loading="lazy" /></div>
+    <div class="photo-thumb" data-index="5"><img src="images/bachelorette/gallery-6.jpg" alt="גלריה 6" loading="lazy" /></div>
+    <div class="photo-thumb" data-index="6"><img src="images/bachelorette/gallery-7.jpg" alt="גלריה 7" loading="lazy" /></div>
+    <div class="photo-thumb" data-index="7"><img src="images/bachelorette/winery-sunset.jpg" alt="שקיעה ביקב" loading="lazy" /></div>
+  </div>
+</section>
+
+<!-- ─── Testimonials ─── -->
+<section class="testimonials">
+  <div style="max-width:1080px; margin:0 auto;">
+    <span class="section-tag">מה אומרים עלינו</span>
+    <h2 class="section-title">קבוצות שכבר היו אצלנו</h2>
+    <p class="section-sub">כי הדרך הכי טובה לדעת מה מחכה לכם — לשמוע ממי שכבר חווה.</p>
+    <div class="t-carousel-wrap">
+      <div class="t-overflow" dir="ltr">
+        <div class="t-track" id="tTrack">
+
+          <div class="tcard">
+            <div class="tcard-inner">
+              <div class="t-stars">
+                <span class="star-icon">★</span><span class="star-icon">★</span><span class="star-icon">★</span><span class="star-icon">★</span><span class="star-icon">★</span>
+              </div>
+              <p class="tcard-text">"לא ציפינו שיום גיבוש יוציא כזה חיוך מהצוות. גם מי שאמר 'אני לא אמן בחיים' חזר עם ציור שתלה בבית. האווירה ביקב — פשוט אין מילים."</p>
+              <div class="tcard-author">
+                <div class="tcard-avatar">מ</div>
+                <div>
+                  <div class="tcard-name">מיכל כהן</div>
+                  <div class="tcard-role">מנהלת HR, חברת הייטק</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tcard">
+            <div class="tcard-inner">
+              <div class="t-stars">
+                <span class="star-icon">★</span><span class="star-icon">★</span><span class="star-icon">★</span><span class="star-icon">★</span><span class="star-icon">★</span>
+              </div>
+              <p class="tcard-text">"עשינו ציום צוות של 14 איש — ציור על קאנווס עם יין. כולם כבר שואלים מתי חוזרים. הייתה אווירה מדהימה שאי אפשר להסביר, צריך לחוות."</p>
+              <div class="tcard-author">
+                <div class="tcard-avatar">ר</div>
+                <div>
+                  <div class="tcard-name">רחל לוי</div>
+                  <div class="tcard-role">מנהלת פרויקטים, סטארטאפ</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tcard">
+            <div class="tcard-inner">
+              <div class="t-stars">
+                <span class="star-icon">★</span><span class="star-icon">★</span><span class="star-icon">★</span><span class="star-icon">★</span><span class="star-icon">★</span>
+              </div>
+              <p class="tcard-text">"הדבר הכי טוב שאירגנו לצוות שלנו. היין היה נהדר, הפעילות — מפתיעה כמה שמחברת בין אנשים שעובדים יחד שנים ועדיין גילו דברים חדשים."</p>
+              <div class="tcard-author">
+                <div class="tcard-avatar">י</div>
+                <div>
+                  <div class="tcard-name">יוסי ברקוביץ</div>
+                  <div class="tcard-role">מנהל מחלקה, חברת פיננסים</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tcard">
+            <div class="tcard-inner">
+              <div class="t-stars">
+                <span class="star-icon">★</span><span class="star-icon">★</span><span class="star-icon">★</span><span class="star-icon">★</span><span class="star-icon">★</span>
+              </div>
+              <p class="tcard-text">"גיבוש של 10 חברים — גילאים מעורבים, טעמים שונים. כולם נשבו. ציור העציצים היה כה מרגיע שלא הרגשנו בכמה שעות עברו. ממליצה בחום."</p>
+              <div class="tcard-author">
+                <div class="tcard-avatar">נ</div>
+                <div>
+                  <div class="tcard-name">נעמה שפירא</div>
+                  <div class="tcard-role">ארגנה יום כיף לחברות</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="t-progress-bar"><div class="t-progress-fill" id="tProgress"></div></div>
+      <div class="t-controls">
+        <button class="t-btn" id="tPrev" aria-label="הקודם">›</button>
+        <div class="t-dots" id="tDots"></div>
+        <button class="t-btn" id="tNext" aria-label="הבא">‹</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FAQ ─── -->
+<section class="section faq">
+  <div class="section-inner" style="text-align:center;">
+    <span class="section-tag">שאלות נפוצות</span>
+    <h2 class="section-title">כל מה שרציתם לדעת</h2>
+  </div>
+  <div class="faq-list">
+
+    <div class="faq-item">
+      <div class="faq-q">
+        <span>לכמה משתתפים מתאים הגיבוש?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-a">הסדנאות מתאימות לקבוצות של 5 עד 20 משתתפים. זה הגודל שמאפשר אינטימיות, שיחות טובות ותשומת לב אישית — ועדיין מרגיש כמו ארוע.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">
+        <span>מה כלול בפעילות?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-a">כלול: פעילות יצירה מלאה (חומרים, הדרכה, ליווי), יין ביתי מהיקב, וכיבוד. ניתן להוסיף ארוחת בראנץ' — זו אופציה שאנחנו מכינים בשמחה לפי בקשה.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">
+        <span>האם צריך ניסיון ביצירה?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-a">ממש לא. כל הפעילויות מותאמות לכל רמה — כולל מי שלא ציייר מכיתה ד'. המדריכה מלווה כל אחד בקצב שלו, ואין שום ציפייה ל"תוצר מושלם". יש ציפייה לכיף.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">
+        <span>איפה נמצא יקב מטלר?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-a">היקב ממוקם במושב עגור — כ-40 דקות מתל אביב, כ-20 דקות מאשקלון ובאר שבע. נוף פתוח, כרמים, ואוויר שמיד עושה את העבודה.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">
+        <span>האם ניתן לשלב ארוחת בראנץ'?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-a">כן. ארוחת בראנץ' היא תוספת מאוד פופולרית — שולחן ארוך, אוכל ביתי, אוויר פתוח. מדברים על הפרטים יחד בבניית ההצעה האישית שלכם.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">
+        <span>איך מזמינים?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-a">שולחים לנו הודעה בוואטסאפ עם מספר המשתתפים, תאריך מועדף ופעילות שבחרתם — ואנחנו מחזירים הצעת מחיר אישית בתוך 24 שעות.</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── Final CTA ─── -->
+<section class="final-cta" id="finalCta">
+  <h2>מוכנים לתכנן <em>יום שיישאר?</em></h2>
+  <p>
+    שלחו לנו הודעה קצרה — גודל קבוצה, תאריך ופעילות שמעניינת אתכם.
+    אנחנו נחזור עם הצעה אישית ונבנה ביחד חוויה שתרגישו אותה עוד הרבה זמן.
+  </p>
+  <div class="final-btns">
+    <a href="https://wa.me/972515900544?text=%D7%A9%D7%9C%D7%95%D7%9D!%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%9F%2F%D7%AA%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A2%D7%9C%20%D7%99%D7%95%D7%9D%20%D7%92%D7%99%D7%91%D7%95%D7%A9%20%D7%91%D7%99%D7%A7%D7%91%20%D7%9E%D7%98%D7%9C%D7%A8" class="btn-primary" target="_blank" style="font-size:1.1rem; padding:16px 40px;">בקשו הצעת מחיר בוואטסאפ</a>
+    <a href="tel:0515900544" class="btn-secondary" style="font-size:1.05rem;">התקשרו אלינו</a>
+  </div>
+  <p class="final-signature">באהבה, <strong>משפחת יקב מטלר</strong></p>
+</section>
+
+<!-- ─── Footer ─── -->
+<footer>
+  <p>© 2026 יקב מטלר · מושב עגור · <a href="tel:0515900544">051-5900544</a></p>
+</footer>
+
+<!-- ─── Sticky Bar ─── -->
+<div class="sticky-bar" id="stickyBar">
+  <p>גיבוש ביקב מטלר — יין, יצירה ונוף פתוח</p>
+  <a href="https://wa.me/972515900544?text=%D7%A9%D7%9C%D7%95%D7%9D!%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%9F%2F%D7%AA%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A2%D7%9C%20%D7%99%D7%95%D7%9D%20%D7%92%D7%99%D7%91%D7%95%D7%A9%20%D7%91%D7%99%D7%A7%D7%91%20%D7%9E%D7%98%D7%9C%D7%A8" class="sticky-bar-btn" target="_blank">בקשו הצעת מחיר</a>
+</div>
+
+<!-- ─── WhatsApp Float ─── -->
+<a class="wa-float" href="https://wa.me/972515900544?text=%D7%A9%D7%9C%D7%95%D7%9D!%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%9F%2F%D7%AA%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A2%D7%9C%20%D7%99%D7%95%D7%9D%20%D7%92%D7%99%D7%91%D7%95%D7%A9%20%D7%91%D7%99%D7%A7%D7%91%20%D7%9E%D7%98%D7%9C%D7%A8" target="_blank" title="דברו איתנו בוואטסאפ">
+  <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+<!-- ─── Lightbox ─── -->
+<div class="lightbox-overlay" id="lightbox">
+  <span class="lightbox-close" id="lbClose">×</span>
+  <span class="lightbox-nav lightbox-prev" id="lbPrev">›</span>
+  <img class="lightbox-img" id="lbImg" src="" alt="" />
+  <span class="lightbox-nav lightbox-next" id="lbNext">‹</span>
+</div>
+
+<script>
+  /* ─── FAQ ─── */
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.parentElement;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+
+  /* ─── Sticky Bar ─── */
+  const stickyBar = document.getElementById('stickyBar');
+  const finalCta = document.getElementById('finalCta');
+  const io = new IntersectionObserver(entries => {
+    stickyBar.classList.toggle('visible', !entries[0].isIntersecting);
+  }, { threshold: 0.1 });
+  io.observe(finalCta);
+  window.addEventListener('scroll', () => {
+    if (window.scrollY < 400) stickyBar.classList.remove('visible');
+  });
+
+  /* ─── Lightbox ─── */
+  const thumbs = document.querySelectorAll('.photo-thumb');
+  const lbOverlay = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lbImg');
+  const lbClose = document.getElementById('lbClose');
+  const lbPrev = document.getElementById('lbPrev');
+  const lbNext = document.getElementById('lbNext');
+  const imgs = Array.from(thumbs).map(t => ({ src: t.querySelector('img').src, alt: t.querySelector('img').alt }));
+  let lbIndex = 0;
+
+  function openLb(i) {
+    lbIndex = i;
+    lbImg.src = imgs[i].src;
+    lbImg.alt = imgs[i].alt;
+    lbOverlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLb() {
+    lbOverlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  thumbs.forEach((t, i) => t.addEventListener('click', () => openLb(i)));
+  lbClose.addEventListener('click', closeLb);
+  lbOverlay.addEventListener('click', e => { if (e.target === lbOverlay) closeLb(); });
+  lbPrev.addEventListener('click', () => openLb((lbIndex - 1 + imgs.length) % imgs.length));
+  lbNext.addEventListener('click', () => openLb((lbIndex + 1) % imgs.length));
+  document.addEventListener('keydown', e => {
+    if (!lbOverlay.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLb();
+    if (e.key === 'ArrowRight') openLb((lbIndex - 1 + imgs.length) % imgs.length);
+    if (e.key === 'ArrowLeft') openLb((lbIndex + 1) % imgs.length);
+  });
+
+  /* ─── Testimonials Carousel ─── */
+  const track = document.getElementById('tTrack');
+  const cards = track.querySelectorAll('.tcard');
+  const dotsWrap = document.getElementById('tDots');
+  const progress = document.getElementById('tProgress');
+  const prevBtn = document.getElementById('tPrev');
+  const nextBtn = document.getElementById('tNext');
+  let cur = 0;
+  const total = cards.length;
+  let autoTimer, progTimer, progVal = 0;
+
+  function getSlidesVisible() { return window.innerWidth < 600 ? 1 : window.innerWidth < 900 ? 1 : 3; }
+  function maxIndex() { return Math.max(0, total - getSlidesVisible()); }
+
+  function buildDots() {
+    dotsWrap.innerHTML = '';
+    for (let i = 0; i <= maxIndex(); i++) {
+      const d = document.createElement('span');
+      d.className = 't-dot' + (i === cur ? ' active' : '');
+      d.addEventListener('click', () => goTo(i));
+      dotsWrap.appendChild(d);
+    }
+  }
+
+  function goTo(i) {
+    cur = Math.max(0, Math.min(i, maxIndex()));
+    const w = cards[0].offsetWidth + 24;
+    track.style.transform = `translateX(${cur * w}px)`;
+    dotsWrap.querySelectorAll('.t-dot').forEach((d, j) => d.classList.toggle('active', j === cur));
+    resetProgress();
+  }
+
+  function resetProgress() {
+    clearInterval(progTimer);
+    progVal = 0;
+    progress.style.width = '0%';
+    progTimer = setInterval(() => {
+      progVal += 100 / 40;
+      progress.style.width = progVal + '%';
+      if (progVal >= 100) { clearInterval(progTimer); }
+    }, 100);
+  }
+
+  function startAuto() {
+    clearInterval(autoTimer);
+    autoTimer = setInterval(() => {
+      cur = cur >= maxIndex() ? 0 : cur + 1;
+      goTo(cur);
+    }, 4000);
+  }
+
+  buildDots();
+  goTo(0);
+  startAuto();
+  prevBtn.addEventListener('click', () => { goTo(cur - 1); clearInterval(autoTimer); startAuto(); });
+  nextBtn.addEventListener('click', () => { goTo(cur + 1); clearInterval(autoTimer); startAuto(); });
+  window.addEventListener('resize', () => { buildDots(); goTo(Math.min(cur, maxIndex())); });
+
+  /* ─── Touch Swipe on Carousel ─── */
+  let tsX = null;
+  track.addEventListener('touchstart', e => { tsX = e.touches[0].clientX; });
+  track.addEventListener('touchend', e => {
+    if (tsX === null) return;
+    const dx = tsX - e.changedTouches[0].clientX;
+    if (Math.abs(dx) > 40) { dx > 0 ? goTo(cur + 1) : goTo(cur - 1); startAuto(); }
+    tsX = null;
+  });
+</script>
+
+</body>
+</html>
