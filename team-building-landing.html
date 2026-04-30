@@ -1218,12 +1218,12 @@
   const total = cards.length;
   let autoTimer, progTimer, progVal = 0;
 
-  function getSlidesVisible() { return window.innerWidth < 600 ? 1 : window.innerWidth < 900 ? 1 : 3; }
-  function maxIndex() { return Math.max(0, total - getSlidesVisible()); }
+  function getVisible() { return window.innerWidth < 900 ? 1 : 3; }
+  function pageCount() { return Math.ceil(total / getVisible()); }
 
   function buildDots() {
     dotsWrap.innerHTML = '';
-    for (let i = 0; i <= maxIndex(); i++) {
+    for (let i = 0; i < pageCount(); i++) {
       const d = document.createElement('span');
       d.className = 't-dot' + (i === cur ? ' active' : '');
       d.addEventListener('click', () => goTo(i));
@@ -1232,9 +1232,11 @@
   }
 
   function goTo(i) {
-    cur = Math.max(0, Math.min(i, maxIndex()));
-    const w = cards[0].offsetWidth + 24;
-    track.style.transform = `translateX(${cur * w}px)`;
+    /* loop in both directions */
+    cur = ((i % pageCount()) + pageCount()) % pageCount();
+    const visible = getVisible();
+    const cardW = cards[0].offsetWidth + 24;
+    track.style.transform = `translateX(-${cur * visible * cardW}px)`;
     dotsWrap.querySelectorAll('.t-dot').forEach((d, j) => d.classList.toggle('active', j === cur));
     resetProgress();
   }
@@ -1245,17 +1247,14 @@
     progress.style.width = '0%';
     progTimer = setInterval(() => {
       progVal += 100 / 40;
-      progress.style.width = progVal + '%';
-      if (progVal >= 100) { clearInterval(progTimer); }
+      progress.style.width = Math.min(progVal, 100) + '%';
+      if (progVal >= 100) clearInterval(progTimer);
     }, 100);
   }
 
   function startAuto() {
     clearInterval(autoTimer);
-    autoTimer = setInterval(() => {
-      cur = cur >= maxIndex() ? 0 : cur + 1;
-      goTo(cur);
-    }, 4000);
+    autoTimer = setInterval(() => goTo(cur + 1), 4000);
   }
 
   buildDots();
@@ -1263,7 +1262,7 @@
   startAuto();
   prevBtn.addEventListener('click', () => { goTo(cur - 1); clearInterval(autoTimer); startAuto(); });
   nextBtn.addEventListener('click', () => { goTo(cur + 1); clearInterval(autoTimer); startAuto(); });
-  window.addEventListener('resize', () => { buildDots(); goTo(Math.min(cur, maxIndex())); });
+  window.addEventListener('resize', () => { buildDots(); goTo(cur); });
 
   /* ─── Touch Swipe on Carousel ─── */
   let tsX = null;
@@ -1271,7 +1270,7 @@
   track.addEventListener('touchend', e => {
     if (tsX === null) return;
     const dx = tsX - e.changedTouches[0].clientX;
-    if (Math.abs(dx) > 40) { dx > 0 ? goTo(cur + 1) : goTo(cur - 1); startAuto(); }
+    if (Math.abs(dx) > 40) { goTo(dx > 0 ? cur + 1 : cur - 1); clearInterval(autoTimer); startAuto(); }
     tsX = null;
   });
 </script>
