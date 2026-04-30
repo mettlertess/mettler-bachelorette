@@ -12,13 +12,13 @@
       --cream:       #FDF7EE;
       --cream-dark:  #F5E8D2;
       --ink:         #2C2C2C;
-      --primary:     #C8832A;
-      --primary-dark:#A86E20;
-      --terra:       #3D7A78;
-      --terra-dark:  #2E6260;
-      --teal:        #3D7A78;
-      --sage:        #89A882;
-      --sky:         #5B84C4;
+      --primary:     #770523;
+      --primary-dark:#5A0318;
+      --terra:       #D81A67;
+      --terra-dark:  #B01555;
+      --pistachio:   #D0D996;
+      --peony:       #FAD2E1;
+      --blood:       #DD4E28;
       --muted:       #6B6B6B;
       --white:       #FFFFFF;
       --shadow:      0 4px 24px rgba(44,44,44,.08);
@@ -76,7 +76,7 @@
       position: fixed; top: 0; right: 0; left: 0; z-index: 100;
       background: rgba(253,246,240,.92);
       backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(193,127,90,.15);
+      border-bottom: 1px solid rgba(119,5,35,.15);
       padding: 14px 24px;
       display: flex; justify-content: space-between; align-items: center;
     }
@@ -131,7 +131,7 @@
     }
     .hero-eyebrow {
       display: inline-block;
-      background: rgba(200,131,42,.12);
+      background: rgba(119,5,35,.10);
       color: var(--primary);
       border-radius: 50px;
       padding: 6px 18px;
@@ -169,7 +169,7 @@
     }
     .hero-badge {
       background: rgba(255,255,255,.85);
-      border: 1px solid rgba(193,127,90,.25);
+      border: 1px solid rgba(119,5,35,.20);
       border-radius: 50px;
       padding: 6px 14px;
       font-size: .82rem;
@@ -183,7 +183,7 @@
     .section-inner { max-width: 1080px; margin: 0 auto; }
     .section-tag {
       display: inline-block;
-      background: rgba(200,131,42,.12);
+      background: rgba(119,5,35,.10);
       color: var(--primary);
       border-radius: 50px;
       padding: 5px 16px;
@@ -208,7 +208,7 @@
 
     /* ─── Pain Section ─── */
     .pain {
-      background: linear-gradient(135deg, #FFF3E0 0%, #FDEECF 100%);
+      background: linear-gradient(135deg, #FFF0F5 0%, #FAE5EC 100%);
     }
     .pain-grid {
       display: grid;
@@ -222,7 +222,7 @@
     }
     .pain-icon {
       width: 44px; height: 44px; flex-shrink: 0;
-      background: rgba(200,131,42,.14);
+      background: rgba(119,5,35,.10);
       border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
       font-size: 1.2rem;
@@ -369,8 +369,8 @@
     .activity-body p { font-size: .95rem; color: var(--muted); line-height: 1.6; flex: 1; margin-bottom: 18px; }
     .activity-tags { display: flex; gap: 8px; flex-wrap: wrap; }
     .activity-tag {
-      background: rgba(200,131,42,.10);
-      color: var(--primary);
+      background: rgba(208,217,150,.45);
+      color: #5A0318;
       border-radius: 50px;
       padding: 4px 12px;
       font-size: .78rem;
@@ -419,7 +419,7 @@
     .photo-thumb::after {
       content: '';
       position: absolute; inset: 0;
-      background: linear-gradient(to top, rgba(139,58,82,.35) 0%, transparent 60%);
+      background: linear-gradient(to top, rgba(216,26,103,.35) 0%, transparent 60%);
       opacity: 0;
       transition: opacity .3s;
     }
@@ -428,7 +428,7 @@
 
     /* ─── Testimonials ─── */
     .testimonials {
-      background: linear-gradient(135deg, #2c1a0e 0%, #4a2d1a 45%, #7a4f3a 80%, #9a6545 100%);
+      background: linear-gradient(135deg, #1a0008 0%, #3a0012 45%, #770523 80%, #D81A67 100%);
       padding: 80px 24px;
       overflow: hidden;
     }
@@ -561,7 +561,7 @@
 
     /* ─── Final CTA ─── */
     .final-cta {
-      background: linear-gradient(135deg, var(--cream) 0%, #FBE8C8 50%, var(--cream-dark) 100%);
+      background: linear-gradient(135deg, var(--cream) 0%, #FAD2E1 30%, var(--cream-dark) 100%);
       padding: 100px 24px;
       text-align: center;
     }
@@ -571,7 +571,7 @@
       margin-bottom: 16px;
       line-height: 1.25;
     }
-    .final-cta h2 em { font-style: normal; color: var(--primary); }
+    .final-cta h2 em { font-style: normal; color: var(--terra); }
     .final-cta p { font-size: 1.1rem; color: var(--muted); line-height: 1.65; max-width: 520px; margin: 0 auto 36px; }
     .final-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 40px; }
     .final-signature { font-size: 1.05rem; color: var(--muted); font-style: italic; }
@@ -1081,6 +1081,7 @@
 
 <!-- ─── Final CTA ─── -->
 <section class="final-cta" id="finalCta">
+  <img src="images/logo-mettler.png" alt="Mettler Winery" style="height:90px; width:auto; margin:0 auto 36px; display:block; mix-blend-mode:multiply;" />
   <h2>מוכנים לתכנן <em>יום שיישאר?</em></h2>
   <p>
     שלחו לנו הודעה קצרה — גודל קבוצה, תאריך ופעילות שמעניינת אתכם.
