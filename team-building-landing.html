@@ -428,13 +428,13 @@
 
     /* ─── Testimonials ─── */
     .testimonials {
-      background: linear-gradient(135deg, #2d1200 0%, #7a2d00 40%, #DD4E28 80%, #e8845a 100%);
+      background: linear-gradient(135deg, #c8d87a 0%, #D0D996 50%, #dce8a0 100%);
       padding: 80px 24px;
       overflow: hidden;
     }
-    .testimonials .section-tag { background: rgba(255,255,255,.12); color: rgba(255,255,255,.9); }
-    .testimonials .section-title { color: var(--white); }
-    .testimonials .section-sub { color: rgba(255,255,255,.72); max-width: 520px; }
+    .testimonials .section-tag { background: rgba(90,3,24,.12); color: var(--primary); }
+    .testimonials .section-title { color: var(--ink); }
+    .testimonials .section-sub { color: var(--muted); max-width: 520px; }
     .t-carousel-wrap {
       margin-top: 48px;
       position: relative;
@@ -452,17 +452,17 @@
       min-width: 0;
     }
     .tcard-inner {
-      background: rgba(255,255,255,.10);
+      background: rgba(255,255,255,.55);
       backdrop-filter: blur(18px);
-      border: 1px solid rgba(255,255,255,.18);
+      border: 1px solid rgba(255,255,255,.7);
       border-radius: var(--radius);
       padding: 28px 24px;
-      box-shadow: 0 8px 32px rgba(0,0,0,.22), inset 0 1px 0 rgba(255,255,255,.12);
+      box-shadow: 0 8px 32px rgba(0,0,0,.10), inset 0 1px 0 rgba(255,255,255,.8);
       direction: rtl;
       transition: transform .3s, background .3s;
       height: 100%;
     }
-    .tcard-inner:hover { transform: translateY(-6px); background: rgba(255,255,255,.17); }
+    .tcard-inner:hover { transform: translateY(-6px); background: rgba(255,255,255,.72); }
     .t-stars { display: flex; gap: 4px; margin-bottom: 14px; }
     .star-icon {
       color: #F5C842;
@@ -479,7 +479,7 @@
     }
     .tcard-text {
       font-size: .97rem;
-      color: rgba(255,255,255,.9);
+      color: var(--ink);
       line-height: 1.65;
       margin-bottom: 20px;
       font-style: italic;
@@ -487,43 +487,43 @@
     .tcard-author { display: flex; align-items: center; gap: 12px; }
     .tcard-avatar {
       width: 42px; height: 42px; border-radius: 50%;
-      background: rgba(255,255,255,.2);
+      background: var(--primary);
       display: flex; align-items: center; justify-content: center;
       font-size: 1.1rem; font-weight: 700; color: var(--white);
       flex-shrink: 0;
     }
-    .tcard-name { font-weight: 700; color: var(--white); font-size: .95rem; }
-    .tcard-role { font-size: .82rem; color: rgba(255,255,255,.6); }
+    .tcard-name { font-weight: 700; color: var(--ink); font-size: .95rem; }
+    .tcard-role { font-size: .82rem; color: var(--muted); }
     .t-controls { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 36px; }
     .t-btn {
       width: 44px; height: 44px; border-radius: 50%;
-      background: rgba(255,255,255,.15);
-      border: 1px solid rgba(255,255,255,.25);
-      color: var(--white);
+      background: rgba(255,255,255,.5);
+      border: 1px solid rgba(255,255,255,.8);
+      color: var(--ink);
       font-size: 1.2rem;
       cursor: pointer;
       display: flex; align-items: center; justify-content: center;
       transition: background .2s;
     }
-    .t-btn:hover { background: rgba(255,255,255,.28); }
+    .t-btn:hover { background: rgba(255,255,255,.8); }
     .t-dots { display: flex; gap: 8px; }
     .t-dot {
       width: 8px; height: 8px; border-radius: 50%;
-      background: rgba(255,255,255,.35);
+      background: rgba(90,3,24,.25);
       cursor: pointer;
       transition: background .2s, transform .2s;
     }
-    .t-dot.active { background: var(--white); transform: scale(1.3); }
+    .t-dot.active { background: var(--primary); transform: scale(1.3); }
     .t-progress-bar {
       height: 2px;
-      background: rgba(255,255,255,.18);
+      background: rgba(90,3,24,.15);
       border-radius: 2px;
       margin-top: 20px;
       overflow: hidden;
     }
     .t-progress-fill {
       height: 100%;
-      background: rgba(255,255,255,.65);
+      background: var(--primary);
       border-radius: 2px;
       width: 0%;
       transition: width .1s linear;
