@@ -4,6 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ימי גיבוש ופעילויות קבוצתיות | יקב מטלר</title>
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="ימי גיבוש ופעילויות קבוצתיות | יקב מטלר" />
+  <meta property="og:description" content="חוויה בלתי נשכחת בין הכרמים — יצירה, יין ואווירה כפרית. סדנאות קבוצתיות ליחידות ולעסקים." />
+  <meta property="og:image" content="https://mettler-winery.vercel.app/images/og/team-building.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="800" />
+  <meta property="og:url" content="https://mettler-winery.vercel.app/team-building-landing.html" />
+  <meta property="og:locale" content="he_IL" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <style>
@@ -590,6 +598,29 @@
     }
     footer a { color: var(--terra); }
 
+    .footer-socials {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+    .footer-socials a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1px solid rgba(246,239,216,.22);
+      color: rgba(246,239,216,.6);
+      transition: color .2s ease, border-color .2s ease;
+    }
+    .footer-socials a:hover {
+      color: var(--terra);
+      border-color: var(--terra);
+    }
+    .footer-socials svg { width: 18px; height: 18px; }
+
     /* ─── Sticky Bar ─── */
     .sticky-bar {
       position: fixed; bottom: 0; right: 0; left: 0; z-index: 150;
@@ -754,7 +785,7 @@
             <div class="pain-icon">—</div>
             <div class="pain-item-text">
               <strong>פעילויות שכולם כבר עשו</strong>
-              <p>קארטינג, פסיחה — יפה לפעם ראשונה, אבל הצוות כבר מכיר את התסריט מראש.</p>
+              <p>קארטינג, רכיבה אתגרית — יפה לפעם ראשונה, אבל הצוות כבר מכיר את התסריט מראש.</p>
             </div>
           </div>
           <div class="pain-item">
@@ -1092,7 +1123,7 @@
         <span>איפה נמצא יקב מטלר?</span>
         <span class="faq-icon">+</span>
       </div>
-      <div class="faq-a">היקב ממוקם במושב עגור — כ-40 דקות מתל אביב, כ-20 דקות מאשקלון ובאר שבע. נוף פתוח, כרמים, ואוויר שמיד עושה את העבודה.</div>
+      <div class="faq-a">היקב ממוקם במושב עגור — כ-45 דקות מתל אביב או מירושלים, כ-40 דקות מאשקלון ובאר שבע. נוף פתוח, כרמים, ואוויר שמיד עושה את העבודה.</div>
     </div>
 
     <div class="faq-item">
@@ -1131,6 +1162,21 @@
 
 <!-- ─── Footer ─── -->
 <footer>
+  <div class="footer-socials">
+    <a href="https://www.mettler-winery.com/" target="_blank" rel="noopener" aria-label="האתר שלנו" title="האתר שלנו">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/>
+        <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+      </svg>
+    </a>
+    <a href="https://www.instagram.com/mettler_winery" target="_blank" rel="noopener" aria-label="אינסטגרם" title="אינסטגרם">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+        <circle cx="12" cy="12" r="4"/>
+        <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+      </svg>
+    </a>
+  </div>
   <p>© 2026 יקב מטלר · מושב עגור · <a href="tel:0515900544">051-5900544</a></p>
 </footer>
 

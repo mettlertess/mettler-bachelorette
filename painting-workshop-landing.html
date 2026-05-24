@@ -4,6 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>סדנאות ציור ביקב מטלר | יין, צבעים ויצירה</title>
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="סדנאות ציור ביקב מטלר | יין, צבעים ויצירה" />
+  <meta property="og:description" content="בואו לצייר, לטעום ולנשום — סדנת ציור ביקב בוטיק עם יין ביד ונוף כרמים מרהיב." />
+  <meta property="og:image" content="https://mettler-winery.vercel.app/images/og/painting.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="900" />
+  <meta property="og:url" content="https://mettler-winery.vercel.app/painting-workshop-landing.html" />
+  <meta property="og:locale" content="he_IL" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
@@ -796,6 +804,29 @@
     }
     footer a { color: var(--pink); }
 
+    .footer-socials {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+    .footer-socials a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,.2);
+      color: rgba(255,255,255,.55);
+      transition: color .2s ease, border-color .2s ease;
+    }
+    .footer-socials a:hover {
+      color: var(--pink);
+      border-color: var(--pink);
+    }
+    .footer-socials svg { width: 18px; height: 18px; }
+
     /* ─── RESPONSIVE ─── */
     @media (max-width: 900px) {
       .details-inner,
@@ -849,7 +880,7 @@
     <div class="hero-content">
       <span class="hero-tag">סדנאות ציור ביקב מטלר</span>
       <h1>
-        ערב אחד מול הכרמים,<br />
+        בוקר אחד מול הכרמים,<br />
         צבעים, יין<br />
         <em>ומשהו שיצרת בידיים שלך.</em>
       </h1>
@@ -960,7 +991,7 @@
         <span class="section-tag">מה קורה בסדנה</span>
         <h2 class="section-title">פשוט תגיעו. הכל כבר מוכן.</h2>
         <p>מגיעים, שותים כוס יין, נושמים.</p>
-        <p>לאה מסבירה מה עושים — ואז פשוט מתחילים. אין "נכון" ואין "לא יפה". כל אחת עובדת בקצב שלה, לאה עוברת ועוזרת, הבדים מתמלאים בצבע.</p>
+        <p>המדריכה מסבירה מה עושים — ואז פשוט מתחילים. אין "נכון" ואין "לא יפה". כל אחת עובדת בקצב שלה, המדריכה עוברת ועוזרת, הבדים מתמלאים בצבע.</p>
         <p>בסוף יש תמונה שלא הייתה קודם, כוס שנייה, והרבה צחוקים.</p>
         <div class="what-highlight">
           <strong>בלי לחץ, בלי ציפיות.</strong>
@@ -984,7 +1015,7 @@
       </div>
 
       <div class="include-item">
-        <h3>הנחיה אישית של לאה</h3>
+        <h3>הנחיה אישית של מדריכה מנוסה</h3>
         <p>לאורך כל הסדנה, ליד כל אחת</p>
       </div>
 
@@ -1214,6 +1245,21 @@
 
 <!-- ─── FOOTER ─── -->
 <footer>
+  <div class="footer-socials">
+    <a href="https://www.mettler-winery.com/" target="_blank" rel="noopener" aria-label="האתר שלנו" title="האתר שלנו">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/>
+        <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+      </svg>
+    </a>
+    <a href="https://www.instagram.com/mettler_winery" target="_blank" rel="noopener" aria-label="אינסטגרם" title="אינסטגרם">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+        <circle cx="12" cy="12" r="4"/>
+        <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+      </svg>
+    </a>
+  </div>
   <p>© 2026 יקב מטלר · מושב עגור · <a href="tel:0515900544">051-5900544</a></p>
 </footer>
 
