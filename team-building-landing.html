@@ -6,36 +6,48 @@
   <title>ימי גיבוש ופעילויות קבוצתיות | יקב מטלר</title>
   <meta property="og:type" content="website" />
   <meta property="og:title" content="ימי גיבוש ופעילויות קבוצתיות | יקב מטלר" />
-  <meta property="og:description" content="חוויה בלתי נשכחת בין הכרמים — יצירה, יין ואווירה כפרית. סדנאות קבוצתיות ליחידות ולעסקים." />
+  <meta property="og:description" content="חוויה בלתי נשכחת בין הכרמים - יצירה, יין ואווירה כפרית. סדנאות קבוצתיות ליחידות ולעסקים." />
   <meta property="og:image" content="https://mettler-winery.vercel.app/images/og/team-building.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="800" />
   <meta property="og:url" content="https://mettler-winery.vercel.app/team-building-landing.html" />
   <meta property="og:locale" content="he_IL" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Alef:wght@400;700&family=Assistant:wght@300;400;500;600;700&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet" />
   <style>
     /* ─── Variables ─── */
     :root {
-      --cream:       #F6EFD8;
-      --cream-dark:  #EBE0C8;
-      --sand:        #EBE0C8;
-      --ink:         #6E2417;
-      --bordeaux:    #6E2417;
-      --primary:     #6E2417;
-      --primary-dark:#E8B589;
-      --terra:       #A56B38;
-      --terra-dark:  #8B5730;
-      --caramel:     #A56B38;
-      --butter:      #F2DC86;
-      --sky:         #A8C5DA;
-      --peach:       #E8B589;
-      --muted:       #6B6B6B;
-      --white:       #F6EFD8;
-      --shadow:      0 4px 24px rgba(110,36,23,.10);
-      --shadow-lg:   0 8px 40px rgba(110,36,23,.14);
-      --radius:      18px;
-      --radius-sm:   10px;
+      --paper:       #f4f0e8;
+      --cream:       #f4f0e8;
+      --cream-dark:  #efe7da;
+      --sand:        #efe7da;
+      --ink:         #2b2620;
+      --ink-soft:    #2e2a22;
+      --bordeaux:    #6f343a;
+      --wine:        #6f343a;
+      --wine-dark:   #5a2a2f;
+      --primary:     #6f343a;
+      --primary-dark:#5a2a2f;
+      --terra:       #b08a3e;
+      --terra-dark:  #8a6a2f;
+      --caramel:     #b08a3e;
+      --gold:        #b08a3e;
+      --gold-soft:   #e7c79b;
+      --olive:       #586a44;
+      --butter:      #c8a24e;
+      --butter-dark: #b3893a;
+      --sky:         #efe7da;
+      --peach:       #b3893a;
+      --muted:       #8a8378;
+      --line:        #dbd5ca;
+      --card:        #ffffff;
+      --card-border: #e6e2d8;
+      --white:       #ffffff;
+      --shadow:      0 14px 34px -26px rgba(40,32,20,.45);
+      --shadow-lg:   0 24px 48px -30px rgba(40,32,20,.5);
+      --radius:      14px;
+      --radius-sm:   9px;
     }
 
     /* ─── Reset ─── */
@@ -50,77 +62,82 @@
     }
     img { display: block; max-width: 100%; }
     a { text-decoration: none; color: inherit; }
+    h1, h2, h3 { font-family: 'Alef', sans-serif; font-weight: 700; }
+    .ltr { direction: ltr; unicode-bidi: isolate; letter-spacing: .04em; }
 
     /* ─── Buttons ─── */
     .btn-primary {
       display: inline-block;
-      background: var(--butter);
-      color: var(--ink);
-      border-radius: 50px;
-      padding: 14px 32px;
+      background: var(--wine);
+      color: var(--cream);
+      border-radius: 4px;
+      padding: 15px 36px;
       font-size: 1rem;
-      font-weight: 700;
+      font-weight: 600;
+      letter-spacing: .03em;
       font-family: 'Assistant', sans-serif;
-      border: none;
+      border: 1px solid var(--wine);
       cursor: pointer;
-      transition: background .2s, transform .15s;
+      transition: background .2s, transform .15s, box-shadow .2s;
     }
-    .btn-primary:hover { background: var(--peach); transform: translateY(-1px); }
+    .btn-primary:hover { background: var(--wine-dark); transform: translateY(-2px); box-shadow: 0 12px 26px -16px rgba(111,52,58,.9); }
 
     .btn-secondary {
       display: inline-block;
       background: transparent;
-      color: var(--terra);
-      border: 2px solid var(--terra);
-      border-radius: 50px;
-      padding: 12px 28px;
+      color: var(--ink);
+      border: 1px solid rgba(43,38,32,.35);
+      border-radius: 4px;
+      padding: 14px 30px;
       font-size: 1rem;
       font-weight: 600;
+      letter-spacing: .03em;
       font-family: 'Assistant', sans-serif;
       cursor: pointer;
-      transition: background .2s, color .2s, transform .15s;
+      transition: background .2s, color .2s, border-color .2s, transform .15s;
     }
-    .btn-secondary:hover { background: var(--terra); color: var(--cream); transform: translateY(-1px); }
+    .btn-secondary:hover { background: var(--wine); color: var(--cream); border-color: var(--wine); transform: translateY(-2px); }
 
     /* ─── Navbar ─── */
     .navbar {
       position: fixed; top: 0; right: 0; left: 0; z-index: 100;
-      background: rgba(165,107,56,.95);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(246,239,216,.20);
-      padding: 14px 24px;
+      background: rgba(244,240,232,.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+      padding: 12px 24px;
       display: flex; justify-content: space-between; align-items: center;
     }
     .navbar-logo img {
-      height: 52px;
+      height: 48px;
       width: auto;
       display: block;
       mix-blend-mode: multiply;
     }
     .navbar-links {
-      display: flex; align-items: center; gap: 20px;
+      display: flex; align-items: center; gap: 22px;
     }
     .navbar-link {
-      font-size: .88rem;
+      font-size: .86rem;
       font-weight: 600;
-      color: var(--cream);
+      color: var(--ink);
       display: flex; align-items: center; gap: 5px;
-      opacity: .85;
-      transition: opacity .2s;
+      opacity: .72;
+      transition: opacity .2s, color .2s;
     }
-    .navbar-link:hover { opacity: 1; }
+    .navbar-link:hover { opacity: 1; color: var(--gold); }
     .navbar-link svg { width: 16px; height: 16px; }
     .navbar-cta {
-      background: var(--butter);
-      color: var(--ink);
-      border-radius: 50px;
+      background: var(--wine);
+      color: var(--cream);
+      border-radius: 4px;
       padding: 10px 22px;
-      font-size: .9rem;
-      font-weight: 700;
+      font-size: .88rem;
+      font-weight: 600;
+      letter-spacing: .03em;
       font-family: 'Assistant', sans-serif;
       transition: background .2s, transform .15s;
     }
-    .navbar-cta:hover { background: var(--peach); transform: translateY(-1px); }
+    .navbar-cta:hover { background: var(--wine-dark); transform: translateY(-1px); }
 
     /* ─── Hero ─── */
     .hero {
@@ -133,7 +150,7 @@
     .hero::before {
       content: '';
       position: absolute; inset: 0;
-      background: rgba(246,239,216,.80);
+      background: linear-gradient(180deg, rgba(244,240,232,.74) 0%, rgba(244,240,232,.82) 55%, rgba(244,240,232,.94) 100%);
     }
     .hero-content {
       position: relative; z-index: 1;
@@ -143,25 +160,24 @@
     }
     .hero-eyebrow {
       display: inline-block;
-      background: rgba(165,107,56,.18);
-      color: var(--primary);
-      border-radius: 50px;
-      padding: 6px 18px;
-      font-size: .88rem;
+      color: var(--gold);
+      font-size: .82rem;
       font-weight: 600;
-      margin-bottom: 20px;
-      letter-spacing: .03em;
+      margin-bottom: 22px;
+      letter-spacing: .22em;
     }
     .hero h1 {
-      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-family: 'Alef', sans-serif;
+      font-size: clamp(2.1rem, 5.2vw, 3.4rem);
       font-weight: 700;
-      line-height: 1.22;
-      margin-bottom: 18px;
-      color: var(--ink);
+      line-height: 1.2;
+      margin-bottom: 20px;
+      color: var(--ink-soft);
+      letter-spacing: -.01em;
     }
     .hero h1 em {
       font-style: normal;
-      color: var(--primary);
+      color: var(--gold);
     }
     .hero-sub {
       font-size: clamp(1rem, 2.5vw, 1.2rem);
@@ -180,12 +196,12 @@
       display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;
     }
     .hero-badge {
-      background: rgba(246,239,216,.85);
-      border: 1px solid rgba(165,107,56,.30);
-      border-radius: 50px;
+      background: rgba(255,255,255,.55);
+      border: 1px solid rgba(176,138,62,.4);
+      border-radius: 4px;
       padding: 6px 14px;
-      font-size: .82rem;
-      font-weight: 600;
+      font-size: .8rem;
+      font-weight: 500;
       color: var(--ink);
       display: flex; align-items: center; gap: 5px;
     }
@@ -195,22 +211,21 @@
     .section-inner { max-width: 1080px; margin: 0 auto; }
     .section-tag {
       display: inline-block;
-      background: rgba(165,107,56,.15);
-      color: var(--primary);
-      border-radius: 50px;
-      padding: 5px 16px;
-      font-size: .8rem;
-      font-weight: 700;
-      margin-bottom: 12px;
-      letter-spacing: .04em;
-      text-transform: uppercase;
+      color: var(--gold);
+      font-size: .75rem;
+      font-weight: 600;
+      margin-bottom: 14px;
+      letter-spacing: .2em;
     }
     .section-title {
-      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      font-family: 'Alef', sans-serif;
+      font-size: clamp(1.7rem, 3.6vw, 2.5rem);
       font-weight: 700;
-      line-height: 1.25;
+      line-height: 1.22;
       margin-bottom: 14px;
+      color: var(--ink-soft);
     }
+    .section-title em { font-style: normal; color: var(--gold); }
     .section-sub {
       font-size: 1.05rem;
       color: var(--muted);
@@ -234,8 +249,10 @@
     }
     .pain-icon {
       width: 44px; height: 44px; flex-shrink: 0;
-      background: rgba(165,107,56,.15);
+      background: rgba(176,138,62,.12);
+      border: 1px solid rgba(176,138,62,.3);
       border-radius: 50%;
+      color: var(--gold);
       display: flex; align-items: center; justify-content: center;
       font-size: 1.2rem;
     }
@@ -319,14 +336,12 @@
       position: relative;
     }
     .step-num {
-      width: 52px; height: 52px;
-      background: var(--primary);
-      color: var(--white);
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.3rem;
-      font-weight: 700;
-      margin: 0 auto 18px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 200;
+      font-size: 3.4rem;
+      line-height: 1;
+      color: var(--gold);
+      margin: 0 auto 8px;
     }
     .step h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 8px; }
     .step p { font-size: .95rem; color: var(--muted); line-height: 1.6; }
@@ -365,12 +380,13 @@
       position: absolute;
       top: 16px;
       right: 16px;
-      background: var(--primary);
-      color: var(--white);
-      border-radius: 50px;
-      padding: 4px 14px;
-      font-size: .78rem;
-      font-weight: 700;
+      background: var(--wine);
+      color: var(--cream);
+      border-radius: 4px;
+      padding: 5px 14px;
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .04em;
       z-index: 2;
     }
     .activity-img { height: 220px; overflow: hidden; flex-shrink: 0; }
@@ -381,34 +397,35 @@
     .activity-body p { font-size: .95rem; color: var(--muted); line-height: 1.6; flex: 1; margin-bottom: 18px; }
     .activity-tags { display: flex; gap: 8px; flex-wrap: wrap; }
     .activity-tag {
-      background: rgba(165,107,56,.15);
+      background: rgba(176,138,62,.13);
       color: var(--ink);
-      border-radius: 50px;
+      border-radius: 4px;
       padding: 4px 12px;
-      font-size: .78rem;
+      font-size: .76rem;
       font-weight: 600;
     }
 
     /* ─── Mid CTA ─── */
     .mid-cta {
-      background: var(--sky);
-      padding: 64px 24px;
+      background: var(--wine);
+      padding: 72px 24px;
       text-align: center;
     }
-    .mid-cta h2 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 700; color: var(--ink); margin-bottom: 14px; }
-    .mid-cta p { color: var(--muted); font-size: 1.05rem; margin-bottom: 30px; max-width: 520px; margin-right: auto; margin-left: auto; line-height: 1.6; }
+    .mid-cta h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); font-weight: 700; color: var(--cream); margin-bottom: 14px; }
+    .mid-cta p { color: rgba(244,240,232,.82); font-size: 1.05rem; margin-bottom: 30px; max-width: 520px; margin-right: auto; margin-left: auto; line-height: 1.6; }
     .btn-white {
       display: inline-block;
       background: var(--butter);
-      color: var(--ink);
-      border-radius: 50px;
-      padding: 14px 36px;
+      color: #2b2620;
+      border-radius: 4px;
+      padding: 15px 38px;
       font-size: 1rem;
-      font-weight: 700;
+      font-weight: 600;
+      letter-spacing: .03em;
       font-family: 'Assistant', sans-serif;
-      transition: transform .15s, box-shadow .15s;
+      transition: transform .15s, box-shadow .15s, background .2s;
     }
-    .btn-white:hover { background: var(--peach); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(110,36,23,.18); }
+    .btn-white:hover { background: var(--gold-soft); transform: translateY(-2px); box-shadow: 0 10px 26px -14px rgba(0,0,0,.5); }
 
     /* ─── Masonry Gallery ─── */
     .gallery { background: var(--cream-dark); }
@@ -444,7 +461,7 @@
       padding: 80px 24px;
       overflow: hidden;
     }
-    .testimonials .section-tag { background: rgba(110,36,23,.12); color: var(--ink); }
+    .testimonials .section-tag { background: transparent; color: var(--gold); }
     .testimonials .section-title { color: var(--ink); }
     .testimonials .section-sub { color: var(--muted); max-width: 520px; }
     .t-carousel-wrap {
@@ -464,8 +481,7 @@
       min-width: 0;
     }
     .tcard-inner {
-      background: var(--butter);
-      border: none;
+      background: var(--card);
       border-radius: var(--radius);
       padding: 28px 24px;
       box-shadow: var(--shadow-lg);
@@ -634,16 +650,17 @@
     .sticky-bar p { color: var(--cream); font-size: .95rem; font-weight: 600; }
     .sticky-bar-btn {
       background: var(--butter);
-      color: var(--ink);
-      border-radius: 50px;
+      color: #2b2620;
+      border-radius: 4px;
       padding: 10px 24px;
       font-size: .9rem;
-      font-weight: 700;
+      font-weight: 600;
+      letter-spacing: .03em;
       font-family: 'Assistant', sans-serif;
       white-space: nowrap;
       transition: transform .15s, background .2s;
     }
-    .sticky-bar-btn:hover { transform: translateY(-1px); background: var(--peach); }
+    .sticky-bar-btn:hover { transform: translateY(-1px); background: var(--gold-soft); }
 
     /* ─── Lightbox ─── */
     .lightbox-overlay {
@@ -722,6 +739,20 @@
       .sticky-bar p { font-size: .85rem; }
       .hero-btns { flex-direction: column; align-items: center; }
     }
+
+    /* ─── Editorial card borders & accents ─── */
+    .step, .activity-card, .faq-item, .tcard-inner, .solution-badge { border: 1px solid var(--card-border); }
+    .footer-latin {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: .62rem;
+      letter-spacing: .32em;
+      color: rgba(246,239,216,.45);
+      margin-bottom: 12px;
+    }
+    @media (max-width: 600px) {
+      .step-num { font-size: 3rem; }
+    }
   </style>
 </head>
 <body>
@@ -757,7 +788,7 @@
     <span class="hero-eyebrow">ימי גיבוש ופעילויות קבוצתיות</span>
     <h1>יום גיבוש שהצוות שלכם<br><em>ישמע עליו שנים</em></h1>
     <p class="hero-sub">
-      חוויה של יצירה, יין ונוף פתוח בלב יקב מטלר —<br>
+      חוויה של יצירה, יין ונוף פתוח בלב יקב מטלר -<br>
       לקבוצות עובדים, חברים ומשפחות שמחפשים משהו אמיתי.
     </p>
     <div class="hero-btns">
@@ -782,28 +813,28 @@
         <h2 class="section-title">לפעמים יום גיבוש<br>מרגיש כמו עוד ישיבה</h2>
         <div class="pain-items">
           <div class="pain-item">
-            <div class="pain-icon">—</div>
+            <div class="pain-icon">-</div>
             <div class="pain-item-text">
               <strong>פעילויות שכולם כבר עשו</strong>
-              <p>קארטינג, רכיבה אתגרית — יפה לפעם ראשונה, אבל הצוות כבר מכיר את התסריט מראש.</p>
+              <p>קארטינג, רכיבה אתגרית - יפה לפעם ראשונה, אבל הצוות כבר מכיר את התסריט מראש.</p>
             </div>
           </div>
           <div class="pain-item">
-            <div class="pain-icon">—</div>
+            <div class="pain-icon">-</div>
             <div class="pain-item-text">
               <strong>קשה למצוא חוויה שמחברת אנשים</strong>
-              <p>לא כולם אוהבים ספורט, לא כולם אוהבים שקט. לצאת לאמצע — קשה.</p>
+              <p>לא כולם אוהבים ספורט, לא כולם אוהבים שקט. לצאת לאמצע - קשה.</p>
             </div>
           </div>
           <div class="pain-item">
-            <div class="pain-icon">—</div>
+            <div class="pain-icon">-</div>
             <div class="pain-item-text">
               <strong>ארגון מורכב מדי</strong>
-              <p>לוגיסטיקה, ספקים, תיאומים — מה שאמור להיות כיף הופך למשימה.</p>
+              <p>לוגיסטיקה, ספקים, תיאומים - מה שאמור להיות כיף הופך למשימה.</p>
             </div>
           </div>
         </div>
-        <p class="pain-quote">"חיפשנו משהו שיגרום לצוות להרגיש טוב — לא עוד אירוע שצריך לסבול אותו."</p>
+        <p class="pain-quote">"חיפשנו משהו שיגרום לצוות להרגיש טוב - לא עוד אירוע שצריך לסבול אותו."</p>
       </div>
       <div class="pain-image-wrap">
         <img src="images/team-building/pain-image.jpeg" alt="יקב מטלר בשקיעה" loading="lazy" />
@@ -825,32 +856,32 @@
       </div>
       <div>
         <span class="section-tag">החוויה שלנו</span>
-        <h2 class="section-title">יצירה + יין + נוף —<br>שילוב שעובד</h2>
+        <h2 class="section-title">יצירה + יין + נוף -<br>שילוב שעובד</h2>
         <p class="section-sub">
           הגעתם, פתחתם בקבוק, ישבתם ביחד סביב קאנווס.
-          אין תחרות, אין "נכון" ו"לא נכון" —
+          אין תחרות, אין "נכון" ו"לא נכון" -
           רק שעה-שעתיים שבהן אנשים פשוט נושמים.
         </p>
         <div class="solution-points">
           <div class="solution-point">
             <div class="solution-dot"></div>
-            <p><strong>יין ביתי ממש מהיקב</strong> — שתייה שמגיעה עם סיפור</p>
+            <p><strong>יין ביתי ממש מהיקב</strong> - שתייה שמגיעה עם סיפור</p>
           </div>
           <div class="solution-point">
             <div class="solution-dot"></div>
-            <p><strong>פעילות יצירה לבחירה</strong> — קאנווס, עציצים או צבעי מים</p>
+            <p><strong>פעילות יצירה לבחירה</strong> - קאנווס, עציצים או צבעי מים</p>
           </div>
           <div class="solution-point">
             <div class="solution-dot"></div>
-            <p><strong>כיבוד שמחכה עליכם</strong> — ואופציית בראנץ' מלא</p>
+            <p><strong>כיבוד שמחכה עליכם</strong> - ואופציית בראנץ' מלא</p>
           </div>
           <div class="solution-point">
             <div class="solution-dot"></div>
-            <p><strong>כל אחד חוזר עם יצירה</strong> — זיכרון שנשאר</p>
+            <p><strong>כל אחד חוזר עם יצירה</strong> - זיכרון שנשאר</p>
           </div>
           <div class="solution-point">
             <div class="solution-dot"></div>
-            <p><strong>אנחנו מסדרים הכל</strong> — אתם רק מגיעים</p>
+            <p><strong>אנחנו מסדרים הכל</strong> - אתם רק מגיעים</p>
           </div>
         </div>
       </div>
@@ -867,19 +898,19 @@
       <div class="step">
         <div class="step-num">1</div>
         <h3>בחרו את הפעילות</h3>
-        <p>קאנווס, עציצים, או צבעי מים — שולחים לנו הודעה ומחליטים ביחד מה מתאים לקבוצה.</p>
+        <p>קאנווס, עציצים, או צבעי מים - שולחים לנו הודעה ומחליטים ביחד מה מתאים לקבוצה.</p>
         <span class="step-arrow">‹</span>
       </div>
       <div class="step">
         <div class="step-num">2</div>
         <h3>הגיעו ליקב</h3>
-        <p>אנחנו מכינים הכל מראש — חומרי יצירה, יין, כיבוד ואווירה. אתם מגיעים ומתחילים ליהנות.</p>
+        <p>אנחנו מכינים הכל מראש - חומרי יצירה, יין, כיבוד ואווירה. אתם מגיעים ומתחילים ליהנות.</p>
         <span class="step-arrow">‹</span>
       </div>
       <div class="step">
         <div class="step-num">3</div>
         <h3>צרו, שתו, חזרו</h3>
-        <p>שעתיים של יצירה ושיחות טובות — וכל אחד חוזר הביתה עם יצירה אישית ביד.</p>
+        <p>שעתיים של יצירה ושיחות טובות - וכל אחד חוזר הביתה עם יצירה אישית ביד.</p>
       </div>
     </div>
   </div>
@@ -891,7 +922,7 @@
     <div style="text-align:center; margin-bottom:0;">
       <span class="section-tag">הפעילויות שלנו</span>
       <h2 class="section-title">בחרו את החוויה שמתאימה לכם</h2>
-      <p class="section-sub" style="margin: 0 auto;">שלוש אפשרויות יצירה — כולן מתאימות גם למי שלא מצייר מאז כיתה ד'.</p>
+      <p class="section-sub" style="margin: 0 auto;">שלוש אפשרויות יצירה - כולן מתאימות גם למי שלא מצייר מאז כיתה ד'.</p>
     </div>
     <div class="activities-grid">
 
@@ -902,7 +933,7 @@
         </div>
         <div class="activity-body">
           <h3>ציור על קאנווס</h3>
-          <p>כל אחד מקבל קאנווס, צבעים ומכחול — ומצייר בדיוק מה שמרגיש נכון לו. אין טעויות, יש רק יצירה. המדריכה מלווה וכולם חוזרים עם ציור לתלות בבית.</p>
+          <p>כל אחד מקבל קאנווס, צבעים ומכחול - ומצייר בדיוק מה שמרגיש נכון לו. אין טעויות, יש רק יצירה. המדריכה מלווה וכולם חוזרים עם ציור לתלות בבית.</p>
           <div class="activity-tags">
             <span class="activity-tag">מתאים לכולם</span>
             <span class="activity-tag">לוקח הביתה</span>
@@ -930,7 +961,7 @@
         </div>
         <div class="activity-body">
           <h3>ציור בצבעי מים</h3>
-          <p>טכניקה עדינה ומרגיעה שמתאימה גם לאלה שאומרים "אני לא אמן בחיים". צבעי המים עושים את העבודה — אתם רק נושמים ונותנים לצבע לזרום.</p>
+          <p>טכניקה עדינה ומרגיעה שמתאימה גם לאלה שאומרים "אני לא אמן בחיים". צבעי המים עושים את העבודה - אתם רק נושמים ונותנים לצבע לזרום.</p>
           <div class="activity-tags">
             <span class="activity-tag">טכניקה קלה</span>
             <span class="activity-tag">מדיטטיבי</span>
@@ -945,7 +976,7 @@
 <!-- ─── Mid CTA ─── -->
 <section class="mid-cta">
   <h2>מחפשים משהו שיישאר בזיכרון?</h2>
-  <p>שולחים לנו הודעה עם מספר המשתתפים והתאריך — ואנחנו מכינים לכם הצעה אישית.</p>
+  <p>שולחים לנו הודעה עם מספר המשתתפים והתאריך - ואנחנו מכינים לכם הצעה אישית.</p>
   <a href="https://wa.me/972515900544?text=%D7%A9%D7%9C%D7%95%D7%9D!%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%9F%2F%D7%AA%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A2%D7%9C%20%D7%99%D7%95%D7%9D%20%D7%92%D7%99%D7%91%D7%95%D7%A9%20%D7%91%D7%99%D7%A7%D7%91%20%D7%9E%D7%98%D7%9C%D7%A8" class="btn-white" target="_blank">שלחו הודעה בוואטסאפ</a>
 </section>
 
@@ -954,7 +985,7 @@
   <div class="section-inner" style="text-align:center;">
     <span class="section-tag">גלריה</span>
     <h2 class="section-title">הצצה לאווירה</h2>
-    <p class="section-sub" style="margin: 0 auto;">כי המראה של בוקר ביקב עם כוס יין ביד — מסביר יותר מכל מילה.</p>
+    <p class="section-sub" style="margin: 0 auto;">כי המראה של בוקר ביקב עם כוס יין ביד - מסביר יותר מכל מילה.</p>
   </div>
   <div class="masonry-grid">
     <div class="photo-thumb" data-index="0"><img src="images/team-building/gallery-1.jpg" alt="גלריה 1" loading="lazy" /></div>
@@ -973,7 +1004,7 @@
   <div style="max-width:1080px; margin:0 auto;">
     <span class="section-tag">מה אומרים עלינו</span>
     <h2 class="section-title">קבוצות שכבר היו אצלנו</h2>
-    <p class="section-sub">כי הדרך הכי טובה לדעת מה מחכה לכם — לשמוע ממי שכבר חווה.</p>
+    <p class="section-sub">כי הדרך הכי טובה לדעת מה מחכה לכם - לשמוע ממי שכבר חווה.</p>
     <div class="t-carousel-wrap">
       <div class="t-overflow" dir="ltr">
         <div class="t-track" id="tTrack">
@@ -983,7 +1014,7 @@
               <div class="t-stars">
                 <span class="star-icon">★</span><span class="star-icon">★</span><span class="star-icon">★</span><span class="star-icon">★</span><span class="star-icon">★</span>
               </div>
-              <p class="tcard-text">"לא ציפינו שיום גיבוש יוציא כזה חיוך מהצוות. גם מי שאמר 'אני לא אמן בחיים' חזר עם ציור שתלה בבית. האווירה ביקב — פשוט אין מילים."</p>
+              <p class="tcard-text">"לא ציפינו שיום גיבוש יוציא כזה חיוך מהצוות. גם מי שאמר 'אני לא אמן בחיים' חזר עם ציור שתלה בבית. האווירה ביקב - פשוט אין מילים."</p>
               <div class="tcard-author">
                 <div class="tcard-avatar">מ</div>
                 <div>
@@ -999,7 +1030,7 @@
               <div class="t-stars">
                 <span class="star-icon">★</span><span class="star-icon">★</span><span class="star-icon">★</span><span class="star-icon">★</span><span class="star-icon">★</span>
               </div>
-              <p class="tcard-text">"עשינו ציום צוות של 14 איש — ציור על קאנווס עם יין. כולם כבר שואלים מתי חוזרים. הייתה אווירה מדהימה שאי אפשר להסביר, צריך לחוות."</p>
+              <p class="tcard-text">"עשינו ציום צוות של 14 איש - ציור על קאנווס עם יין. כולם כבר שואלים מתי חוזרים. הייתה אווירה מדהימה שאי אפשר להסביר, צריך לחוות."</p>
               <div class="tcard-author">
                 <div class="tcard-avatar">ר</div>
                 <div>
@@ -1015,7 +1046,7 @@
               <div class="t-stars">
                 <span class="star-icon">★</span><span class="star-icon">★</span><span class="star-icon">★</span><span class="star-icon">★</span><span class="star-icon">★</span>
               </div>
-              <p class="tcard-text">"הדבר הכי טוב שאירגנו לצוות שלנו. היין היה נהדר, הפעילות — מפתיעה כמה שמחברת בין אנשים שעובדים יחד שנים ועדיין גילו דברים חדשים."</p>
+              <p class="tcard-text">"הדבר הכי טוב שאירגנו לצוות שלנו. היין היה נהדר, הפעילות - מפתיעה כמה שמחברת בין אנשים שעובדים יחד שנים ועדיין גילו דברים חדשים."</p>
               <div class="tcard-author">
                 <div class="tcard-avatar">י</div>
                 <div>
@@ -1031,7 +1062,7 @@
               <div class="t-stars">
                 <span class="star-icon">★</span><span class="star-icon">★</span><span class="star-icon">★</span><span class="star-icon">★</span><span class="star-icon">★</span>
               </div>
-              <p class="tcard-text">"גיבוש של 10 חברים — גילאים מעורבים, טעמים שונים. כולם נשבו. ציור העציצים היה כה מרגיע שלא הרגשנו בכמה שעות עברו. ממליצה בחום."</p>
+              <p class="tcard-text">"גיבוש של 10 חברים - גילאים מעורבים, טעמים שונים. כולם נשבו. ציור העציצים היה כה מרגיע שלא הרגשנו בכמה שעות עברו. ממליצה בחום."</p>
               <div class="tcard-author">
                 <div class="tcard-avatar">נ</div>
                 <div>
@@ -1063,7 +1094,7 @@
               <div class="t-stars">
                 <span class="star-icon">★</span><span class="star-icon">★</span><span class="star-icon">★</span><span class="star-icon">★</span><span class="star-icon">★</span>
               </div>
-              <p class="tcard-text">"ארגנו יום גיבוש לצוות של 18 איש — חלק ספקנים מראש. אחרי שעה כולם היו שקועים בציור. בסוף היום לאה בדקה שכולם בסדר ולא רצו ללכת."</p>
+              <p class="tcard-text">"ארגנו יום גיבוש לצוות של 18 איש - חלק ספקנים מראש. אחרי שעה כולם היו שקועים בציור. בסוף היום לאה בדקה שכולם בסדר ולא רצו ללכת."</p>
               <div class="tcard-author">
                 <div class="tcard-avatar">א</div>
                 <div>
@@ -1099,7 +1130,7 @@
         <span>לכמה משתתפים מתאים הגיבוש?</span>
         <span class="faq-icon">+</span>
       </div>
-      <div class="faq-a">הסדנאות מתאימות לקבוצות של 5 עד 20 משתתפים. זה הגודל שמאפשר אינטימיות, שיחות טובות ותשומת לב אישית — ועדיין מרגיש כמו ארוע.</div>
+      <div class="faq-a">הסדנאות מתאימות לקבוצות של 5 עד 20 משתתפים. זה הגודל שמאפשר אינטימיות, שיחות טובות ותשומת לב אישית - ועדיין מרגיש כמו ארוע.</div>
     </div>
 
     <div class="faq-item">
@@ -1107,7 +1138,7 @@
         <span>מה כלול בפעילות?</span>
         <span class="faq-icon">+</span>
       </div>
-      <div class="faq-a">כלול: פעילות יצירה מלאה (חומרים, הדרכה, ליווי), יין ביתי מהיקב, וכיבוד. ניתן להוסיף ארוחת בראנץ' — זו אופציה שאנחנו מכינים בשמחה לפי בקשה.</div>
+      <div class="faq-a">כלול: פעילות יצירה מלאה (חומרים, הדרכה, ליווי), יין ביתי מהיקב, וכיבוד. ניתן להוסיף ארוחת בראנץ' - זו אופציה שאנחנו מכינים בשמחה לפי בקשה.</div>
     </div>
 
     <div class="faq-item">
@@ -1115,7 +1146,7 @@
         <span>האם צריך ניסיון ביצירה?</span>
         <span class="faq-icon">+</span>
       </div>
-      <div class="faq-a">ממש לא. כל הפעילויות מותאמות לכל רמה — כולל מי שלא ציייר מכיתה ד'. המדריכה מלווה כל אחד בקצב שלו, ואין שום ציפייה ל"תוצר מושלם". יש ציפייה לכיף.</div>
+      <div class="faq-a">ממש לא. כל הפעילויות מותאמות לכל רמה - כולל מי שלא ציייר מכיתה ד'. המדריכה מלווה כל אחד בקצב שלו, ואין שום ציפייה ל"תוצר מושלם". יש ציפייה לכיף.</div>
     </div>
 
     <div class="faq-item">
@@ -1123,7 +1154,7 @@
         <span>איפה נמצא יקב מטלר?</span>
         <span class="faq-icon">+</span>
       </div>
-      <div class="faq-a">היקב ממוקם במושב עגור — כ-45 דקות מתל אביב או מירושלים, כ-40 דקות מאשקלון ובאר שבע. נוף פתוח, כרמים, ואוויר שמיד עושה את העבודה.</div>
+      <div class="faq-a">היקב ממוקם במושב עגור - כ-45 דקות מתל אביב או מירושלים, כ-40 דקות מאשקלון ובאר שבע. נוף פתוח, כרמים, ואוויר שמיד עושה את העבודה.</div>
     </div>
 
     <div class="faq-item">
@@ -1131,7 +1162,7 @@
         <span>האם ניתן לשלב ארוחת בראנץ'?</span>
         <span class="faq-icon">+</span>
       </div>
-      <div class="faq-a">כן. ארוחת בראנץ' היא תוספת מאוד פופולרית — שולחן ארוך, אוכל ביתי, אוויר פתוח. מדברים על הפרטים יחד בבניית ההצעה האישית שלכם.</div>
+      <div class="faq-a">כן. ארוחת בראנץ' היא תוספת מאוד פופולרית - שולחן ארוך, אוכל ביתי, אוויר פתוח. מדברים על הפרטים יחד בבניית ההצעה האישית שלכם.</div>
     </div>
 
     <div class="faq-item">
@@ -1139,7 +1170,7 @@
         <span>איך מזמינים?</span>
         <span class="faq-icon">+</span>
       </div>
-      <div class="faq-a">שולחים לנו הודעה בוואטסאפ עם מספר המשתתפים, תאריך מועדף ופעילות שבחרתם — ואנחנו מחזירים הצעת מחיר אישית בתוך 24 שעות.</div>
+      <div class="faq-a">שולחים לנו הודעה בוואטסאפ עם מספר המשתתפים, תאריך מועדף ופעילות שבחרתם - ואנחנו מחזירים הצעת מחיר אישית בתוך 24 שעות.</div>
     </div>
 
   </div>
@@ -1150,7 +1181,7 @@
   <img src="images/logo-mettler.png" alt="Mettler Winery" style="height:90px; width:auto; margin:0 auto 36px; display:block; mix-blend-mode:multiply;" />
   <h2>מוכנים לתכנן <em>יום שיישאר?</em></h2>
   <p>
-    שלחו לנו הודעה קצרה — גודל קבוצה, תאריך ופעילות שמעניינת אתכם.
+    שלחו לנו הודעה קצרה - גודל קבוצה, תאריך ופעילות שמעניינת אתכם.
     אנחנו נחזור עם הצעה אישית ונבנה ביחד חוויה שתרגישו אותה עוד הרבה זמן.
   </p>
   <div class="final-btns">
@@ -1177,12 +1208,13 @@
       </svg>
     </a>
   </div>
+  <p class="footer-latin ltr">L&amp;H METTLER · FARM &amp; WINERY · ISRAEL</p>
   <p>© 2026 יקב מטלר · מושב עגור · <a href="tel:0515900544">051-5900544</a></p>
 </footer>
 
 <!-- ─── Sticky Bar ─── -->
 <div class="sticky-bar" id="stickyBar">
-  <p>גיבוש ביקב מטלר — יין, יצירה ונוף פתוח</p>
+  <p>גיבוש ביקב מטלר - יין, יצירה ונוף פתוח</p>
   <a href="https://wa.me/972515900544?text=%D7%A9%D7%9C%D7%95%D7%9D!%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%9F%2F%D7%AA%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A2%D7%9C%20%D7%99%D7%95%D7%9D%20%D7%92%D7%99%D7%91%D7%95%D7%A9%20%D7%91%D7%99%D7%A7%D7%91%20%D7%9E%D7%98%D7%9C%D7%A8" class="sticky-bar-btn" target="_blank">בקשו הצעת מחיר</a>
 </div>
 
