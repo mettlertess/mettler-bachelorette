@@ -3,17 +3,121 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>מסיבת רווקות ביקב מטלר | יצירה, יין ונוף</title>
+  <title>מסיבת רווקות ביקב מטלר | סדנאות יצירה, יין ונוף במושב עגור</title>
+  <meta name="description" content="מסיבת רווקות שלא תשכחו ביקב מטלר, מושב עגור - סדנאות יצירה בשילוב יין ונוף כרמים. ציור, אקוורל, רקמה ועוד. כל משתתפת יוצאת עם יצירה אישית. לתיאום בוואטסאפ." />
+  <meta name="keywords" content="מסיבת רווקות, סדנאות יצירה, יקב מטלר, מושב עגור, סדנת ציור, אקוורל, רקמה, מסיבת רווקות שונה, רווקות ביקב, סדנה לקבוצת נשים" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="יקב מטלר" />
+  <meta name="theme-color" content="#FDF6F0" />
+  <link rel="canonical" href="https://mettler-winery.vercel.app/" />
+
+  <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="מסיבת רווקות ביקב מטלר | יצירה, יין ונוף" />
-  <meta property="og:description" content="מסיבת רווקות שלא תשכחו — ביקב בוטיק עם יצירה, יין ונוף כפרי מרהיב." />
+  <meta property="og:site_name" content="יקב מטלר" />
+  <meta property="og:title" content="מסיבת רווקות ביקב מטלר | סדנאות יצירה, יין ונוף" />
+  <meta property="og:description" content="מסיבת רווקות שלא תשכחו - ביקב בוטיק עם יצירה, יין ונוף כפרי מרהיב. כל משתתפת יוצאת עם יצירה אישית שנשארת." />
   <meta property="og:image" content="https://mettler-winery.vercel.app/images/bachelorette/winery-hero.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="מסיבת רווקות עם סדנת יצירה ביקב מטלר" />
   <meta property="og:url" content="https://mettler-winery.vercel.app/" />
   <meta property="og:locale" content="he_IL" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="מסיבת רווקות ביקב מטלר | סדנאות יצירה, יין ונוף" />
+  <meta name="twitter:description" content="מסיבת רווקות שלא תשכחו - ביקב בוטיק עם יצירה, יין ונוף כפרי מרהיב." />
+  <meta name="twitter:image" content="https://mettler-winery.vercel.app/images/bachelorette/winery-hero.jpg" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Alef:wght@400;700&family=Assistant:wght@300;400;500;600;700;800&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet" />
+
+  <!-- ─── SCHEMA / STRUCTURED DATA ─── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["LocalBusiness", "Winery"],
+        "@id": "https://mettler-winery.vercel.app/#business",
+        "name": "יקב מטלר",
+        "url": "https://www.mettler-winery.com/",
+        "image": "https://mettler-winery.vercel.app/images/bachelorette/winery-hero.jpg",
+        "telephone": "+972-51-5900544",
+        "priceRange": "₪₪",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "משק 18",
+          "addressLocality": "מושב עגור",
+          "postalCode": "9979500",
+          "addressCountry": "IL"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "31.6949388",
+          "longitude": "34.913161"
+        },
+        "sameAs": [
+          "https://www.instagram.com/mettler_winery",
+          "https://www.mettler-winery.com/"
+        ]
+      },
+      {
+        "@type": "Service",
+        "@id": "https://mettler-winery.vercel.app/#bachelorette",
+        "name": "מסיבת רווקות עם סדנת יצירה ביקב מטלר",
+        "serviceType": "מסיבת רווקות וסדנת יצירה",
+        "description": "מסיבת רווקות בוטיק ביקב מטלר במושב עגור, בשילוב סדנת יצירה בהדרכה צמודה, יין ונוף כרמים. שש סדנאות לבחירה: ציור על כוסות יין, ציור עציצים, רקמה בוטנית, רקמת חרוזים, פאנץ' נידל וציור אקוורל. ללא ניסיון קודם, לקבוצות של 5 עד 20 משתתפות, כשעתיים וחצי של יצירה.",
+        "provider": { "@id": "https://mettler-winery.vercel.app/#business" },
+        "areaServed": { "@type": "Place", "name": "ישראל" },
+        "audience": { "@type": "Audience", "audienceType": "קבוצות נשים, כלות, חברות" },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5.0",
+          "bestRating": "5",
+          "ratingCount": "47"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://mettler-winery.vercel.app/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "צריך ניסיון קודם?",
+            "acceptedAnswer": { "@type": "Answer", "text": "ממש לא. הסדנאות מיועדות לכולן, גם למי שמעולם לא אחזה במברשת צבע. טס מלווה את כולן צעד אחר צעד." }
+          },
+          {
+            "@type": "Question",
+            "name": "מה מביאים לסדנה?",
+            "acceptedAnswer": { "@type": "Answer", "text": "רק את עצמכן. כל חומרי היצירה כלולים: צבעים, מברשות, עציצים, חוטים. הכל מוכן." }
+          },
+          {
+            "@type": "Question",
+            "name": "איפה בדיוק מתקיימת הסדנה?",
+            "acceptedAnswer": { "@type": "Answer", "text": "יקב מטלר, מושב עגור. המיקום המדויק והנגישות יישלחו אליכן לאחר תיאום." }
+          },
+          {
+            "@type": "Question",
+            "name": "אפשר לשלב כמה סדנאות באותו יום?",
+            "acceptedAnswer": { "@type": "Answer", "text": "בהחלט. נחשוב יחד מה מתאים לקבוצה שלכן ונבנה את היום המושלם." }
+          },
+          {
+            "@type": "Question",
+            "name": "האם יש יין וכיבוד בסדנה?",
+            "acceptedAnswer": { "@type": "Answer", "text": "כן. יין וכיבוד זמינים בהתאם לתפריט היקב, בתשלום נפרד. טס תשמח לרכז את זה יחד עם הזמנת הסדנה." }
+          },
+          {
+            "@type": "Question",
+            "name": "איך מזמינים?",
+            "acceptedAnswer": { "@type": "Answer", "text": "שולחות הודעה בוואטסאפ ל-051-5900544 ואנחנו מסדרות את כל השאר: תאריך, סדנה ומספר משתתפות." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -50,9 +154,13 @@
     }
 
     h1, h2, h3, h4 {
-      font-family: 'Assistant', sans-serif;
-      line-height: 1.35;
+      font-family: 'Alef', sans-serif;
+      font-weight: 700;
+      line-height: 1.3;
     }
+
+    /* Latin micro-labels (numerals, eyebrows) */
+    .ltr { direction: ltr; unicode-bidi: isolate; letter-spacing: .04em; }
 
     img { display: block; width: 100%; object-fit: cover; }
 
@@ -97,9 +205,10 @@
       background: var(--brown);
       color: var(--ink);
       padding: 9px 20px;
-      border-radius: 50px;
+      border-radius: 4px;
       font-size: 14px;
       font-weight: 700;
+      letter-spacing: .02em;
       transition: background .2s;
       white-space: nowrap;
     }
@@ -142,14 +251,11 @@
 
     .hero-tag {
       display: inline-block;
-      background: var(--pink);
-      color: var(--brown-dark);
+      color: var(--terra-dark);
       font-size: 13px;
       font-weight: 600;
-      padding: 5px 16px;
-      border-radius: 50px;
-      margin-bottom: 28px;
-      letter-spacing: .03em;
+      margin-bottom: 24px;
+      letter-spacing: .22em;
     }
 
     .hero h1 {
@@ -184,9 +290,10 @@
       background: var(--brown);
       color: var(--ink);
       padding: 14px 32px;
-      border-radius: 50px;
+      border-radius: 4px;
       font-size: 16px;
       font-weight: 700;
+      letter-spacing: .03em;
       font-family: 'Assistant', sans-serif;
       transition: background .2s, transform .15s;
       display: inline-flex;
@@ -202,10 +309,11 @@
       background: transparent;
       color: var(--ink);
       padding: 14px 28px;
-      border-radius: 50px;
+      border-radius: 4px;
       font-size: 16px;
       font-weight: 600;
-      border: 2px solid var(--terra);
+      letter-spacing: .03em;
+      border: 1px solid var(--terra);
       transition: all .2s;
       display: inline-flex;
       align-items: center;
@@ -243,8 +351,7 @@
     .section-tag {
       font-size: 13px;
       font-weight: 600;
-      letter-spacing: .08em;
-      text-transform: uppercase;
+      letter-spacing: .16em;
       color: var(--terra);
       margin-bottom: 12px;
       display: block;
@@ -368,6 +475,7 @@
 
     .step {
       background: var(--white);
+      border: 1px solid rgba(193,127,90,.16);
       border-radius: var(--radius);
       padding: 36px 28px;
       box-shadow: var(--shadow);
@@ -376,17 +484,12 @@
     }
 
     .step-num {
-      width: 52px; height: 52px;
-      border-radius: 50%;
-      background: var(--cream-dark);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 20px;
-      font-family: 'Assistant', sans-serif;
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: var(--brown);
+      margin: 0 auto 8px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 3.4rem;
+      font-weight: 200;
+      line-height: 1;
+      color: var(--terra);
     }
 
     .step h3 {
@@ -425,6 +528,7 @@
 
     .workshop-card {
       background: var(--white);
+      border: 1px solid rgba(193,127,90,.16);
       border-radius: var(--radius);
       overflow: hidden;
       box-shadow: var(--shadow);
@@ -523,95 +627,6 @@
       padding: 4px 12px;
       border-radius: 50px;
     }
-
-    /* ─── PRICING ─── */
-    .pricing {
-      background: var(--cream-dark);
-    }
-
-    .pricing-note {
-      background: var(--sage-light);
-      border-right: 4px solid var(--sage);
-      border-radius: var(--radius-sm);
-      padding: 16px 20px;
-      margin-bottom: 40px;
-      font-size: .95rem;
-      color: var(--muted);
-    }
-
-    .pricing-cards {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-    }
-
-    .price-card {
-      background: var(--white);
-      border-radius: var(--radius);
-      padding: 30px 22px;
-      box-shadow: var(--shadow);
-      text-align: center;
-    }
-
-    .price-card.featured {
-      background: var(--brown);
-      color: var(--white);
-    }
-
-    .price-card-label {
-      font-size: .88rem;
-      font-weight: 600;
-      letter-spacing: .04em;
-      color: var(--muted);
-      margin-bottom: 10px;
-    }
-
-    .price-card.featured .price-card-label { color: rgba(255,255,255,.7); }
-
-    .price-card-title {
-      font-family: 'Assistant', sans-serif;
-      font-size: 1.05rem;
-      font-weight: 600;
-      margin-bottom: 16px;
-      color: var(--ink);
-    }
-
-    .price-card.featured .price-card-title { color: var(--white); }
-
-    .price-amount {
-      font-family: 'Assistant', sans-serif;
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--brown);
-    }
-
-    .price-card.featured .price-amount { color: var(--pink); }
-
-    .price-amount-sub {
-      font-size: .85rem;
-      color: var(--muted);
-      margin-top: 4px;
-    }
-
-    .price-card.featured .price-amount-sub { color: rgba(255,255,255,.6); }
-
-    .price-includes {
-      margin-top: 18px;
-      font-size: .88rem;
-      color: var(--muted);
-      line-height: 1.6;
-    }
-
-    .price-card.featured .price-includes { color: rgba(255,255,255,.75); }
-
-    .pricing-footer {
-      margin-top: 32px;
-      text-align: center;
-      font-size: .95rem;
-      color: var(--muted);
-    }
-
-    .pricing-footer strong { color: var(--brown); }
 
     /* ─── PHOTOS STRIP ─── */
     /* ─── MASONRY GALLERY ─── */
@@ -1256,8 +1271,6 @@
       .step-arrow { display: none; }
 
       .workshops-grid { grid-template-columns: 1fr 1fr; }
-
-      .pricing-cards { grid-template-columns: 1fr 1fr; }
     }
 
     @media (max-width: 600px) {
@@ -1268,8 +1281,6 @@
       .hero-content { padding: 50px 20px; }
 
       .workshops-grid { grid-template-columns: 1fr; }
-
-      .pricing-cards { grid-template-columns: 1fr; }
 
       .photos-row {
         overflow-x: auto;
@@ -1320,7 +1331,7 @@
         </a>
       </div>
       <div class="hero-badges">
-        <span class="badge"><span class="badge-dot"></span> 5–20 משתתפות</span>
+        <span class="badge"><span class="badge-dot"></span> 5-20 משתתפות</span>
         <span class="badge"><span class="badge-dot"></span> כ-2.5 שעות יצירה</span>
         <span class="badge"><span class="badge-dot"></span> ללא ניסיון קודם</span>
         <span class="badge"><span class="badge-dot"></span> מושב עגור</span>
@@ -1428,7 +1439,6 @@
           <div class="workshop-meta">
             <span class="workshop-tag">עד 10 משתתפות</span>
             <span class="workshop-tag">2.5 שעות</span>
-            <span class="workshop-tag">מ-1,600 ₪</span>
           </div>
         </div>
       </div>
@@ -1443,7 +1453,6 @@
           <div class="workshop-meta">
             <span class="workshop-tag">עד 20 משתתפות</span>
             <span class="workshop-tag">2.5 שעות</span>
-            <span class="workshop-tag">מ-1,200 ₪</span>
           </div>
         </div>
       </div>
@@ -1458,7 +1467,6 @@
           <div class="workshop-meta">
             <span class="workshop-tag">עד 10 משתתפות</span>
             <span class="workshop-tag">2.5 שעות</span>
-            <span class="workshop-tag">מ-2,000 ₪</span>
           </div>
         </div>
       </div>
@@ -1473,7 +1481,6 @@
           <div class="workshop-meta">
             <span class="workshop-tag">עד 10 משתתפות</span>
             <span class="workshop-tag">2.5 שעות</span>
-            <span class="workshop-tag">מ-2,200 ₪</span>
           </div>
         </div>
       </div>
@@ -1488,7 +1495,6 @@
           <div class="workshop-meta">
             <span class="workshop-tag">עד 10 משתתפות</span>
             <span class="workshop-tag">2.5 שעות</span>
-            <span class="workshop-tag">לפי תיאום</span>
           </div>
         </div>
       </div>
@@ -1500,11 +1506,10 @@
         </div>
         <div class="workshop-body">
           <h3>ציור אקוורל ביקב</h3>
-          <p>צבעי מים על נוף הכרמים. יוצרות ציור אישי עם נוף יקב מטלר — חוויה שנשמרת בפריים.</p>
+          <p>צבעי מים על נוף הכרמים. יוצרות ציור אישי עם נוף יקב מטלר - חוויה שנשמרת בפריים.</p>
           <div class="workshop-meta">
             <span class="workshop-tag">עד 15 משתתפות</span>
             <span class="workshop-tag">2.5 שעות</span>
-            <span class="workshop-tag">מ-1,800 ₪</span>
           </div>
         </div>
       </div>
@@ -1535,51 +1540,6 @@
     <div class="photo-thumb"><img src="images/bachelorette/gallery-7.jpg" alt="ביקב מטלר" /></div>
   </div>
 </div>
-
-<!-- ─── PRICING ─── -->
-<section class="pricing" id="pricing">
-  <div class="container">
-    <span class="section-tag">מחירים</span>
-    <h2 class="section-title">כמה זה עולה?</h2>
-    <div class="pricing-note">
-      המחיר משתנה לפי סוג הסדנה וגודל הקבוצה. הטבלה מציגה טווח. דברי איתנו לקבלת מחיר מדויק לסדנה שבחרתם.
-    </div>
-    <div class="pricing-cards">
-      <div class="price-card">
-        <div class="price-card-label">BOUTIQUE</div>
-        <div class="price-card-title">סדנת בוטיק</div>
-        <div class="price-amount">1,200 ₪</div>
-        <div class="price-amount-sub">עד 6 משתתפות</div>
-        <div class="price-includes">כל החומרים כלולים<br />מחיר פיקס</div>
-      </div>
-      <div class="price-card featured">
-        <div class="price-card-label">POPULAR</div>
-        <div class="price-card-title">החוויה הקלאסית</div>
-        <div class="price-amount">1,800 ₪</div>
-        <div class="price-amount-sub">עד 10 משתתפות</div>
-        <div class="price-includes">כל החומרים כלולים<br />מחיר פיקס</div>
-      </div>
-      <div class="price-card">
-        <div class="price-card-label">GROUP+</div>
-        <div class="price-card-title">קבוצה גדולה</div>
-        <div class="price-amount">+150 ₪</div>
-        <div class="price-amount-sub">לכל משתתפת נוספת</div>
-        <div class="price-includes">מעל 10 משתתפות<br />לפי כמות</div>
-      </div>
-      <div class="price-card">
-        <div class="price-card-label">FULL GROUP</div>
-        <div class="price-card-title">חבילה ל-20</div>
-        <div class="price-amount">2,800 ₪</div>
-        <div class="price-amount-sub">קבוצה של 20</div>
-        <div class="price-includes">הנחת קבוצה<br />כל החומרים כלולים</div>
-      </div>
-    </div>
-    <p class="pricing-footer">
-      יין וכיבוד בהתאם לתפריט היקב, <strong>תשלום נפרד.</strong><br />
-      לסדנאות רקמה וחרוזים מחירים שונים, <strong>נשמח לפרט בשיחה.</strong>
-    </p>
-  </div>
-</section>
 
 <!-- ─── TESTIMONIALS ─── -->
 <section class="testimonials">
@@ -1676,7 +1636,7 @@
               <div class="tcard-stars">
                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
               </div>
-              <p class="tcard-text">"ארגנתי לחברה שלי את מסיבת הרווקות ביקב מטלר ולא יכולתי להיות מרוצה יותר. הנוף, האווירה, טס — הכל היה פשוט מושלם."</p>
+              <p class="tcard-text">"ארגנתי לחברה שלי את מסיבת הרווקות ביקב מטלר ולא יכולתי להיות מרוצה יותר. הנוף, האווירה, טס - הכל היה פשוט מושלם."</p>
               <span class="tcard-workshop">פאנץ' נידל</span>
             </div>
           </div>
@@ -1694,7 +1654,7 @@
               <div class="tcard-stars">
                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
               </div>
-              <p class="tcard-text">"הגעתי בלי ציפיות ויצאתי עם חיוך שלא עזב אותי שלושה ימים. הסביבה ביקב, הריח, הצבעים — חוויה שכל הגוף זוכר."</p>
+              <p class="tcard-text">"הגעתי בלי ציפיות ויצאתי עם חיוך שלא עזב אותי שלושה ימים. הסביבה ביקב, הריח, הצבעים - חוויה שכל הגוף זוכר."</p>
               <span class="tcard-workshop">זורעות אהבה: ציור עציצים</span>
             </div>
           </div>
@@ -1712,7 +1672,7 @@
               <div class="tcard-stars">
                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
               </div>
-              <p class="tcard-text">"מוצאת את עצמי ממליצה לכל חברה שלי — לא רק לרווקות. כל אחת שצריכה קצת אוויר וקצת יצירה, זה המקום שלה."</p>
+              <p class="tcard-text">"מוצאת את עצמי ממליצה לכל חברה שלי - לא רק לרווקות. כל אחת שצריכה קצת אוויר וקצת יצירה, זה המקום שלה."</p>
               <span class="tcard-workshop">רקמת חרוזים</span>
             </div>
           </div>
@@ -1817,7 +1777,7 @@
 <div class="sticky-bar" id="sticky-bar">
   <div class="sticky-bar-text">
     <strong>מסיבת רווקות ביקב מטלר</strong>
-    יצירה, יין ונוף. מ-1,200 ₪ לקבוצה.
+    יצירה, יין ונוף כפרי לקבוצה שלכן.
   </div>
   <a href="https://wa.me/972515900544?text=שלום!%20אני%20מעוניינת%20לשמוע%20על%20סדנת%20רווקות%20ביקב%20מטלר" class="btn-primary" target="_blank">לתיאום בוואטסאפ</a>
 </div>
