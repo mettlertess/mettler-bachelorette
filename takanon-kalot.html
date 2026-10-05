@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>תקנון כלות | יקב מטלר</title>
+  <meta name="robots" content="noindex" />
+  <meta name="description" content="תקנון ותיאום ציפיות לכלות המתארחות בסוויטות יקב מטלר, עם חתימה דיגיטלית." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="תקנון כלות | יקב מטלר" />
+  <meta property="og:description" content="מזל טוב! כמה דגשים קצרים לפני היום המיוחד שלך - ואז חתימה קטנה וזהו." />
+  <meta property="og:image" content="https://mettler-winery.vercel.app/images/og/takanon-kalot.jpg" />
+  <meta property="og:url" content="https://mettler-winery.vercel.app/takanon-kalot.html" />
+  <meta property="og:locale" content="he_IL" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Alef:wght@400;700&family=Assistant:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --paper:       #f4f0e8;
+      --cream:       #f7f4ee;
+      --white:       #ffffff;
+      --ink:         #2b2620;
+      --ink-deep:    #1b1813;
+      --muted:       #8a8378;
+      --gold:        #b08a3e;
+      --wine:        #6f343a;
+      --wine-dark:   #5a2a2f;
+      --olive:       #586a44;
+      --card-border: #e6e2d8;
+      --error:       #a3372f;
+    }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'Assistant', sans-serif;
+      font-size: 18px;
+      line-height: 1.75;
+      direction: rtl;
+    }
+
+    h1, h2, h3 { font-family: 'Alef', sans-serif; font-weight: 700; line-height: 1.3; color: var(--ink-deep); }
+
+    .wrap { max-width: 720px; margin: 0 auto; padding: 0 16px; }
+
+    /* ─── HERO ─── */
+    .hero {
+      position: relative;
+      height: 46vh;
+      min-height: 300px;
+      max-height: 460px;
+      overflow: hidden;
+    }
+    .hero img { width: 100%; height: 100%; object-fit: cover; object-position: center 46%; display: block; }
+    .hero::after {
+      content: "";
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(27,24,19,.8) 0%, rgba(27,24,19,.5) 55%, rgba(27,24,19,.2) 100%);
+    }
+    .hero-text {
+      position: absolute; inset: auto 0 0 0;
+      z-index: 1;
+      padding: 0 16px 72px;
+      color: var(--cream);
+      text-align: center;
+      text-shadow: 0 1px 12px rgba(27,24,19,.45);
+    }
+    .eyebrow {
+      font-family: 'Assistant', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: .18em;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 10px;
+    }
+    .hero .eyebrow { color: #e3c98f; }
+    .hero h1 { color: var(--cream); font-size: clamp(32px, 7vw, 46px); line-height: 1.15; }
+    .hero p { font-size: 17px; opacity: .92; margin-top: 10px; line-height: 1.5; }
+
+    /* ─── CARD ─── */
+    .card {
+      background: var(--white);
+      border: 1px solid var(--card-border);
+      border-radius: 4px;
+      padding: 32px 22px;
+      margin: -36px auto 28px;
+      position: relative;
+      z-index: 2;
+    }
+    @media (min-width: 640px) { .card { padding: 44px 48px; } }
+
+    .intro h2 { font-size: 26px; margin-bottom: 10px; }
+    .intro p { color: var(--ink); }
+
+    section.block { padding-top: 30px; margin-top: 30px; border-top: 1px solid var(--card-border); }
+    section.block h2 { font-size: 23px; margin-bottom: 14px; }
+
+    ul.rules { list-style: none; display: grid; gap: 14px; }
+    ul.rules li { padding-right: 18px; position: relative; }
+    ul.rules li::before {
+      content: "";
+      position: absolute; right: 0; top: .72em;
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--gold);
+    }
+    ul.rules strong { color: var(--ink-deep); font-weight: 700; }
+
+    .times {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+      margin: 4px 0 4px;
+    }
+    .time-box {
+      background: var(--cream);
+      border: 1px solid var(--card-border);
+      border-radius: 4px;
+      padding: 14px 10px;
+      text-align: center;
+    }
+    .time-box span { display: block; font-size: 14px; color: var(--muted); }
+    .time-box b { font-size: 26px; font-weight: 300; color: var(--ink-deep); letter-spacing: .04em; }
+
+    .pay-list { list-style: none; display: grid; gap: 10px; margin: 12px 0; }
+    .pay-list li {
+      background: var(--cream);
+      border: 1px solid var(--card-border);
+      border-radius: 4px;
+      padding: 12px 16px;
+    }
+    .pay-list b { color: var(--ink-deep); }
+    .ltr { direction: ltr; unicode-bidi: embed; }
+
+    table.cancel { width: 100%; border-collapse: collapse; margin-top: 4px; }
+    table.cancel td { padding: 12px 6px; border-bottom: 1px solid var(--card-border); vertical-align: top; }
+    table.cancel tr:last-child td { border-bottom: none; }
+    table.cancel td:last-child { text-align: left; font-weight: 700; color: var(--wine); white-space: nowrap; }
+
+    .note {
+      background: #f6ede9;
+      border-right: 3px solid var(--wine);
+      padding: 12px 16px;
+      border-radius: 4px;
+      margin-bottom: 14px;
+      font-weight: 600;
+      color: var(--wine-dark);
+    }
+    ol.steps { list-style: none; counter-reset: s; display: grid; gap: 12px; }
+    ol.steps li { counter-increment: s; display: flex; gap: 14px; align-items: baseline; }
+    ol.steps li::before {
+      content: counter(s);
+      font-size: 26px; font-weight: 200; color: var(--gold);
+      min-width: 20px; line-height: 1;
+    }
+
+    .signoff { margin-top: 30px; font-style: normal; color: var(--muted); }
+    .signoff b { color: var(--ink-deep); font-family: 'Alef', sans-serif; font-size: 19px; }
+
+    /* ─── FORM ─── */
+    .sign-section { background: var(--cream); margin: 34px -22px -32px; padding: 32px 22px; border-top: 1px solid var(--card-border); }
+    @media (min-width: 640px) { .sign-section { margin: 40px -48px -44px; padding: 40px 48px; } }
+    .sign-section h2 { font-size: 24px; margin-bottom: 6px; }
+    .sign-section > p { color: var(--muted); font-size: 16px; margin-bottom: 22px; }
+
+    .fields { display: grid; gap: 16px; }
+    @media (min-width: 560px) { .fields { grid-template-columns: 1fr 1fr; } .full { grid-column: 1 / -1; } }
+
+    label.f { display: block; }
+    label.f span { display: block; font-size: 15px; font-weight: 600; margin-bottom: 5px; }
+    label.f span i { font-style: normal; color: var(--muted); font-weight: 400; }
+    input[type=text], input[type=tel], input[type=email], input[type=date], input[type=number] {
+      width: 100%;
+      font: inherit;
+      font-size: 17px;
+      padding: 11px 14px;
+      border: 1px solid #d8d2c4;
+      border-radius: 4px;
+      background: var(--white);
+      color: var(--ink);
+      min-height: 48px;
+    }
+    input:focus { outline: 2px solid var(--gold); outline-offset: 1px; border-color: var(--gold); }
+    .invalid input, .invalid .pad { border-color: var(--error); }
+    .err { display: none; color: var(--error); font-size: 14px; margin-top: 4px; }
+    .invalid .err { display: block; }
+
+    .pad-wrap { margin-top: 22px; }
+    .pad-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px; }
+    .pad-head span { font-size: 15px; font-weight: 600; }
+    .pad-head button {
+      background: none; border: none; font: inherit; font-size: 15px;
+      color: var(--wine); text-decoration: underline; cursor: pointer; padding: 6px 2px;
+    }
+    .pad {
+      position: relative;
+      background: var(--white);
+      border: 1px dashed #c9c1ae;
+      border-radius: 4px;
+      height: 190px;
+    }
+    .pad canvas { width: 100%; height: 100%; display: block; touch-action: none; cursor: crosshair; }
+    .pad .hint {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      color: #c2baa8; font-size: 17px; pointer-events: none;
+    }
+    .pad .line { position: absolute; left: 24px; right: 24px; bottom: 44px; border-bottom: 1px solid #e3ddd0; pointer-events: none; }
+
+    .legal { font-size: 14px; color: var(--muted); margin-top: 18px; line-height: 1.6; }
+
+    .agree { display: flex; gap: 12px; align-items: flex-start; margin-top: 16px; cursor: pointer; }
+    .agree input { width: 22px; height: 22px; margin-top: 3px; accent-color: var(--wine); flex-shrink: 0; }
+    .agree span { font-weight: 600; }
+
+    .btn {
+      display: block; width: 100%;
+      margin-top: 24px;
+      background: var(--wine);
+      color: var(--cream);
+      font: inherit; font-size: 19px; font-weight: 700;
+      border: none; border-radius: 4px;
+      padding: 15px 20px;
+      cursor: pointer;
+      transition: background .2s;
+    }
+    .btn:hover { background: var(--wine-dark); }
+    .btn[disabled] { opacity: .6; cursor: wait; }
+    .btn.secondary { background: var(--white); color: var(--wine); border: 1px solid var(--wine); }
+
+    /* ─── DONE ─── */
+    .done { display: none; text-align: center; padding: 10px 0; }
+    .done h2 { font-size: 28px; margin-bottom: 8px; }
+    .done p { margin-bottom: 6px; }
+    .signed-summary {
+      text-align: right;
+      background: var(--white);
+      border: 1px solid var(--card-border);
+      border-radius: 4px;
+      padding: 18px;
+      margin-top: 20px;
+      font-size: 16px;
+    }
+    .signed-summary dl { display: grid; grid-template-columns: auto 1fr; gap: 4px 14px; }
+    .signed-summary dt { color: var(--muted); }
+    .signed-summary img { max-width: 260px; width: 100%; margin-top: 10px; border-bottom: 1px solid var(--card-border); }
+    .signed-summary .hash { font-size: 11px; color: var(--muted); word-break: break-all; margin-top: 10px; direction: ltr; text-align: left; }
+
+    footer { text-align: center; font-size: 14px; color: var(--muted); padding: 10px 16px 40px; }
+
+    /* ─── PRINT: signed copy ─── */
+    @media print {
+      body { background: #fff; font-size: 12pt; }
+      .hero, .no-print, footer { display: none !important; }
+      .card { margin: 0; border: none; padding: 0; }
+      .sign-section { background: #fff; margin: 20px 0 0; padding: 16px 0 0; }
+      .done { display: block !important; text-align: right; }
+      .done .btn, .done > p { display: none; }
+      section.block { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <img src="images/og/takanon-kalot.jpg" alt="זוג בחלוקים מרים כוסית מול סוויטה ביקב מטלר" />
+    <div class="hero-text">
+      <span class="eyebrow">יקב מטלר · מושב עגור</span>
+      <h1>תקנון כלות</h1>
+      <p>כמה דגשים קצרים לפני היום המיוחד שלך</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <article class="card">
+
+      <div id="terms">
+        <div class="intro">
+          <h2>מזל טוב!</h2>
+          <p>אנחנו נרגשים לארח אותך ביום המיוחד שלך. כדי שהשהות שלך ושל המלוות שלך תהיה פסטורלית, נעימה וחסרת דאגות, ועל מנת שנוכל להעניק לכן את השירות והאווירה הטובים ביותר, ריכזנו עבורך כמה דגשים קצרים. המסמך שלפניך נועד לשמור על הנוחות, הבטיחות והרוגע של כולנו בתוך קסם היקב.</p>
+        </div>
+
+        <section class="block">
+          <h2>חשוב לדעת</h2>
+          <p style="margin-bottom:16px">אנחנו שמחים לארח אתכן ביום המרגש שלכן! הסוויטות ממוקמות בשטח הבית הפרטי של המשפחה, ונשמח שתכבדו את המקום.</p>
+
+          <div class="times">
+            <div class="time-box"><span>צ'ק-אין</span><b>15:00</b></div>
+            <div class="time-box"><span>צ'ק-אאוט</span><b>11:00</b></div>
+          </div>
+
+          <ul class="rules" style="margin-top:18px">
+            <li><strong>תפוסה ואורחים:</strong> הסוויטות מיועדות לעד 4 אורחים, בהתאם להזמנה מראש. נבקש לא להכניס אורחים נוספים מבחוץ - לכל החרגה או בקשה מיוחדת, אפשר לפנות אלינו מראש.</li>
+            <li><strong>צילומי חתונה:</strong> אפשר להצטלם בשטח הסוויטות והכרם בלבד.</li>
+            <li><strong>מגיעים מוקדם או רוצים להישאר עוד קצת?</strong> מוזמנים ליהנות מכוס יין בגינה מול הכרמים, בתיאום מראש.</li>
+            <li><strong>צ'ק-אאוט מאוחר (עד 17:00 או עד מוצאי שבת):</strong> בימים א'-ד' או בשבת, בתוספת 450 ש"ח ובתיאום מראש בלבד.</li>
+            <li><strong>אווירה ושקט:</strong> אין להשתמש בהגברה בשטח היקב, ונבקש לשמור על מינימום רעש.</li>
+            <li><strong>ריהוט:</strong> אם הזזתן ריהוט בסוויטה, נבקש להחזיר אותו למקומו בסיום השימוש.</li>
+            <li><strong>ארוחת בוקר מפנקת:</strong> מוגשת בין 9:00 ל-10:00, בתיאום מראש, 190 ש"ח לזוג. חביתות, לחם דגנים, חמאה וריבה, סלט ירקות, מטבלים מתוצרת בית, שתייה קלה ועוגה ביתית.</li>
+            <li><strong>אוכל ומטבח:</strong> הסוויטות מצוידות במיקרוגל, מכונת קפה ותמי 4 (אין אפשרות לבשל או לעשות מנגל). לרשותכן מקרר שפתוח 24/7 לרכישת יין רוזה, קישים, מטבלים, גבינות, סלטים וקינוחים.</li>
+            <li><strong>בעלי חיים:</strong> אנחנו אוהבים בעלי חיים מאוד, אבל בעקבות ניסיון העבר ומקרים של אלרגיות קשות, אין אפשרות להגיע עם כלבים למתחם. תודה על ההבנה.</li>
+          </ul>
+        </section>
+
+        <section class="block">
+          <h2>תנאי תשלום</h2>
+          <p>לצורך ההזמנה יש להעביר פרטי כרטיס אשראי לביטחון, ולשלם מקדמה בגובה 20% מסכום העסקה. החיוב מתבצע שבועיים לפני האירוח, באחת מהדרכים הבאות:</p>
+          <ul class="pay-list">
+            <li><b>ביט או פייבוקס:</b> <span class="ltr">050-2802554</span></li>
+            <li><b>העברה בנקאית:</b> יקב מטלר, בנק הפועלים (12), סניף 626, חשבון 688116</li>
+            <li><b>כרטיס אשראי</b></li>
+          </ul>
+          <p>בתשלום בהעברה או באפליקציה, נשמח לקבל צילום מסך של אישור ההעברה.</p>
+        </section>
+
+        <section class="block">
+          <h2>מדיניות ביטולים</h2>
+          <table class="cancel">
+            <tr><td>ביטול עד חודש לפני מועד ההגעה</td><td>ללא דמי ביטול</td></tr>
+            <tr><td>ביטול בין חודש לשבועיים לפני ההגעה</td><td>50% משווי העסקה</td></tr>
+            <tr><td>ביטול בשבועיים שלפני ההגעה</td><td>דמי ביטול מלאים</td></tr>
+          </table>
+          <p style="margin-top:14px">אם הנחיות פיקוד העורף לא יאפשרו את קיום האירוע, האירוע יבוטל או יידחה למועד שנתאם יחד איתכן.</p>
+        </section>
+
+        <section class="block">
+          <h2>איך מגיעים</h2>
+          <p style="margin-bottom:12px">מושב עגור - אפשר לנווט עם וייז ל"יקב מטלר".</p>
+          <div class="note">שימו לב: לא נכנסים לתוך המושב. הניווט שולח לתוך המושב, אבל הכניסה למתחם הלינה היא מחוץ למושב.</div>
+          <ol class="steps">
+            <li>כשמגיעים מול שער המושב, ממשיכים שמאלה עם הכביש.</li>
+            <li>אחרי כ-10 מטר פונים ימינה לדרך העפר.</li>
+            <li>עוברים את היקב הראשון וממשיכים כ-150 מטר.</li>
+            <li>חונים בצד ימין, לפי ההנחיות במקום.</li>
+          </ol>
+          <p style="margin-top:14px">נשמח אם תעדכנו אותנו מראש מתי אתן מתכננות להגיע, כדי שנוכל להתכונן לקראתכן.</p>
+        </section>
+
+        <p class="signoff">מחכים לך,<br /><b>באהבה, לאה והמשפחה</b></p>
+      </div>
+
+      <!-- ─── חתימה ─── -->
+      <section class="sign-section" id="sign">
+        <form id="form" class="no-print" novalidate>
+          <h2>אישור וחתימה</h2>
+          <p>כמה פרטים וחתימה קצרה - וזהו, אפשר להתחיל להתרגש.</p>
+
+          <div class="fields">
+            <label class="f full" data-req>
+              <span>שם מלא</span>
+              <input type="text" name="name" autocomplete="name" required />
+              <div class="err">נשמח לשם מלא</div>
+            </label>
+            <label class="f" data-req>
+              <span>טלפון</span>
+              <input type="tel" name="phone" autocomplete="tel" inputmode="tel" required />
+              <div class="err">נשמח למספר טלפון</div>
+            </label>
+            <label class="f">
+              <span>אימייל <i>(לא חובה)</i></span>
+              <input type="email" name="email" autocomplete="email" />
+            </label>
+            <label class="f" data-req>
+              <span>תאריך הגעה</span>
+              <input type="date" name="arrival" required />
+              <div class="err">נא לבחור תאריך הגעה</div>
+            </label>
+            <label class="f" data-req>
+              <span>תאריך עזיבה</span>
+              <input type="date" name="departure" required />
+              <div class="err">נא לבחור תאריך עזיבה</div>
+            </label>
+            <label class="f" data-req>
+              <span>מספר אורחים <i>(עד 4)</i></span>
+              <input type="number" name="guests" min="1" max="4" inputmode="numeric" required />
+              <div class="err">נא לבחור מספר בין 1 ל-4</div>
+            </label>
+          </div>
+
+          <div class="pad-wrap" id="padField">
+            <div class="pad-head">
+              <span>חתימה</span>
+              <button type="button" id="clearPad">ניקוי</button>
+            </div>
+            <div class="pad">
+              <div class="line"></div>
+              <div class="hint" id="padHint">חתמי כאן עם האצבע או העכבר</div>
+              <canvas id="pad" aria-label="משטח חתימה"></canvas>
+            </div>
+            <div class="err">נשמח לחתימה שלך</div>
+          </div>
+
+          <p class="legal">בעת החתימה נשמרים השם, תאריך ושעת החתימה, פרטי הדפדפן וטביעת אצבע דיגיטלית של נוסח התקנון שאושר, כדי שאפשר יהיה לוודא בעתיד שהנוסח לא השתנה.</p>
+
+          <div id="agreeField">
+            <label class="agree">
+              <input type="checkbox" name="agree" />
+              <span>קראתי את התקנון, אני מסכימה לתנאים וחותמת עליו באופן אלקטרוני.</span>
+            </label>
+            <div class="err">יש לסמן את תיבת האישור</div>
+          </div>
+
+          <button class="btn" type="submit" id="submitBtn">אישור וחתימה</button>
+        </form>
+
+        <div class="done" id="done">
+          <span class="eyebrow">נחתם בהצלחה</span>
+          <h2>תודה ומזל טוב, נתראה בקרוב</h2>
+          <p>קיבלנו את החתימה שלך. כדאי לשמור עותק לעצמך.</p>
+
+          <div class="signed-summary">
+            <dl>
+              <dt>שם</dt><dd id="sName"></dd>
+              <dt>טלפון</dt><dd id="sPhone" class="ltr" style="text-align:right"></dd>
+              <dt>תאריכים</dt><dd id="sDates"></dd>
+              <dt>אורחים</dt><dd id="sGuests"></dd>
+              <dt>נחתם</dt><dd id="sTime"></dd>
+            </dl>
+            <img id="sSig" alt="החתימה" />
+            <div class="hash" id="sHash"></div>
+          </div>
+
+          <button class="btn secondary" type="button" onclick="window.print()">שמירת עותק חתום (PDF)</button>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <footer>יקב מטלר · מושב עגור · <span id="ver"></span></footer>
+
+  <script>
+    // כתובת ה-Web App של Google Apps Script (ראו תקנון-צימרים/הוראות-חיבור.md)
+    const ENDPOINT = 'https://script.google.com/macros/s/AKfycbwvJOofoty7312Sqzyf4sjnKfznLNR4we_Np5-5z_mXfG5KNs94YJj-uSqKUt2ikIoDGw/exec';
+    const DOC = 'כלות';
+    const TERMS_VERSION = 'גרסה 1 - אוקטובר 2026';
+
+    document.getElementById('ver').textContent = TERMS_VERSION;
+
+    // ─── משטח חתימה ───
+    const canvas = document.getElementById('pad');
+    const ctx = canvas.getContext('2d');
+    const hint = document.getElementById('padHint');
+    let drawing = false, hasInk = false, last = null;
+
+    function sizeCanvas() {
+      const r = canvas.getBoundingClientRect();
+      const dpr = window.devicePixelRatio || 1;
+      const prev = hasInk ? canvas.toDataURL() : null;
+      canvas.width = r.width * dpr;
+      canvas.height = r.height * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      ctx.lineCap = 'round';
+      ctx.lineJoin = 'round';
+      ctx.strokeStyle = '#1b1813';
+      ctx.lineWidth = 2.4;
+      if (prev) {
+        const img = new Image();
+        img.onload = () => ctx.drawImage(img, 0, 0, r.width, r.height);
+        img.src = prev;
+      }
+    }
+    sizeCanvas();
+    window.addEventListener('resize', sizeCanvas);
+
+    function pos(e) {
+      const r = canvas.getBoundingClientRect();
+      return { x: e.clientX - r.left, y: e.clientY - r.top };
+    }
+    canvas.addEventListener('pointerdown', e => {
+      drawing = true;
+      last = pos(e);
+      canvas.setPointerCapture(e.pointerId);
+      ctx.beginPath();
+      ctx.arc(last.x, last.y, 1.2, 0, Math.PI * 2);
+      ctx.fillStyle = '#1b1813';
+      ctx.fill();
+      markInk();
+    });
+    canvas.addEventListener('pointermove', e => {
+      if (!drawing) return;
+      const p = pos(e);
+      ctx.beginPath();
+      ctx.moveTo(last.x, last.y);
+      ctx.lineTo(p.x, p.y);
+      ctx.stroke();
+      last = p;
+    });
+    ['pointerup', 'pointercancel', 'pointerleave'].forEach(t =>
+      canvas.addEventListener(t, () => { drawing = false; }));
+
+    function markInk() {
+      hasInk = true;
+      hint.style.display = 'none';
+      document.getElementById('padField').classList.remove('invalid');
+    }
+    document.getElementById('clearPad').addEventListener('click', () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      hasInk = false;
+      hint.style.display = '';
+    });
+
+    // ─── טביעת אצבע לנוסח התקנון ───
+    async function termsHash() {
+      const text = document.getElementById('terms').innerText.replace(/\s+/g, ' ').trim();
+      const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(TERMS_VERSION + '|' + text));
+      return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
+    }
+
+    // ─── שליחה ───
+    const form = document.getElementById('form');
+    form.addEventListener('input', e => e.target.closest('[data-req], #agreeField')?.classList.remove('invalid'));
+
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
+      let ok = true, first = null;
+      const flag = el => { el.classList.add('invalid'); ok = false; first = first || el; };
+
+      form.querySelectorAll('[data-req]').forEach(f => {
+        const inp = f.querySelector('input');
+        if (!inp.value.trim() || !inp.checkValidity()) flag(f);
+      });
+      const arr = form.arrival.value, dep = form.departure.value;
+      if (arr && dep && dep <= arr) {
+        const f = form.departure.closest('[data-req]');
+        f.querySelector('.err').textContent = 'תאריך העזיבה צריך להיות אחרי ההגעה';
+        flag(f);
+      }
+      if (!hasInk) flag(document.getElementById('padField'));
+      if (!form.agree.checked) flag(document.getElementById('agreeField'));
+
+      if (!ok) { first.scrollIntoView({ behavior: 'smooth', block: 'center' }); return; }
+
+      const btn = document.getElementById('submitBtn');
+      btn.disabled = true;
+      btn.textContent = 'שולחים...';
+
+      const signedAt = new Date();
+      const data = {
+        name: form.name.value.trim(),
+        phone: form.phone.value.trim(),
+        email: form.email.value.trim(),
+        arrival: arr,
+        departure: dep,
+        guests: form.guests.value,
+        doc: DOC,
+        signature: canvas.toDataURL('image/png'),
+        signedAt: signedAt.toISOString(),
+        signedAtLocal: signedAt.toLocaleString('he-IL'),
+        termsVersion: TERMS_VERSION,
+        termsHash: await termsHash(),
+        userAgent: navigator.userAgent,
+        page: location.href
+      };
+
+      if (ENDPOINT) {
+        try {
+          await fetch(ENDPOINT, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+            body: JSON.stringify(data)
+          });
+        } catch (err) {
+          btn.disabled = false;
+          btn.textContent = 'אישור וחתימה';
+          alert('משהו השתבש בשליחה. בדקו את החיבור לאינטרנט ונסו שוב, או כתבו לנו בוואטסאפ.');
+          return;
+        }
+      } else {
+        console.warn('ENDPOINT ריק - החתימה לא נשלחה לשום מקום');
+      }
+
+      const fmt = d => d.split('-').reverse().join('.');
+      document.getElementById('sName').textContent = data.name;
+      document.getElementById('sPhone').textContent = data.phone;
+      document.getElementById('sDates').textContent = fmt(arr) + ' - ' + fmt(dep);
+      document.getElementById('sGuests').textContent = data.guests;
+      document.getElementById('sTime').textContent = data.signedAtLocal;
+      document.getElementById('sSig').src = data.signature;
+      document.getElementById('sHash').textContent = TERMS_VERSION + ' · SHA-256 ' + data.termsHash;
+
+      form.style.display = 'none';
+      document.getElementById('done').style.display = 'block';
+      document.getElementById('sign').scrollIntoView({ behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>
