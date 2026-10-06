@@ -170,7 +170,7 @@
     label.f { display: block; }
     label.f span { display: block; font-size: 15px; font-weight: 600; margin-bottom: 5px; }
     label.f span i { font-style: normal; color: var(--muted); font-weight: 400; }
-    input[type=text], input[type=tel], input[type=email], input[type=date] {
+    input[type=text], input[type=tel], input[type=email], input[type=date], select, textarea {
       width: 100%;
       font: inherit;
       font-size: 17px;
@@ -181,8 +181,10 @@
       color: var(--ink);
       min-height: 48px;
     }
-    input:focus { outline: 2px solid var(--gold); outline-offset: 1px; border-color: var(--gold); }
-    .invalid input, .invalid .pad { border-color: var(--error); }
+    textarea { resize: vertical; line-height: 1.5; }
+    select { cursor: pointer; }
+    input:focus, select:focus, textarea:focus { outline: 2px solid var(--gold); outline-offset: 1px; border-color: var(--gold); }
+    .invalid input, .invalid select, .invalid .pad { border-color: var(--error); }
     .err { display: none; color: var(--error); font-size: 14px; margin-top: 4px; }
     .invalid .err { display: block; }
 
@@ -296,6 +298,7 @@
             <li><strong>צ'ק-אאוט מאוחר (עד 17:00):</strong> בימים א'-ד', בתוספת 450 ש"ח ובתיאום מראש בלבד.</li>
             <li><strong>בשבת - לילה שני או עזיבה מאוחרת:</strong> בהנחה של 30%.</li>
             <li><strong>אווירה ושקט:</strong> אין להשתמש בהגברה בשטח היקב, ונבקש לשמור על מינימום רעש.</li>
+            <li><strong>בריכת שכשוכית:</strong> בבריכת השכשוכית שבמתחם אין מציל ואין השגחה. <strong>הרחצה באחריות הרוחצים בלבד.</strong> מי שאינו יודע לשחות - אין להיכנס למים. אין לקפוץ למים, ואין להיכנס למים לאחר שתיית אלכוהול. ילדים ותינוקות - בהשגחה צמודה של מבוגר בלבד.</li>
             <li><strong>ארוחת בוקר מפנקת:</strong> מוגשת בין 9:00 ל-10:00, בתיאום מראש, 190 ש"ח לזוג. חביתות, לחם דגנים, חמאה וריבה, סלט ירקות, מטבלים מתוצרת בית, שתייה קלה ועוגה ביתית.</li>
             <li><strong>אוכל ומטבח:</strong> הסוויטות מצוידות במיקרוגל, מכונת קפה ותמי 4 (אין אפשרות לבשל או לעשות מנגל). במתחם עומד לרשותכם מקרר שפתוח 24/7 לרכישת יין רוזה, קישים, מטבלים, גבינות, סלטים וקינוחים.</li>
             <li><strong>בעלי חיים:</strong> אנחנו אוהבים בעלי חיים מאוד, אבל בעקבות ניסיון העבר ומקרים של אלרגיות קשות, <strong>אין אפשרות להגיע עם כלבים למתחם.</strong> תודה על ההבנה.</li>
@@ -369,6 +372,21 @@
               <input type="date" name="departure" required />
               <div class="err">נא לבחור תאריך עזיבה</div>
             </label>
+            <label class="f" data-req>
+              <span>הצימר שהוזמן</span>
+              <select name="suite" required>
+                <option value="" selected disabled>בחירה</option>
+                <option>נוף גפנים</option>
+                <option>בוסתן</option>
+                <option>עינב</option>
+                <option>כרם</option>
+              </select>
+              <div class="err">נא לבחור צימר</div>
+            </label>
+            <label class="f full">
+              <span>הערות <i>(לא חובה)</i></span>
+              <textarea name="notes" rows="3" placeholder="בקשות מיוחדות, שעת הגעה משוערת, כל מה שחשוב שנדע"></textarea>
+            </label>
           </div>
 
           <div class="pad-wrap" id="padField">
@@ -406,6 +424,7 @@
             <dl>
               <dt>שם</dt><dd id="sName"></dd>
               <dt>טלפון</dt><dd id="sPhone" class="ltr" style="text-align:right"></dd>
+              <dt>צימר</dt><dd id="sSuite"></dd>
               <dt>תאריכים</dt><dd id="sDates"></dd>
               <dt>נחתם</dt><dd id="sTime"></dd>
             </dl>
@@ -425,7 +444,7 @@
   <script>
     // כתובת ה-Web App של Google Apps Script (ראו תקנון-צימרים/הוראות-חיבור.md)
     const ENDPOINT = 'https://script.google.com/macros/s/AKfycbwvJOofoty7312Sqzyf4sjnKfznLNR4we_Np5-5z_mXfG5KNs94YJj-uSqKUt2ikIoDGw/exec';
-    const TERMS_VERSION = 'גרסה 5 - אוקטובר 2026';
+    const TERMS_VERSION = 'גרסה 6 - אוקטובר 2026';
 
     document.getElementById('ver').textContent = TERMS_VERSION;
 
@@ -501,6 +520,7 @@
 
     // ─── שליחה ───
     const form = document.getElementById('form');
+    form.addEventListener('change', e => e.target.closest('[data-req]')?.classList.remove('invalid'));
     form.addEventListener('input', e => e.target.closest('[data-req], #agreeField')?.classList.remove('invalid'));
 
     form.addEventListener('submit', async e => {
@@ -509,7 +529,8 @@
       const flag = el => { el.classList.add('invalid'); ok = false; first = first || el; };
 
       form.querySelectorAll('[data-req]').forEach(f => {
-        if (!f.querySelector('input').value.trim()) flag(f);
+        const inp = f.querySelector('input, select');
+        if (!inp.value.trim() || !inp.checkValidity()) flag(f);
       });
       const arr = form.arrival.value, dep = form.departure.value;
       if (arr && dep && dep <= arr) {
@@ -533,6 +554,8 @@
         email: form.email.value.trim(),
         arrival: arr,
         departure: dep,
+        suite: form.suite.value,
+        notes: form.notes.value.trim(),
         signature: canvas.toDataURL('image/png'),
         signedAt: signedAt.toISOString(),
         signedAtLocal: signedAt.toLocaleString('he-IL'),
@@ -563,6 +586,7 @@
       const fmt = d => d.split('-').reverse().join('.');
       document.getElementById('sName').textContent = data.name;
       document.getElementById('sPhone').textContent = data.phone;
+      document.getElementById('sSuite').textContent = data.suite;
       document.getElementById('sDates').textContent = fmt(arr) + ' - ' + fmt(dep);
       document.getElementById('sTime').textContent = data.signedAtLocal;
       document.getElementById('sSig').src = data.signature;

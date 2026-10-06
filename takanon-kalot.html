@@ -170,7 +170,7 @@
     label.f { display: block; }
     label.f span { display: block; font-size: 15px; font-weight: 600; margin-bottom: 5px; }
     label.f span i { font-style: normal; color: var(--muted); font-weight: 400; }
-    input[type=text], input[type=tel], input[type=email], input[type=date], input[type=number] {
+    input[type=text], input[type=tel], input[type=email], input[type=date], input[type=number], select, textarea {
       width: 100%;
       font: inherit;
       font-size: 17px;
@@ -181,8 +181,10 @@
       color: var(--ink);
       min-height: 48px;
     }
-    input:focus { outline: 2px solid var(--gold); outline-offset: 1px; border-color: var(--gold); }
-    .invalid input, .invalid .pad { border-color: var(--error); }
+    textarea { resize: vertical; line-height: 1.5; }
+    select { cursor: pointer; }
+    input:focus, select:focus, textarea:focus { outline: 2px solid var(--gold); outline-offset: 1px; border-color: var(--gold); }
+    .invalid input, .invalid select, .invalid .pad { border-color: var(--error); }
     .err { display: none; color: var(--error); font-size: 14px; margin-top: 4px; }
     .invalid .err { display: block; }
 
@@ -296,6 +298,7 @@
             <li><strong>מגיעים מוקדם או רוצים להישאר עוד קצת?</strong> מוזמנים ליהנות מכוס יין בגינה מול הכרמים, בתיאום מראש.</li>
             <li><strong>צ'ק-אאוט מאוחר (עד 17:00 או עד מוצאי שבת):</strong> בימים א'-ד' או בשבת, בתוספת 450 ש"ח ובתיאום מראש בלבד.</li>
             <li><strong>אווירה ושקט:</strong> אין להשתמש בהגברה בשטח היקב, ונבקש לשמור על מינימום רעש.</li>
+            <li><strong>בריכת שכשוכית:</strong> בבריכת השכשוכית שבמתחם אין מציל ואין השגחה. <strong>הרחצה באחריות הרוחצים בלבד.</strong> מי שאינו יודע לשחות - אין להיכנס למים. אין לקפוץ למים, ואין להיכנס למים לאחר שתיית אלכוהול. ילדים ותינוקות - בהשגחה צמודה של מבוגר בלבד.</li>
             <li><strong>ריהוט:</strong> אם הזזתן ריהוט בסוויטה, נבקש להחזיר אותו למקומו בסיום השימוש.</li>
             <li><strong>ארוחת בוקר מפנקת:</strong> מוגשת בין 9:00 ל-10:00, בתיאום מראש, 190 ש"ח לזוג. חביתות, לחם דגנים, חמאה וריבה, סלט ירקות, מטבלים מתוצרת בית, שתייה קלה ועוגה ביתית.</li>
             <li><strong>אוכל ומטבח:</strong> הסוויטות מצוידות במיקרוגל, מכונת קפה ותמי 4 (אין אפשרות לבשל או לעשות מנגל). לרשותכן מקרר שפתוח 24/7 לרכישת יין רוזה, קישים, מטבלים, גבינות, סלטים וקינוחים.</li>
@@ -372,9 +375,24 @@
               <div class="err">נא לבחור תאריך עזיבה</div>
             </label>
             <label class="f" data-req>
+              <span>הצימר שהוזמן</span>
+              <select name="suite" required>
+                <option value="" selected disabled>בחירה</option>
+                <option>נוף גפנים</option>
+                <option>בוסתן</option>
+                <option>עינב</option>
+                <option>כרם</option>
+              </select>
+              <div class="err">נא לבחור צימר</div>
+            </label>
+            <label class="f" data-req>
               <span>מספר אורחים <i>(עד 4)</i></span>
               <input type="number" name="guests" min="1" max="4" inputmode="numeric" required />
               <div class="err">נא לבחור מספר בין 1 ל-4</div>
+            </label>
+            <label class="f full">
+              <span>הערות <i>(לא חובה)</i></span>
+              <textarea name="notes" rows="3" placeholder="בקשות מיוחדות, שעת הגעה משוערת, כל מה שחשוב שנדע"></textarea>
             </label>
           </div>
 
@@ -413,6 +431,7 @@
             <dl>
               <dt>שם</dt><dd id="sName"></dd>
               <dt>טלפון</dt><dd id="sPhone" class="ltr" style="text-align:right"></dd>
+              <dt>צימר</dt><dd id="sSuite"></dd>
               <dt>תאריכים</dt><dd id="sDates"></dd>
               <dt>אורחים</dt><dd id="sGuests"></dd>
               <dt>נחתם</dt><dd id="sTime"></dd>
@@ -434,7 +453,7 @@
     // כתובת ה-Web App של Google Apps Script (ראו תקנון-צימרים/הוראות-חיבור.md)
     const ENDPOINT = 'https://script.google.com/macros/s/AKfycbwvJOofoty7312Sqzyf4sjnKfznLNR4we_Np5-5z_mXfG5KNs94YJj-uSqKUt2ikIoDGw/exec';
     const DOC = 'כלות';
-    const TERMS_VERSION = 'גרסה 3 - אוקטובר 2026';
+    const TERMS_VERSION = 'גרסה 4 - אוקטובר 2026';
 
     document.getElementById('ver').textContent = TERMS_VERSION;
 
@@ -510,6 +529,7 @@
 
     // ─── שליחה ───
     const form = document.getElementById('form');
+    form.addEventListener('change', e => e.target.closest('[data-req]')?.classList.remove('invalid'));
     form.addEventListener('input', e => e.target.closest('[data-req], #agreeField')?.classList.remove('invalid'));
 
     form.addEventListener('submit', async e => {
@@ -518,7 +538,7 @@
       const flag = el => { el.classList.add('invalid'); ok = false; first = first || el; };
 
       form.querySelectorAll('[data-req]').forEach(f => {
-        const inp = f.querySelector('input');
+        const inp = f.querySelector('input, select');
         if (!inp.value.trim() || !inp.checkValidity()) flag(f);
       });
       const arr = form.arrival.value, dep = form.departure.value;
@@ -543,6 +563,8 @@
         email: form.email.value.trim(),
         arrival: arr,
         departure: dep,
+        suite: form.suite.value,
+        notes: form.notes.value.trim(),
         guests: form.guests.value,
         doc: DOC,
         signature: canvas.toDataURL('image/png'),
@@ -575,6 +597,7 @@
       const fmt = d => d.split('-').reverse().join('.');
       document.getElementById('sName').textContent = data.name;
       document.getElementById('sPhone').textContent = data.phone;
+      document.getElementById('sSuite').textContent = data.suite;
       document.getElementById('sDates').textContent = fmt(arr) + ' - ' + fmt(dep);
       document.getElementById('sGuests').textContent = data.guests;
       document.getElementById('sTime').textContent = data.signedAtLocal;
