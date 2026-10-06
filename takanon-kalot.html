@@ -54,7 +54,7 @@
       max-height: 460px;
       overflow: hidden;
     }
-    .hero img { width: 100%; height: 100%; object-fit: cover; object-position: center 36%; display: block; }
+    .hero > img { width: 100%; height: 100%; object-fit: cover; object-position: center 36%; display: block; }
     .hero::after {
       content: "";
       position: absolute; inset: 0;
@@ -78,6 +78,10 @@
       margin-bottom: 10px;
     }
     .hero .eyebrow { color: #e3c98f; }
+    .hero .logo {
+      width: clamp(130px, 30vw, 180px); height: auto; margin: 0 auto 14px; display: block;
+      filter: drop-shadow(0 1px 8px rgba(27,24,19,.5));
+    }
     .hero h1 { color: var(--cream); font-size: clamp(32px, 7vw, 46px); line-height: 1.15; }
     .hero p { font-size: 17px; opacity: .92; margin-top: 10px; line-height: 1.5; }
 
@@ -268,7 +272,7 @@
   <header class="hero">
     <img src="images/og/takanon-kalot.jpg" alt="שתי כוסות יין רוזה מורמות לשקיעה מול הכרם ביקב מטלר" />
     <div class="hero-text">
-      <span class="eyebrow">יקב מטלר · מושב עגור</span>
+      <img class="logo" src="images/og/logo-cream-600.png" alt="יקב מטלר" />
       <h1>תקנון כלות</h1>
       <p>כמה דגשים קצרים לפני היום המיוחד שלך</p>
     </div>
